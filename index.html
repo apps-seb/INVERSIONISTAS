@@ -6,6 +6,7 @@
     <title>Ecosistema Premium Inversión v2 - Colombia</title>
     <meta name="description" content="Invierta en el futuro del comercio digital en Colombia. Ecosistema todo-en-uno con logística propia, IA y alta rentabilidad.">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <script id="tailwind-config">
@@ -153,38 +154,38 @@
             <div class="absolute top-20 right-0 w-96 h-96 bg-gold/10 rounded-full blur-[100px] animate-pulse-slow"></div>
             <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-900/20 rounded-full blur-[80px]"></div>
 
-            <div class="relative z-10 max-w-4xl mx-auto text-center md:text-left md:flex md:items-center md:justify-between w-full">
+            <div class="relative z-10 max-w-5xl mx-auto text-center md:text-left md:flex md:items-center md:justify-between w-full">
                 <div class="md:w-1/2">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold-light text-[10px] font-black tracking-widest uppercase mb-6 backdrop-blur-sm">
                         <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
-                        Oportunidad Colombia 2024
+                        Ronda de Inversión Semilla 2024
                     </div>
-                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.95] mb-6">
-                        DOMINA EL <br/>
-                        <span class="text-gold-gradient italic pr-2">ECOMMERCE</span> <br/>
-                        AUTOMATIZADO
+                    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter leading-[0.95] mb-6">
+                        INVIERTA EN <br/>
+                        <span class="text-gold-gradient italic pr-2">ECOMMERCE HÍBRIDO</span> <br/>
+                        COMO SOCIO
                     </h1>
                     <p class="text-gray-300 text-sm md:text-base font-medium mb-8 leading-relaxed max-w-lg">
-                        Olvídese de la inflación y el bajo rendimiento bancario. Adquiera un negocio digital "Llave en Mano" con logística propia, IA avanzada y marca privada.
+                        No sea solo un cliente, sea dueño. Participe en el capital de una compañía tecnológica con logística propia, marca privada y dropshipping automatizado en Colombia.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <button onclick="openModal()" class="bg-gold-metallic text-midnight-light font-black h-14 px-8 rounded-lg flex items-center justify-center gap-2 shadow-glow-gold hover:scale-[1.02] transition-transform w-full sm:w-auto">
-                            AGENDAR ASESORÍA
-                            <span class="material-symbols-outlined text-xl">arrow_outward</span>
+                        <button onclick="document.getElementById('calculadora').scrollIntoView()" class="bg-gold-metallic text-midnight-light font-black h-14 px-8 rounded-lg flex items-center justify-center gap-2 shadow-glow-gold hover:scale-[1.02] transition-transform w-full sm:w-auto">
+                            CALCULAR MI EQUITY
+                            <span class="material-symbols-outlined text-xl">calculate</span>
                         </button>
-                        <button onclick="document.getElementById('inversion').scrollIntoView()" class="glass text-white font-bold h-14 px-8 rounded-lg flex items-center justify-center gap-2 hover:bg-white/5 transition-colors w-full sm:w-auto border border-white/20">
-                            VER DESGLOSE
-                            <span class="material-symbols-outlined">visibility</span>
+                        <button onclick="openModal()" class="glass text-white font-bold h-14 px-8 rounded-lg flex items-center justify-center gap-2 hover:bg-white/5 transition-colors w-full sm:w-auto border border-white/20">
+                            VER PROSPECTO
+                            <span class="material-symbols-outlined">description</span>
                         </button>
                     </div>
                     <div class="flex items-center gap-4 mt-8 justify-center md:justify-start">
                         <div class="flex -space-x-3">
                             <div class="w-10 h-10 rounded-full border-2 border-midnight bg-gray-700 bg-[url('https://randomuser.me/api/portraits/men/32.jpg')] bg-cover"></div>
                             <div class="w-10 h-10 rounded-full border-2 border-midnight bg-gray-600 bg-[url('https://randomuser.me/api/portraits/women/44.jpg')] bg-cover"></div>
-                            <div class="w-10 h-10 rounded-full border-2 border-midnight bg-gray-500 flex items-center justify-center text-[10px] font-bold bg-midnight-light text-gold">+400</div>
+                            <div class="w-10 h-10 rounded-full border-2 border-midnight bg-gray-500 flex items-center justify-center text-[10px] font-bold bg-midnight-light text-gold">+45</div>
                         </div>
                         <div class="text-left">
-                            <p class="text-[12px] text-white font-bold">Inversionistas Activos</p>
+                            <p class="text-[12px] text-white font-bold">Socios Capitalistas</p>
                             <div class="flex text-gold text-[10px]">
                                 <span class="material-symbols-outlined text-[14px] fill-current">star</span>
                                 <span class="material-symbols-outlined text-[14px] fill-current">star</span>
@@ -229,8 +230,8 @@
         <section class="py-20 px-6 bg-midnight border-b border-white/5">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Por qué su capital <span class="text-red-500">pierde valor</span> hoy?</h2>
-                    <p class="text-gray-400 max-w-2xl mx-auto">El modelo tradicional de inversión ya no funciona. La inflación y la saturación del mercado exigen una evolución.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Por qué invertir en <span class="text-red-500">Startups</span> hoy?</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">La finca raíz y los CDTs ofrecen seguridad pero bajo crecimiento. El Ecommerce Híbrido es el nuevo petróleo.</p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
@@ -239,9 +240,9 @@
                         <div class="w-14 h-14 bg-red-500/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-red-500 text-3xl">trending_down</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-200">Devaluación Constante</h3>
+                        <h3 class="text-xl font-bold mb-3 text-gray-200">Bajos Retornos Tradicionales</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">
-                            El peso colombiano ha perdido poder adquisitivo. Dejar el dinero en el banco es perder un 8-12% anual en términos reales.
+                            La finca raíz renta un 0.5% mensual. El sector tecnológico en Colombia está creciendo al 200% anual. ¿Dónde prefiere poner su capital?
                         </p>
                     </div>
 
@@ -250,9 +251,9 @@
                         <div class="w-14 h-14 bg-red-500/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-red-500 text-3xl">sentiment_dissatisfied</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-200">Complejidad Técnica</h3>
+                        <h3 class="text-xl font-bold mb-3 text-gray-200">Socio Silencioso</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">
-                            Montar un Ecommerce solo requiere: Desarrolladores, Diseñadores, Bodegas, Contratos con transportadoras... ¿Tiene 6 meses para perder?
+                            Usted pone el capital, nosotros la operación. No necesita aprender de marketing, ni contratar bodegas, ni lidiar con devoluciones.
                         </p>
                     </div>
 
@@ -261,9 +262,9 @@
                         <div class="w-14 h-14 bg-red-500/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-red-500 text-3xl">warning</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-200">Agencias "Vende-Humo"</h3>
+                        <h3 class="text-xl font-bold mb-3 text-gray-200">Propiedad Real</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">
-                            El mercado está lleno de cursos y agencias que no entregan resultados. Usted necesita activos tangibles, no promesas.
+                            A diferencia de un curso o una agencia, aquí usted compra PARTICIPACIÓN (Equity). Es dueño de una parte de la infraestructura y la tecnología.
                         </p>
                     </div>
                 </div>
@@ -274,29 +275,106 @@
         <section id="beneficios" class="py-16 px-6 bg-midnight-light/30">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-4">Ventajas del <span class="text-gold-gradient">Ecosistema</span></h2>
-                    <p class="text-gray-400">Diseñado para minimizar riesgo y maximizar conversión.</p>
+                    <h2 class="text-3xl font-bold mb-4">Ventajas de ser <span class="text-gold-gradient">Socio Capitalista</span></h2>
+                    <p class="text-gray-400">Diseñado para maximizar la valorización de su portafolio.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="glass p-6 rounded-xl hover:bg-white/5 transition-colors">
-                        <span class="material-symbols-outlined text-gold text-4xl mb-4">rocket_launch</span>
-                        <h3 class="font-bold text-lg mb-2">Lanzamiento Rápido</h3>
-                        <p class="text-sm text-gray-400">Tienda activa y vendiendo en menos de 15 días. Sin esperas de desarrollo.</p>
+                        <span class="material-symbols-outlined text-gold text-4xl mb-4">account_balance</span>
+                        <h3 class="font-bold text-lg mb-2">Dividendos Trimestrales</h3>
+                        <p class="text-sm text-gray-400">Reciba utilidades líquidas cada 3 meses directamente en su cuenta bancaria o wallet.</p>
                     </div>
                     <div class="glass p-6 rounded-xl hover:bg-white/5 transition-colors">
-                        <span class="material-symbols-outlined text-gold text-4xl mb-4">local_shipping</span>
-                        <h3 class="font-bold text-lg mb-2">Logística Propia</h3>
-                        <p class="text-sm text-gray-400">Bodegas en Bogotá, Medellín y Cali. Entregas same-day y pago contra entrega (COD).</p>
+                        <span class="material-symbols-outlined text-gold text-4xl mb-4">domain</span>
+                        <h3 class="font-bold text-lg mb-2">Infraestructura Propia</h3>
+                        <p class="text-sm text-gray-400">Usted es copropietario de bodegas físicas, flota de transporte y stock de mercancía.</p>
                     </div>
                     <div class="glass p-6 rounded-xl hover:bg-white/5 transition-colors">
                         <span class="material-symbols-outlined text-gold text-4xl mb-4">psychology</span>
-                        <h3 class="font-bold text-lg mb-2">Inteligencia Artificial</h3>
-                        <p class="text-sm text-gray-400">Copywriting, Creativos y Atención al cliente automatizados con IA de última generación.</p>
+                        <h3 class="font-bold text-lg mb-2">Propiedad Intelectual</h3>
+                        <p class="text-sm text-gray-400">Dueño del Software de Tracking, Bases de Datos y Algoritmos de IA desarrollados in-house.</p>
                     </div>
                     <div class="glass p-6 rounded-xl hover:bg-white/5 transition-colors">
-                        <span class="material-symbols-outlined text-gold text-4xl mb-4">payments</span>
-                        <h3 class="font-bold text-lg mb-2">Pagos Locales</h3>
-                        <p class="text-sm text-gray-400">Integración con Nequi, Daviplata, PSE y tarjetas. Tasa de aceptación del 95%.</p>
+                        <span class="material-symbols-outlined text-gold text-4xl mb-4">show_chart</span>
+                        <h3 class="font-bold text-lg mb-2">Exit Strategy</h3>
+                        <p class="text-sm text-gray-400">Proyección de venta de la compañía a un fondo de inversión en 5 años (Multiplicador 10x).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INVESTMENT SIMULATOR Section -->
+        <section id="calculadora" class="py-20 px-6 bg-midnight-light/50 border-b border-white/5">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Simulador de <span class="text-gold-gradient">Equity & Retorno</span></h2>
+                    <p class="text-gray-400">Proyecte su participación accionaria y sus dividendos futuros.</p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border border-white/10 shadow-2xl">
+                    <div class="grid lg:grid-cols-2 gap-12">
+                        <!-- Controls -->
+                        <div class="space-y-8">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-300 mb-4 uppercase tracking-wider">¿Cómo desea calcular?</label>
+                                <div class="flex gap-4 p-1 bg-black/40 rounded-lg">
+                                    <button onclick="setCalcMode('amount')" id="btn-amount" class="flex-1 py-3 rounded-md text-sm font-bold transition-all bg-gold-metallic text-midnight shadow-glow-gold">Por Monto ($)</button>
+                                    <button onclick="setCalcMode('equity')" id="btn-equity" class="flex-1 py-3 rounded-md text-sm font-bold transition-all text-gray-400 hover:text-white">Por Equity (%)</button>
+                                </div>
+                            </div>
+
+                            <div id="input-container-amount">
+                                <label class="block text-xs font-bold text-gray-400 mb-2 uppercase">Monto a Invertir (USD)</label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                                    <input type="number" id="invest-amount" value="25000" step="1000" min="5000" oninput="calculateROI()" class="w-full bg-midnight border border-white/10 rounded-xl py-4 pl-8 pr-4 text-white font-bold text-xl focus:border-gold focus:ring-1 focus:ring-gold outline-none">
+                                </div>
+                                <p class="text-[10px] text-gray-500 mt-2">Mínimo sugerido: $5,000 USD</p>
+                            </div>
+
+                            <div id="input-container-equity" class="hidden">
+                                <label class="block text-xs font-bold text-gray-400 mb-2 uppercase">Equity Deseado (%)</label>
+                                <div class="relative">
+                                    <input type="number" id="invest-equity" value="0.5" step="0.1" min="0.1" max="49" oninput="calculateROI()" class="w-full bg-midnight border border-white/10 rounded-xl py-4 pl-4 pr-8 text-white font-bold text-xl focus:border-gold focus:ring-1 focus:ring-gold outline-none">
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">%</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-400 mb-2 uppercase flex justify-between">
+                                    <span>Ventas Mensuales Compañía</span>
+                                    <span id="sales-display" class="text-gold">$500,000 USD</span>
+                                </label>
+                                <input type="range" id="sales-slider" min="100000" max="5000000" step="50000" value="500000" oninput="calculateROI()" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-gold">
+                                <div class="flex justify-between text-[10px] text-gray-500 mt-1">
+                                    <span>Año 1 (Conservador)</span>
+                                    <span>Año 5 (Escalado)</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                                <h4 class="font-bold text-gray-300 mb-4 text-sm">Resumen de Inversión</h4>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs text-gray-400">Su Participación (Equity):</span>
+                                    <span id="result-equity" class="font-black text-xl text-white">0.50%</span>
+                                </div>
+                                <div class="flex justify-between items-center border-t border-white/10 pt-2">
+                                    <span class="text-xs text-gray-400">Dividendo Mensual Estimado:</span>
+                                    <span id="result-dividend" class="font-black text-xl text-green-400">$1,750 USD</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Visuals -->
+                        <div class="flex flex-col gap-6">
+                            <div class="h-48 relative">
+                                <canvas id="equityChart"></canvas>
+                            </div>
+                            <div class="flex-1 bg-midnight/50 rounded-xl p-4 border border-white/5 relative">
+                                <h4 class="text-xs font-bold text-gray-400 uppercase mb-4 text-center">Proyección Crecimiento Valor Acción</h4>
+                                <canvas id="growthChart"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -500,123 +578,135 @@
             </div>
         </section>
 
-        <!-- PROMOTIONS & UPSELLS Section -->
-        <section class="py-20 px-6">
+        <!-- TECHNOLOGY ASSETS Section -->
+        <section class="py-20 px-6 relative">
+            <div class="absolute inset-0 bg-purple-900/5 pointer-events-none"></div>
             <div class="max-w-6xl mx-auto">
-                <div class="flex justify-between items-end mb-12">
-                    <div>
-                        <h2 class="text-3xl font-bold mb-2">Combos <span class="text-purple-400">Power AI</span></h2>
-                        <p class="text-gray-400 text-sm">Maximice su retorno con herramientas de aceleración.</p>
+                <div class="text-center mb-16">
+                    <div class="inline-block px-4 py-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full border border-purple-500/30 text-xs font-bold uppercase tracking-widest text-white mb-4">
+                        <span class="material-symbols-outlined text-sm align-middle mr-1">verified</span>
+                        Propiedad Intelectual Incluida
                     </div>
-                    <div class="hidden md:block">
-                        <span class="bg-red-500/20 text-red-400 border border-red-500/50 px-3 py-1 rounded text-xs font-bold uppercase animate-pulse">Oferta Limitada</span>
-                    </div>
+                    <h2 class="text-3xl font-bold mb-4">Su Portafolio de <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Tecnología IA</span></h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Al invertir, usted se convierte en copropietario de estas herramientas propietarias valoradas en más de $2M USD.</p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-6">
-                    <!-- Upsell 1 -->
-                    <div class="glass border border-purple-500/30 p-6 rounded-2xl relative group hover:bg-purple-900/10 transition-colors cursor-pointer">
-                        <div class="absolute -top-3 right-4 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded">POPULAR</div>
-                        <div class="h-12 w-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 text-purple-400">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Tech 1 -->
+                    <div class="glass border border-purple-500/30 p-6 rounded-2xl relative group hover:bg-purple-900/10 transition-colors">
+                        <div class="h-12 w-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 text-purple-400 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined">smart_toy</span>
                         </div>
                         <h3 class="font-bold text-lg mb-2 text-white">Bot Chat + CRM</h3>
-                        <p class="text-gray-400 text-sm mb-4">Automatice el 90% de las ventas por WhatsApp con nuestro Bot entrenado.</p>
-                        <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                            <div>
-                                <p class="text-[10px] text-gray-500 line-through">$1,200 USD</p>
-                                <p class="font-bold text-white">$499 USD</p>
-                            </div>
-                            <button class="p-2 rounded-full bg-white/5 hover:bg-white/10 text-purple-400">
-                                <span class="material-symbols-outlined">add</span>
-                            </button>
-                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Automatice el 90% de las ventas por WhatsApp. Cierre ventas mientras duerme.</p>
+                        <span class="text-[10px] font-bold text-green-400 uppercase tracking-wider">Incluido en Equity</span>
                     </div>
 
-                    <!-- Upsell 2 -->
-                    <div class="glass border border-white/10 p-6 rounded-2xl relative group hover:bg-white/5 transition-colors cursor-pointer">
-                        <div class="h-12 w-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-400">
-                            <span class="material-symbols-outlined">ads_click</span>
+                    <!-- Tech 2 -->
+                    <div class="glass border border-blue-500/30 p-6 rounded-2xl relative group hover:bg-blue-900/10 transition-colors">
+                        <div class="h-12 w-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-400 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined">movie_filter</span>
                         </div>
-                        <h3 class="font-bold text-lg mb-2 text-white">Pack Creativos 3D</h3>
-                        <p class="text-gray-400 text-sm mb-4">10 Videos de alto impacto generados con IA para sus campañas de TikTok.</p>
-                        <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                            <div>
-                                <p class="text-[10px] text-gray-500 line-through">$800 USD</p>
-                                <p class="font-bold text-white">$299 USD</p>
-                            </div>
-                            <button class="p-2 rounded-full bg-white/5 hover:bg-white/10 text-blue-400">
-                                <span class="material-symbols-outlined">add</span>
-                            </button>
-                        </div>
+                        <h3 class="font-bold text-lg mb-2 text-white">Generador Video IA</h3>
+                        <p class="text-gray-400 text-sm mb-4">Software propio que crea 100 anuncios de video únicos por día para TikTok Ads.</p>
+                        <span class="text-[10px] font-bold text-green-400 uppercase tracking-wider">Incluido en Equity</span>
                     </div>
 
-                    <!-- Upsell 3 -->
-                    <div class="glass border border-gold/30 p-6 rounded-2xl relative group hover:bg-gold/5 transition-colors cursor-pointer">
-                        <div class="h-12 w-12 bg-gold/20 rounded-lg flex items-center justify-center mb-4 text-gold">
+                    <!-- Tech 3 -->
+                    <div class="glass border border-gold/30 p-6 rounded-2xl relative group hover:bg-gold/5 transition-colors">
+                        <div class="h-12 w-12 bg-gold/20 rounded-lg flex items-center justify-center mb-4 text-gold group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined">loyalty</span>
                         </div>
                         <h3 class="font-bold text-lg mb-2 text-white">Club Fidelización</h3>
-                        <p class="text-gray-400 text-sm mb-4">Sistema de puntos para sus clientes. Aumente la recompra un 35%.</p>
-                        <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                            <div>
-                                <p class="text-[10px] text-gray-500 line-through">$1,500 USD</p>
-                                <p class="font-bold text-white">$599 USD</p>
-                            </div>
-                            <button class="p-2 rounded-full bg-white/5 hover:bg-white/10 text-gold">
-                                <span class="material-symbols-outlined">add</span>
-                            </button>
-                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Sistema de puntos Blockchain para retención de clientes. +35% LTV.</p>
+                        <span class="text-[10px] font-bold text-green-400 uppercase tracking-wider">Incluido en Equity</span>
                     </div>
+
+                    <!-- Tech 4 -->
+                    <div class="glass border border-green-500/30 p-6 rounded-2xl relative group hover:bg-green-900/10 transition-colors">
+                        <div class="h-12 w-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 text-green-400 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined">inventory</span>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2 text-white">Predictive Stock</h3>
+                        <p class="text-gray-400 text-sm mb-4">Algoritmo que predice la demanda futura para evitar quiebres de inventario.</p>
+                        <span class="text-[10px] font-bold text-green-400 uppercase tracking-wider">Incluido en Equity</span>
+                    </div>
+
+                    <!-- Tech 5 -->
+                    <div class="glass border border-red-500/30 p-6 rounded-2xl relative group hover:bg-red-900/10 transition-colors">
+                        <div class="h-12 w-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4 text-red-400 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined">campaign</span>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2 text-white">Trafficker Autónomo</h3>
+                        <p class="text-gray-400 text-sm mb-4">IA que ajusta presupuestos en Meta/Google Ads cada 15 minutos para maximizar ROAS.</p>
+                        <span class="text-[10px] font-bold text-green-400 uppercase tracking-wider">Incluido en Equity</span>
+                    </div>
+
+                    <!-- Tech 6 -->
+                    <div class="glass border border-white/10 p-6 rounded-2xl relative group hover:bg-white/5 transition-colors bg-gradient-to-br from-white/5 to-transparent">
+                        <div class="h-12 w-12 bg-white/10 rounded-lg flex items-center justify-center mb-4 text-white group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined">rocket_launch</span>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2 text-white">Launchpad</h3>
+                        <p class="text-gray-400 text-sm mb-4">Plataforma para lanzar nuevas marcas en 48 horas validando mercado.</p>
+                        <span class="text-[10px] font-bold text-green-400 uppercase tracking-wider">Incluido en Equity</span>
+                    </div>
+                </div>
+
+                <div class="mt-12 p-6 bg-gold-metallic/10 border border-gold/30 rounded-xl text-center">
+                    <p class="text-gold font-bold text-lg flex justify-center items-center gap-2">
+                        <span class="material-symbols-outlined">stars</span>
+                        Valor Total de Activos Tecnológicos: <span class="text-white line-through decoration-red-500 mx-2">$2,450,000 USD</span> <span class="text-white">INCLUIDO EN SU INVERSIÓN</span>
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- PRICING Section -->
         <section class="py-20 px-6 bg-midnight-light/30">
-            <h2 class="text-3xl font-bold text-center mb-2">Planes de Inversión</h2>
-            <p class="text-sm text-gray-500 text-center mb-12">Escalabilidad garantizada en todos los niveles.</p>
+            <h2 class="text-3xl font-bold text-center mb-2">Rondas de Inversión</h2>
+            <p class="text-sm text-gray-500 text-center mb-12">Participe en la capitalización de la compañía.</p>
 
             <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
                 <!-- SILVER -->
                 <div class="border border-white/10 rounded-2xl p-8 hover:bg-white/5 transition-colors">
-                    <h3 class="font-black text-gray-400 tracking-widest uppercase mb-4">Silver</h3>
+                    <h3 class="font-black text-gray-400 tracking-widest uppercase mb-4">Seed Round</h3>
                     <p class="text-4xl font-bold text-white mb-2">$5,000 <span class="text-sm font-normal text-gray-500">USD</span></p>
-                    <p class="text-xs text-gray-400 mb-8">Participación Estándar</p>
+                    <p class="text-xs text-gray-400 mb-8">Nota Convertible</p>
                     <ul class="space-y-4 mb-8 text-sm text-gray-300">
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-sm">check</span> Tienda Dropshipping Automatizada</li>
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-sm">check</span> Acceso a Logística NexusTrack</li>
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-sm">check</span> Retorno 12-18 Meses</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-sm">check</span> Participación en Utilidades (Revenue Share)</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-sm">check</span> Acceso Dashboard Inversionista</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-sm">check</span> Retorno Estimado 12-18 Meses</li>
                     </ul>
-                    <button onclick="openModal()" class="w-full py-4 rounded-lg border border-white/20 hover:bg-white/10 font-bold text-sm transition-colors">Seleccionar</button>
+                    <button onclick="openModal()" class="w-full py-4 rounded-lg border border-white/20 hover:bg-white/10 font-bold text-sm transition-colors">Aplicar a Seed</button>
                 </div>
 
                 <!-- GOLD -->
                 <div class="relative border border-gold rounded-2xl p-8 bg-gradient-to-b from-gold/10 to-midnight transform md:-translate-y-4 shadow-glow-gold">
-                    <div class="absolute top-0 right-0 bg-gold text-midnight text-[10px] font-black px-3 py-1 rounded-bl-lg rounded-tr-lg">MÁS VENDIDO</div>
-                    <h3 class="font-black text-gold tracking-widest uppercase mb-4">Gold Partner</h3>
+                    <div class="absolute top-0 right-0 bg-gold text-midnight text-[10px] font-black px-3 py-1 rounded-bl-lg rounded-tr-lg">PRE-SERIES A</div>
+                    <h3 class="font-black text-gold tracking-widest uppercase mb-4">Partner Round</h3>
                     <p class="text-5xl font-bold text-white mb-2">$25,000 <span class="text-sm font-normal text-gray-500">USD</span></p>
-                    <p class="text-xs text-gray-400 mb-8">Participación con Equity</p>
+                    <p class="text-xs text-gray-400 mb-8">Equity Real (Acciones)</p>
                     <ul class="space-y-4 mb-8 text-sm text-white font-medium">
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold text-sm">star</span> <strong>Marca Propia (Private Label)</strong></li>
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold text-sm">star</span> Acciones en la Matriz (0.5%)</li>
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold text-sm">star</span> Dividendos Trimestrales</li>
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold text-sm">star</span> Retorno 6-10 Meses</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold text-sm">star</span> <strong>0.5% Acciones Preferenciales</strong></li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold text-sm">star</span> Dividendos Trimestrales de por vida</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold text-sm">star</span> Derecho a Voto en Asamblea</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold text-sm">star</span> Retorno Estimado 6-10 Meses</li>
                     </ul>
-                    <button onclick="openModal()" class="w-full py-4 rounded-lg bg-gold-metallic text-midnight font-bold text-sm hover:scale-[1.02] transition-transform shadow-lg">Convertirme en Socio</button>
+                    <button onclick="openModal()" class="w-full py-4 rounded-lg bg-gold-metallic text-midnight font-bold text-sm hover:scale-[1.02] transition-transform shadow-lg">Aplicar como Socio</button>
                 </div>
 
                 <!-- DIAMOND -->
                 <div class="border border-white/10 rounded-2xl p-8 hover:bg-white/5 transition-colors">
-                    <h3 class="font-black text-gray-400 tracking-widest uppercase mb-4">Diamond</h3>
+                    <h3 class="font-black text-gray-400 tracking-widest uppercase mb-4">Board Member</h3>
                     <p class="text-4xl font-bold text-white mb-2">$50,000 <span class="text-sm font-normal text-gray-500">USD</span></p>
-                    <p class="text-xs text-gray-400 mb-8">Franquicia Master</p>
+                    <p class="text-xs text-gray-400 mb-8">Equity + Governance</p>
                     <ul class="space-y-4 mb-8 text-sm text-gray-300">
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-sm">check</span> 3 Marcas Propias</li>
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-sm">check</span> Puesto en la Junta Directiva</li>
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-sm">check</span> Viaje a China (Fábricas)</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-sm">check</span> <strong>1.2% Acciones Comunes</strong></li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-sm">check</span> Puesto en Junta Directiva</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-sm">check</span> Viaje a China (Fábricas & Proveedores)</li>
                     </ul>
-                    <button onclick="openModal()" class="w-full py-4 rounded-lg border border-white/20 hover:bg-white/10 font-bold text-sm transition-colors">Agendar Reunión</button>
+                    <button onclick="openModal()" class="w-full py-4 rounded-lg border border-white/20 hover:bg-white/10 font-bold text-sm transition-colors">Agendar Cita Junta</button>
                 </div>
             </div>
         </section>
@@ -793,6 +883,151 @@
                 nav.classList.remove('shadow-lg');
                 nav.classList.replace('bg-midnight/95', 'bg-midnight/80');
             }
+        });
+
+        // --- CALCULATOR LOGIC ---
+        let calcMode = 'amount';
+        const VALUATION = 5000000; // $5M USD Valuation
+        let equityChart, growthChart;
+
+        function setCalcMode(mode) {
+            calcMode = mode;
+            const btnAmount = document.getElementById('btn-amount');
+            const btnEquity = document.getElementById('btn-equity');
+            const inputAmount = document.getElementById('input-container-amount');
+            const inputEquity = document.getElementById('input-container-equity');
+
+            if (mode === 'amount') {
+                btnAmount.classList.add('bg-gold-metallic', 'text-midnight', 'shadow-glow-gold');
+                btnAmount.classList.remove('text-gray-400', 'hover:text-white');
+                btnEquity.classList.remove('bg-gold-metallic', 'text-midnight', 'shadow-glow-gold');
+                btnEquity.classList.add('text-gray-400', 'hover:text-white');
+
+                inputAmount.classList.remove('hidden');
+                inputEquity.classList.add('hidden');
+            } else {
+                btnEquity.classList.add('bg-gold-metallic', 'text-midnight', 'shadow-glow-gold');
+                btnEquity.classList.remove('text-gray-400', 'hover:text-white');
+                btnAmount.classList.remove('bg-gold-metallic', 'text-midnight', 'shadow-glow-gold');
+                btnAmount.classList.add('text-gray-400', 'hover:text-white');
+
+                inputEquity.classList.remove('hidden');
+                inputAmount.classList.add('hidden');
+            }
+            calculateROI();
+        }
+
+        function calculateROI() {
+            const amountInput = document.getElementById('invest-amount');
+            const equityInput = document.getElementById('invest-equity');
+            const salesInput = document.getElementById('sales-slider');
+
+            let amount, equity;
+
+            if (calcMode === 'amount') {
+                amount = parseFloat(amountInput.value) || 0;
+                equity = (amount / VALUATION) * 100;
+                // Update equity input silently for consistency if we switch back
+                equityInput.value = equity.toFixed(2);
+            } else {
+                equity = parseFloat(equityInput.value) || 0;
+                amount = (equity / 100) * VALUATION;
+                // Update amount input silently
+                amountInput.value = Math.round(amount);
+            }
+
+            const monthlySales = parseFloat(salesInput.value);
+            // Assuming 15% Net Margin available for Dividends
+            const monthlyNetProfit = monthlySales * 0.15;
+            const monthlyDividend = monthlyNetProfit * (equity / 100);
+
+            // Update UI
+            document.getElementById('sales-display').innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(monthlySales);
+            document.getElementById('result-equity').innerText = equity.toFixed(2) + '%';
+            document.getElementById('result-dividend').innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(monthlyDividend);
+
+            updateCharts(equity, amount);
+        }
+
+        function initCharts() {
+            const ctxEquity = document.getElementById('equityChart').getContext('2d');
+            const ctxGrowth = document.getElementById('growthChart').getContext('2d');
+
+            Chart.defaults.color = '#9ca3af';
+            Chart.defaults.font.family = 'Manrope';
+
+            equityChart = new Chart(ctxEquity, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Su Participación', 'Otros Socios/Fundadores'],
+                    datasets: [{
+                        data: [0.5, 99.5],
+                        backgroundColor: ['#D4AF37', '#1f2937'],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'right' }
+                    }
+                }
+            });
+
+            growthChart = new Chart(ctxGrowth, {
+                type: 'bar',
+                data: {
+                    labels: ['2024', '2025', '2026', '2027', '2028'],
+                    datasets: [{
+                        label: 'Valor de su Inversión ($)',
+                        data: [25000, 35000, 52000, 78000, 120000],
+                        backgroundColor: '#D4AF37',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+
+        function updateCharts(equity, amount) {
+            if (!equityChart || !growthChart) return;
+
+            // Update Equity Chart
+            equityChart.data.datasets[0].data = [equity, 100 - equity];
+            equityChart.update();
+
+            // Update Growth Chart (Simulation: 40% YoY Growth)
+            const growthData = [];
+            let currentVal = amount;
+            for(let i=0; i<5; i++) {
+                growthData.push(currentVal);
+                currentVal = currentVal * 1.4; // 40% growth
+            }
+            growthChart.data.datasets[0].data = growthData;
+            growthChart.update();
+        }
+
+        // Init Calculator on Load
+        document.addEventListener('DOMContentLoaded', () => {
+            initCharts();
+            calculateROI();
         });
     </script>
 </body>
