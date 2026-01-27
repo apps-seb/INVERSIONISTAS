@@ -579,19 +579,32 @@
                     <div id="demo-supplements" class="hidden grid md:grid-cols-2 gap-12 transition-opacity duration-500">
                         <!-- Visual -->
                         <div class="relative">
-                             <div class="aspect-square bg-gray-800 rounded-xl overflow-hidden mb-4 relative group">
-                                <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=1000&auto=format&fit=crop" alt="Supplements" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                             <div class="aspect-square bg-gray-800 rounded-xl overflow-hidden mb-4 relative group border border-white/10">
+                                <img src="https://mercacol.com.co/wp-content/uploads/2026/01/ISO100.webp" alt="ISO100 Protein" class="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-black px-3 py-1 rounded shadow-lg animate-pulse">
+                                    OFERTA FLASH
+                                </div>
                                 <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur text-white text-xs font-bold px-3 py-2 rounded-lg border-l-4 border-red-500">
                                     PACK DEFINICIÓN EXTREMA
                                 </div>
                              </div>
 
-                             <div class="grid grid-cols-2 gap-2">
-                                <div class="bg-white/5 p-2 rounded text-center">
+                             <!-- Unlockable Gift Visual (Hidden initially) -->
+                             <div id="supp-gift-section" class="hidden absolute inset-0 z-20 glass-gold rounded-xl flex-col items-center justify-center text-center p-6 backdrop-blur-md animate-in fade-in zoom-in duration-500">
+                                <p class="text-sm font-bold text-midnight uppercase tracking-widest mb-2">¡OBSEQUIO DESBLOQUEADO!</p>
+                                <img src="https://mercacol.com.co/wp-content/uploads/2026/01/l-carnitina.png" class="w-48 h-48 object-contain drop-shadow-2xl mb-4 animate-float" alt="Gift">
+                                <div class="bg-white text-midnight font-black px-4 py-2 rounded-full text-lg shadow-glow-gold">
+                                    L-CARNITINA GRATIS
+                                </div>
+                                <p class="text-[10px] text-midnight-light font-bold mt-2">Valor Real: $85.000 COP</p>
+                             </div>
+
+                             <div class="grid grid-cols-2 gap-2 mt-4">
+                                <div class="bg-white/5 p-2 rounded text-center border border-white/5">
                                     <span class="material-symbols-outlined text-red-500">local_fire_department</span>
                                     <p class="text-[10px] text-gray-300">Quema Grasa</p>
                                 </div>
-                                <div class="bg-white/5 p-2 rounded text-center">
+                                <div class="bg-white/5 p-2 rounded text-center border border-white/5">
                                     <span class="material-symbols-outlined text-blue-500">bolt</span>
                                     <p class="text-[10px] text-gray-300">Energía Pura</p>
                                 </div>
@@ -600,69 +613,96 @@
 
                         <!-- Logic -->
                         <div class="flex flex-col justify-center">
-                            <h3 class="text-2xl font-bold text-white mb-1">Proteína Hidrolizada ISO</h3>
-                            <p class="text-gray-400 text-sm mb-6">Base del combo ($180.000)</p>
+                            <h3 class="text-2xl font-bold text-white mb-1">Proteína Hidrolizada ISO 100</h3>
+                            <div class="flex items-center gap-3 mb-6">
+                                <p class="text-gray-400 text-sm">Base del combo</p>
+                                <span class="bg-red-500/20 text-red-400 text-xs font-bold px-2 py-0.5 rounded">-20% OFF</span>
+                            </div>
 
-                            <p class="text-xs font-bold uppercase text-gold mb-3">Arma tu Stack (Añade y Ahorra)</p>
+                            <p class="text-xs font-bold uppercase text-gold mb-3">Completa tu Stack (Desbloquea Regalo)</p>
 
-                            <div class="space-y-2 mb-6 max-h-64 overflow-y-auto pr-2 custom-scrollbar">
-                                <!-- Addon 1 -->
-                                <label class="flex items-center justify-between p-3 rounded-lg border border-white/10 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <input type="checkbox" class="supp-addon w-5 h-5 rounded border-gray-500 bg-midnight checked:bg-gold checked:border-gold focus:ring-0" value="60000" onchange="calcSupplements()">
-                                        <div>
-                                            <p class="font-bold text-sm text-white">Creatina Monohidratada</p>
-                                            <p class="text-[10px] text-gray-400">Fuerza explosiva</p>
-                                        </div>
-                                    </div>
-                                    <span class="font-bold text-white text-sm">+$60.000</span>
-                                </label>
-
-                                <!-- Addon 2 -->
-                                <label class="flex items-center justify-between p-3 rounded-lg border border-white/10 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
-                                    <div class="flex items-center gap-3">
+                            <div class="space-y-3 mb-6 max-h-[350px] overflow-y-auto pr-2 custom-scrollbar">
+                                <!-- Addon 1: Creatine -->
+                                <label class="relative flex items-center justify-between p-3 rounded-xl border border-white/10 bg-white/5 cursor-pointer hover:bg-white/10 hover:border-gold/30 transition-all group overflow-hidden">
+                                    <div class="flex items-center gap-4 relative z-10">
                                         <input type="checkbox" class="supp-addon w-5 h-5 rounded border-gray-500 bg-midnight checked:bg-gold checked:border-gold focus:ring-0" value="90000" onchange="calcSupplements()">
+                                        <div class="w-12 h-12 bg-white rounded-lg p-1 flex items-center justify-center">
+                                            <img src="https://mercacol.com.co/wp-content/uploads/2026/01/creatine-50s.webp" class="w-full h-full object-contain" alt="Creatine">
+                                        </div>
                                         <div>
-                                            <p class="font-bold text-sm text-white">Pre-Workout "OnFire"</p>
-                                            <p class="text-[10px] text-gray-400">Energía intensa</p>
+                                            <p class="font-bold text-sm text-white group-hover:text-gold transition-colors">Creatina 50 Serv.</p>
+                                            <p class="text-[10px] text-green-400 font-bold">Ahorras $15.000</p>
                                         </div>
                                     </div>
-                                    <span class="font-bold text-white text-sm">+$90.000</span>
+                                    <div class="text-right relative z-10">
+                                        <span class="block text-[10px] text-gray-500 line-through">$105.000</span>
+                                        <span class="font-bold text-white text-sm">$90.000</span>
+                                    </div>
                                 </label>
 
-                                <!-- Addon 3 -->
-                                <label class="flex items-center justify-between p-3 rounded-lg border border-white/10 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <input type="checkbox" class="supp-addon w-5 h-5 rounded border-gray-500 bg-midnight checked:bg-gold checked:border-gold focus:ring-0" value="110000" onchange="calcSupplements()">
+                                <!-- Addon 2: On Fire -->
+                                <label class="relative flex items-center justify-between p-3 rounded-xl border border-white/10 bg-white/5 cursor-pointer hover:bg-white/10 hover:border-gold/30 transition-all group overflow-hidden">
+                                    <div class="flex items-center gap-4 relative z-10">
+                                        <input type="checkbox" class="supp-addon w-5 h-5 rounded border-gray-500 bg-midnight checked:bg-gold checked:border-gold focus:ring-0" value="120000" onchange="calcSupplements()">
+                                        <div class="w-12 h-12 bg-white rounded-lg p-1 flex items-center justify-center">
+                                            <img src="https://mercacol.com.co/wp-content/uploads/2026/01/ONFIRE.webp" class="w-full h-full object-contain" alt="OnFire">
+                                        </div>
                                         <div>
-                                            <p class="font-bold text-sm text-white">Quemador Hydroxycut</p>
-                                            <p class="text-[10px] text-gray-400">Termogénico</p>
+                                            <p class="font-bold text-sm text-white group-hover:text-gold transition-colors">Pre-Workout "OnFire"</p>
+                                            <p class="text-[10px] text-green-400 font-bold">Ahorras $20.000</p>
                                         </div>
                                     </div>
-                                    <span class="font-bold text-white text-sm">+$110.000</span>
+                                    <div class="text-right relative z-10">
+                                        <span class="block text-[10px] text-gray-500 line-through">$140.000</span>
+                                        <span class="font-bold text-white text-sm">$120.000</span>
+                                    </div>
                                 </label>
 
-                                <!-- Addon 4 -->
-                                <label class="flex items-center justify-between p-3 rounded-lg border border-white/10 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <input type="checkbox" class="supp-addon w-5 h-5 rounded border-gray-500 bg-midnight checked:bg-gold checked:border-gold focus:ring-0" value="150000" onchange="calcSupplements()">
+                                <!-- Addon 3: Hydroxycut -->
+                                <label class="relative flex items-center justify-between p-3 rounded-xl border border-white/10 bg-white/5 cursor-pointer hover:bg-white/10 hover:border-gold/30 transition-all group overflow-hidden">
+                                    <div class="flex items-center gap-4 relative z-10">
+                                        <input type="checkbox" class="supp-addon w-5 h-5 rounded border-gray-500 bg-midnight checked:bg-gold checked:border-gold focus:ring-0" value="100000" onchange="calcSupplements()">
+                                        <div class="w-12 h-12 bg-white rounded-lg p-1 flex items-center justify-center">
+                                            <img src="https://mercacol.com.co/wp-content/uploads/2026/01/HIDROXICUT.webp" class="w-full h-full object-contain" alt="Hydroxycut">
+                                        </div>
                                         <div>
-                                            <p class="font-bold text-sm text-white">Cardarine (SARM)</p>
-                                            <p class="text-[10px] text-gray-400">Resistencia élite</p>
+                                            <p class="font-bold text-sm text-white group-hover:text-gold transition-colors">Quemador Hydroxycut</p>
+                                            <p class="text-[10px] text-green-400 font-bold">Ahorras $18.000</p>
                                         </div>
                                     </div>
-                                    <span class="font-bold text-white text-sm">+$150.000</span>
+                                    <div class="text-right relative z-10">
+                                        <span class="block text-[10px] text-gray-500 line-through">$118.000</span>
+                                        <span class="font-bold text-white text-sm">$100.000</span>
+                                    </div>
+                                </label>
+
+                                <!-- Addon 4: Cardarine -->
+                                <label class="relative flex items-center justify-between p-3 rounded-xl border border-white/10 bg-white/5 cursor-pointer hover:bg-white/10 hover:border-gold/30 transition-all group overflow-hidden">
+                                    <div class="flex items-center gap-4 relative z-10">
+                                        <input type="checkbox" class="supp-addon w-5 h-5 rounded border-gray-500 bg-midnight checked:bg-gold checked:border-gold focus:ring-0" value="120000" onchange="calcSupplements()">
+                                        <div class="w-12 h-12 bg-white rounded-lg p-1 flex items-center justify-center">
+                                            <img src="https://mercacol.com.co/wp-content/uploads/2026/01/cardarine-1.png" class="w-full h-full object-contain" alt="Cardarine">
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-sm text-white group-hover:text-gold transition-colors">Cardarine (SARM)</p>
+                                            <p class="text-[10px] text-green-400 font-bold">Ahorras $25.000</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right relative z-10">
+                                        <span class="block text-[10px] text-gray-500 line-through">$145.000</span>
+                                        <span class="font-bold text-white text-sm">$120.000</span>
+                                    </div>
                                 </label>
                             </div>
 
                             <!-- Dynamic Discount Bar -->
                             <div class="mb-4">
                                 <div class="flex justify-between text-[10px] text-gray-400 mb-1">
-                                    <span>Progreso Descuento Combo</span>
-                                    <span id="supp-discount-text" class="text-green-400 font-bold">0% OFF</span>
+                                    <span>Meta para Regalo</span>
+                                    <span id="supp-discount-text" class="text-gold font-bold">0/4 Seleccionados</span>
                                 </div>
                                 <div class="w-full bg-gray-700 rounded-full h-2">
-                                    <div id="supp-progress" class="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+                                    <div id="supp-progress" class="bg-gold-gradient h-2 rounded-full transition-all duration-500 shadow-glow-gold" style="width: 0%"></div>
                                 </div>
                             </div>
 
@@ -678,8 +718,8 @@
                                 </div>
                             </div>
 
-                            <button class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-4 rounded-xl shadow-lg shadow-red-600/20 transition-all flex items-center justify-center gap-2">
-                                AÑADIR AL CARRITO
+                            <button class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-4 rounded-xl shadow-lg shadow-red-600/20 transition-all flex items-center justify-center gap-2 group">
+                                <span class="group-hover:animate-pulse">AÑADIR AL CARRITO</span>
                                 <span class="material-symbols-outlined">add_shopping_cart</span>
                             </button>
                         </div>
@@ -1492,44 +1532,71 @@
         function calcSupplements() {
             let total = suppBasePrice;
             let addonsCount = 0;
+            const checkboxes = document.querySelectorAll('.supp-addon');
+            const maxAddons = checkboxes.length;
 
             // Sum Addons
-            document.querySelectorAll('.supp-addon:checked').forEach(cb => {
-                total += parseInt(cb.value);
-                addonsCount++;
+            checkboxes.forEach(cb => {
+                if(cb.checked) {
+                    total += parseInt(cb.value);
+                    addonsCount++;
+                }
             });
 
             // Progressive Discount Logic
-            // 1 Addon = 0%, 2 Addons = 5%, 3 Addons = 10%, 4 Addons = 15%
             let discountPercent = 0;
             if (addonsCount >= 2) discountPercent = 0.05;
-            if (addonsCount >= 3) discountPercent = 0.10;
-            if (addonsCount >= 4) discountPercent = 0.15;
+            if (addonsCount >= 3) discountPercent = 0.08;
 
-            const originalTotal = total;
-            const discountAmount = total * discountPercent;
+            let totalBeforeGlobalDiscount = total;
+            let discountAmount = total * discountPercent;
             total = total - discountAmount;
 
             // Update Progress Bar
             const progress = document.getElementById('supp-progress');
             const discountText = document.getElementById('supp-discount-text');
-            const maxAddons = 4;
             const progressWidth = (addonsCount / maxAddons) * 100;
 
             progress.style.width = `${progressWidth}%`;
 
-            if(discountPercent > 0) {
-                 discountText.innerText = `¡${discountPercent * 100}% DESCUENTO EXTRA ACTIVADO!`;
-                 document.getElementById('supp-savings').classList.remove('hidden');
+            // GIFT LOGIC
+            const giftSection = document.getElementById('supp-gift-section');
+            if(addonsCount === maxAddons) {
+                // Unlock Gift
+                giftSection.classList.remove('hidden');
+                giftSection.classList.add('flex');
+                discountText.innerText = "¡COMBO COMPLETO! OBSEQUIO DESBLOQUEADO";
+                discountText.classList.add('text-gold', 'animate-pulse');
+                discountText.classList.remove('text-green-400', 'text-gray-400');
             } else {
-                 discountText.innerText = "Agrega 2+ productos para descuento";
+                giftSection.classList.add('hidden');
+                giftSection.classList.remove('flex');
+                discountText.classList.remove('animate-pulse');
+
+                if (addonsCount === 0) {
+                     discountText.innerText = "0/4 Seleccionados";
+                     discountText.className = "text-gray-400 font-bold";
+                } else {
+                     discountText.innerText = `¡${addonsCount}/${maxAddons} Seleccionados! Sigue así...`;
+                     discountText.className = "text-gold font-bold";
+                }
+            }
+
+            if(discountPercent > 0 || addonsCount === maxAddons) {
+                 if(discountAmount > 0) {
+                     document.getElementById('supp-savings').classList.remove('hidden');
+                     const formatter = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 });
+                     document.getElementById('supp-saved-amount').innerText = formatter.format(discountAmount);
+                 } else {
+                     document.getElementById('supp-savings').classList.add('hidden');
+                 }
+            } else {
                  document.getElementById('supp-savings').classList.add('hidden');
             }
 
             const formatter = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 });
             document.getElementById('supp-total').innerText = formatter.format(total);
-            document.getElementById('supp-original').innerText = formatter.format(originalTotal);
-            document.getElementById('supp-saved-amount').innerText = formatter.format(discountAmount);
+            document.getElementById('supp-original').innerText = formatter.format(totalBeforeGlobalDiscount);
         }
 
         // --- LOYALTY DEMO LOGIC ---
