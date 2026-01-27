@@ -367,23 +367,86 @@
                     </div>
                 </div>
 
-                <!-- Loyalty Demo Visual -->
-                <div class="mt-16 glass border border-gold/20 rounded-xl p-1 max-w-2xl mx-auto">
-                    <div class="bg-midnight rounded-lg p-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-gray-700 bg-[url('https://randomuser.me/api/portraits/women/65.jpg')] bg-cover border-2 border-gold"></div>
-                            <div>
-                                <p class="font-bold text-white">María González</p>
-                                <p class="text-xs text-gold flex items-center gap-1">
-                                    <span class="material-symbols-outlined text-sm">workspace_premium</span>
-                                    Cliente Oro
-                                </p>
+                <!-- Loyalty Demo Visual (Interactive) -->
+                <div class="mt-16 glass border border-gold/20 rounded-xl p-6 max-w-3xl mx-auto shadow-2xl relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-gold/10 rounded-full blur-3xl"></div>
+
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <!-- User & Wallet State -->
+                        <div class="bg-midnight rounded-lg p-6 border border-white/5 relative">
+                             <div class="flex items-center gap-4 mb-6">
+                                <div class="w-12 h-12 rounded-full bg-gray-700 bg-[url('https://randomuser.me/api/portraits/women/65.jpg')] bg-cover border-2 border-gold"></div>
+                                <div>
+                                    <p class="font-bold text-white">María González</p>
+                                    <p class="text-xs text-gold flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-sm">workspace_premium</span>
+                                        Cliente Oro
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="text-center bg-gold-metallic/10 rounded-xl p-4 border border-gold/20 mb-4">
+                                <p class="text-[10px] uppercase text-gold font-bold mb-1">Tus Puntos Disponibles</p>
+                                <p class="text-3xl font-black text-white">5,000 <span class="text-sm font-medium text-gold">Pts</span></p>
+                                <p class="text-xs text-gray-400 mt-1">Valor: $100.000 COP</p>
+                            </div>
+
+                            <div class="flex items-center gap-2 text-[10px] text-gray-500 justify-center">
+                                <span class="material-symbols-outlined text-sm">info</span>
+                                1 Punto = $20 COP
                             </div>
                         </div>
-                        <div class="text-center sm:text-right">
-                            <p class="text-[10px] uppercase text-gray-500 font-bold">Saldo Disponible</p>
-                            <p class="text-2xl font-black text-white">2,450 <span class="text-sm text-gold font-medium">Pts</span></p>
-                            <p class="text-xs text-green-400">≈ $24,500 COP para gastar</p>
+
+                        <!-- Checkout Simulation -->
+                        <div>
+                            <h4 class="font-bold text-white mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-gold">shopping_cart_checkout</span>
+                                Simulación Checkout
+                            </h4>
+
+                            <!-- Cart Item -->
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded bg-gray-700 bg-[url('https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=200&auto=format&fit=crop')] bg-cover"></div>
+                                    <div>
+                                        <p class="text-sm font-bold text-white">Smartwatch Ultra</p>
+                                        <p class="text-[10px] text-green-400 font-bold flex items-center">
+                                            <span class="material-symbols-outlined text-[10px] mr-1">add_circle</span>
+                                            Ganas +450 Pts
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="font-bold text-white">$450.000</p>
+                            </div>
+
+                            <!-- Redemption Control -->
+                            <div class="mb-6">
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="text-xs font-bold text-gold uppercase">Redimir Puntos</label>
+                                    <span id="redemption-display" class="text-xs font-bold text-white">0 Pts (-$0)</span>
+                                </div>
+                                <input type="range" id="loyalty-slider" min="0" max="5000" step="100" value="0" oninput="updateLoyaltyCalc(this.value)" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-gold">
+                            </div>
+
+                            <!-- Totals -->
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-xs text-gray-400">
+                                    <span>Subtotal</span>
+                                    <span>$450.000</span>
+                                </div>
+                                <div class="flex justify-between text-xs text-green-400 font-bold">
+                                    <span>Descuento Fidelización</span>
+                                    <span id="loyalty-discount">-$0</span>
+                                </div>
+                                <div class="flex justify-between text-lg font-black text-white pt-2 border-t border-white/10 mt-2">
+                                    <span>Total a Pagar</span>
+                                    <span id="loyalty-total">$450.000</span>
+                                </div>
+                            </div>
+
+                            <button class="w-full mt-4 bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-lg text-xs transition-colors border border-white/10">
+                                REALIZAR PEDIDO DE PRUEBA
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -394,105 +457,234 @@
         <section id="demo-compra" class="py-16 px-6 bg-midnight-light/30 border-b border-white/5">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
-                    <div class="inline-block px-4 py-1 rounded-full border border-blue-500/30 bg-blue-500/5 text-blue-400 text-xs font-bold uppercase tracking-widest mb-4">Demo en Vivo</div>
+                    <div class="inline-block px-4 py-1 rounded-full border border-blue-500/30 bg-blue-500/5 text-blue-400 text-xs font-bold uppercase tracking-widest mb-4">Demo Interactiva</div>
                     <h2 class="text-3xl font-bold mb-4">Motor de <span class="text-gold-gradient">Upsells & Bundles</span></h2>
-                    <p class="text-gray-400">Nuestro checkout inteligente aumenta el ticket promedio (AOV) un 35% ofreciendo descuentos por volumen automáticamente.</p>
+                    <p class="text-gray-400">Pruebe cómo nuestro sistema inteligente sugiere complementos (Upsells) y paquetes (Bundles) para multiplicar el ticket promedio.</p>
                 </div>
 
-                <div class="glass border border-white/10 rounded-2xl p-8 max-w-4xl mx-auto shadow-2xl">
-                    <div class="grid md:grid-cols-2 gap-12">
-                        <!-- Product Visual -->
+                <!-- Tabs -->
+                <div class="flex justify-center gap-4 mb-8">
+                    <button onclick="switchDemoTab('perfume')" id="tab-perfume" class="px-6 py-2 rounded-full border border-gold bg-gold/10 text-gold font-bold text-sm transition-all hover:bg-gold hover:text-midnight">
+                        Ejemplo Perfumería
+                    </button>
+                    <button onclick="switchDemoTab('supplements')" id="tab-supplements" class="px-6 py-2 rounded-full border border-white/20 bg-white/5 text-gray-400 font-bold text-sm transition-all hover:bg-white/10 hover:text-white">
+                        Ejemplo Suplementos
+                    </button>
+                </div>
+
+                <div class="glass border border-white/10 rounded-2xl p-8 max-w-5xl mx-auto shadow-2xl relative overflow-hidden">
+
+                    <!-- SCENARIO 1: PERFUME -->
+                    <div id="demo-perfume" class="grid md:grid-cols-2 gap-12 transition-opacity duration-500">
+                        <!-- Visual -->
                         <div class="relative">
                              <div class="aspect-square bg-gray-800 rounded-xl overflow-hidden mb-4 relative group">
-                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop" id="product-img" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                                <div class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded">-50% HOY</div>
+                                <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop" alt="Perfume" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute top-4 left-4 bg-gold text-midnight text-xs font-bold px-3 py-1 rounded">PREMIUM</div>
                              </div>
-                             <div class="flex gap-4 overflow-x-auto pb-2">
-                                <img onclick="changeVariant('black')" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=200&auto=format&fit=crop" class="w-20 h-20 rounded-lg cursor-pointer border-2 border-gold opacity-100 hover:opacity-100 transition-opacity variant-thumb">
-                                <img onclick="changeVariant('gold')" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=200&auto=format&fit=crop" class="w-20 h-20 rounded-lg cursor-pointer border-2 border-transparent hover:border-gold/50 opacity-60 hover:opacity-100 transition-opacity variant-thumb">
-                            </div>
+                             <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined">science</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-white">¿Sabías qué?</p>
+                                        <p class="text-[10px] text-gray-400">El 40% de los clientes agregan las feromonas cuando se les ofrece en el checkout.</p>
+                                    </div>
+                                </div>
+                             </div>
                         </div>
 
-                        <!-- Product Logic -->
+                        <!-- Logic -->
                         <div class="flex flex-col justify-center">
-                            <h3 class="text-2xl font-bold text-white mb-2">Auriculares Premium Noise Cancelling</h3>
-                            <div class="flex items-center gap-4 mb-6">
-                                <div class="flex text-gold text-xs">
-                                    <span class="material-symbols-outlined text-sm fill-current">star</span>
-                                    <span class="material-symbols-outlined text-sm fill-current">star</span>
-                                    <span class="material-symbols-outlined text-sm fill-current">star</span>
-                                    <span class="material-symbols-outlined text-sm fill-current">star</span>
-                                    <span class="material-symbols-outlined text-sm fill-current">star</span>
-                                </div>
-                                <span class="text-xs text-gray-400">(1,204 Reviews)</span>
+                            <h3 class="text-2xl font-bold text-white mb-1">Eros Pour Homme - 100ml</h3>
+                            <p class="text-gold text-sm font-medium mb-4">Fragancia de Alta Duración</p>
+
+                            <!-- Upsell Checkbox -->
+                            <div class="mb-6 bg-gradient-to-r from-purple-900/20 to-blue-900/20 p-4 rounded-xl border border-purple-500/30">
+                                <label class="flex items-center gap-4 cursor-pointer group">
+                                    <div class="relative">
+                                        <input type="checkbox" id="upsell-pheromone" onchange="calcPerfume()" class="peer sr-only">
+                                        <div class="w-6 h-6 border-2 border-gray-500 rounded bg-midnight peer-checked:bg-purple-500 peer-checked:border-purple-500 transition-colors"></div>
+                                        <span class="material-symbols-outlined absolute top-0.5 left-0.5 text-white text-sm opacity-0 peer-checked:opacity-100">check</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-center">
+                                            <span class="font-bold text-white group-hover:text-purple-300 transition-colors">Agregar Feromonas Puras</span>
+                                            <span class="text-purple-400 font-bold">+$40.000</span>
+                                        </div>
+                                        <p class="text-[10px] text-gray-400">Potencia la atracción x3. Oferta única.</p>
+                                    </div>
+                                    <div class="w-10 h-10 rounded bg-purple-500/10 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-purple-400">auto_fix_high</span>
+                                    </div>
+                                </label>
                             </div>
 
-                            <!-- Variations -->
-                            <div class="mb-8">
-                                <p class="text-xs font-bold uppercase text-gray-400 mb-3">Color Seleccionado: <span id="color-name" class="text-white">Midnight Black</span></p>
-                                <div class="flex gap-3">
-                                    <button onclick="changeVariant('black')" id="btn-color-black" class="w-10 h-10 rounded-full bg-black border-2 border-white ring-2 ring-gold shadow-lg transform scale-110 transition-all variant-btn"></button>
-                                    <button onclick="changeVariant('gold')" id="btn-color-gold" class="w-10 h-10 rounded-full bg-[#D4AF37] border-2 border-transparent hover:scale-110 transition-transform variant-btn"></button>
-                                    <button onclick="changeVariant('silver')" id="btn-color-silver" class="w-10 h-10 rounded-full bg-gray-300 border-2 border-transparent hover:scale-110 transition-transform variant-btn"></button>
-                                </div>
-                            </div>
-
-                            <!-- Bundles -->
+                            <!-- Quantity Breaks -->
                             <div class="space-y-3 mb-8">
-                                <p class="text-xs font-bold uppercase text-gray-400 mb-2">Selecciona Cantidad (Ahorra Más)</p>
+                                <p class="text-xs font-bold uppercase text-gray-400 mb-2">Selecciona Cantidad</p>
                                 
-                                <!-- Option 1 -->
-                                <div onclick="selectBundle(1)" id="bundle-1" class="bundle-option cursor-pointer p-4 rounded-xl border border-white/10 bg-white/5 flex items-center justify-between hover:bg-white/10 transition-all">
+                                <div onclick="selectPerfumeQty(1)" id="perfume-qty-1" class="perfume-opt cursor-pointer p-4 rounded-xl border border-gold bg-gold/10 flex items-center justify-between shadow-glow-gold transition-all">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-6 h-6 rounded-full border-2 border-gray-500 flex items-center justify-center radio-circle"></div>
+                                        <div class="radio-circle w-5 h-5 rounded-full border-2 border-gold flex items-center justify-center"><div class="w-2.5 h-2.5 bg-gold rounded-full"></div></div>
                                         <span class="font-bold text-sm">1 Unidad</span>
                                     </div>
-                                    <span class="font-bold text-white">$149.900</span>
+                                    <span class="font-bold text-white">$120.000</span>
                                 </div>
 
-                                <!-- Option 2 -->
-                                <div onclick="selectBundle(2)" id="bundle-2" class="bundle-option cursor-pointer p-4 rounded-xl border-2 border-gold bg-gold/10 flex items-center justify-between relative shadow-glow-gold transition-all">
-                                    <div class="absolute -top-3 right-4 bg-gold text-midnight text-[10px] font-black px-2 py-0.5 rounded">MÁS VENDIDO</div>
+                                <div onclick="selectPerfumeQty(2)" id="perfume-qty-2" class="perfume-opt cursor-pointer p-4 rounded-xl border border-white/10 bg-white/5 flex items-center justify-between hover:bg-white/10 transition-all">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-6 h-6 rounded-full border-2 border-gold flex items-center justify-center radio-circle">
-                                            <div class="w-3 h-3 bg-gold rounded-full"></div>
-                                        </div>
+                                        <div class="radio-circle w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center"></div>
                                         <div>
-                                            <span class="font-bold text-sm block">Lleva 2 (Pareja)</span>
-                                            <span class="text-[10px] text-green-400 font-bold">Ahorras 15%</span>
+                                            <span class="font-bold text-sm block">Lleva 2</span>
+                                            <span class="text-[10px] text-green-400 font-bold">Ahorra 10%</span>
                                         </div>
                                     </div>
                                     <div class="text-right">
-                                        <span class="block text-[10px] text-gray-400 line-through">$299.800</span>
-                                        <span class="font-bold text-white text-lg">$254.900</span>
+                                        <span class="block text-[10px] text-gray-400 line-through">$240.000</span>
+                                        <span class="font-bold text-white">$216.000</span>
                                     </div>
                                 </div>
 
-                                <!-- Option 3 -->
-                                <div onclick="selectBundle(3)" id="bundle-3" class="bundle-option cursor-pointer p-4 rounded-xl border border-white/10 bg-white/5 flex items-center justify-between hover:bg-white/10 transition-all">
+                                <div onclick="selectPerfumeQty(3)" id="perfume-qty-3" class="perfume-opt cursor-pointer p-4 rounded-xl border border-white/10 bg-white/5 flex items-center justify-between hover:bg-white/10 transition-all">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-6 h-6 rounded-full border-2 border-gray-500 flex items-center justify-center radio-circle"></div>
+                                        <div class="radio-circle w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center"></div>
                                         <div>
-                                            <span class="font-bold text-sm block">Pack Familiar (3)</span>
-                                            <span class="text-[10px] text-green-400 font-bold">Ahorras 25%</span>
+                                            <span class="font-bold text-sm block">Lleva 3</span>
+                                            <span class="text-[10px] text-green-400 font-bold">Ahorra 20%</span>
                                         </div>
                                     </div>
                                     <div class="text-right">
-                                        <span class="block text-[10px] text-gray-400 line-through">$449.700</span>
-                                        <span class="font-bold text-white text-lg">$337.000</span>
+                                        <span class="block text-[10px] text-gray-400 line-through">$360.000</span>
+                                        <span class="font-bold text-white">$288.000</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <button class="w-full bg-green-500 hover:bg-green-600 text-white font-black py-4 rounded-xl shadow-lg shadow-green-500/20 transition-all flex items-center justify-center gap-2 animate-pulse">
+                            <!-- Total -->
+                            <div class="border-t border-white/10 pt-4 mb-4 flex justify-between items-end">
+                                <span class="text-sm text-gray-400">Total a Pagar:</span>
+                                <span id="perfume-total" class="text-3xl font-black text-white">$120.000</span>
+                            </div>
+
+                            <button class="w-full bg-gold-metallic text-midnight font-black py-4 rounded-xl shadow-glow-gold hover:scale-[1.02] transition-transform flex items-center justify-center gap-2">
                                 COMPRAR AHORA
-                                <span class="material-symbols-outlined">shopping_cart</span>
+                                <span class="material-symbols-outlined">shopping_bag</span>
                             </button>
-                            <p class="text-[10px] text-center text-gray-500 mt-3 flex justify-center items-center gap-1">
-                                <span class="material-symbols-outlined text-xs">lock</span> Transacción Segura SSL
-                            </p>
                         </div>
                     </div>
+
+                    <!-- SCENARIO 2: SUPPLEMENTS -->
+                    <div id="demo-supplements" class="hidden grid md:grid-cols-2 gap-12 transition-opacity duration-500">
+                        <!-- Visual -->
+                        <div class="relative">
+                             <div class="aspect-square bg-gray-800 rounded-xl overflow-hidden mb-4 relative group">
+                                <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=1000&auto=format&fit=crop" alt="Supplements" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur text-white text-xs font-bold px-3 py-2 rounded-lg border-l-4 border-red-500">
+                                    PACK DEFINICIÓN EXTREMA
+                                </div>
+                             </div>
+
+                             <div class="grid grid-cols-2 gap-2">
+                                <div class="bg-white/5 p-2 rounded text-center">
+                                    <span class="material-symbols-outlined text-red-500">local_fire_department</span>
+                                    <p class="text-[10px] text-gray-300">Quema Grasa</p>
+                                </div>
+                                <div class="bg-white/5 p-2 rounded text-center">
+                                    <span class="material-symbols-outlined text-blue-500">bolt</span>
+                                    <p class="text-[10px] text-gray-300">Energía Pura</p>
+                                </div>
+                             </div>
+                        </div>
+
+                        <!-- Logic -->
+                        <div class="flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold text-white mb-1">Proteína Hidrolizada ISO</h3>
+                            <p class="text-gray-400 text-sm mb-6">Base del combo ($180.000)</p>
+
+                            <p class="text-xs font-bold uppercase text-gold mb-3">Arma tu Stack (Añade y Ahorra)</p>
+
+                            <div class="space-y-2 mb-6 max-h-64 overflow-y-auto pr-2 custom-scrollbar">
+                                <!-- Addon 1 -->
+                                <label class="flex items-center justify-between p-3 rounded-lg border border-white/10 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" class="supp-addon w-5 h-5 rounded border-gray-500 bg-midnight checked:bg-gold checked:border-gold focus:ring-0" value="60000" onchange="calcSupplements()">
+                                        <div>
+                                            <p class="font-bold text-sm text-white">Creatina Monohidratada</p>
+                                            <p class="text-[10px] text-gray-400">Fuerza explosiva</p>
+                                        </div>
+                                    </div>
+                                    <span class="font-bold text-white text-sm">+$60.000</span>
+                                </label>
+
+                                <!-- Addon 2 -->
+                                <label class="flex items-center justify-between p-3 rounded-lg border border-white/10 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" class="supp-addon w-5 h-5 rounded border-gray-500 bg-midnight checked:bg-gold checked:border-gold focus:ring-0" value="90000" onchange="calcSupplements()">
+                                        <div>
+                                            <p class="font-bold text-sm text-white">Pre-Workout "OnFire"</p>
+                                            <p class="text-[10px] text-gray-400">Energía intensa</p>
+                                        </div>
+                                    </div>
+                                    <span class="font-bold text-white text-sm">+$90.000</span>
+                                </label>
+
+                                <!-- Addon 3 -->
+                                <label class="flex items-center justify-between p-3 rounded-lg border border-white/10 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" class="supp-addon w-5 h-5 rounded border-gray-500 bg-midnight checked:bg-gold checked:border-gold focus:ring-0" value="110000" onchange="calcSupplements()">
+                                        <div>
+                                            <p class="font-bold text-sm text-white">Quemador Hydroxycut</p>
+                                            <p class="text-[10px] text-gray-400">Termogénico</p>
+                                        </div>
+                                    </div>
+                                    <span class="font-bold text-white text-sm">+$110.000</span>
+                                </label>
+
+                                <!-- Addon 4 -->
+                                <label class="flex items-center justify-between p-3 rounded-lg border border-white/10 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" class="supp-addon w-5 h-5 rounded border-gray-500 bg-midnight checked:bg-gold checked:border-gold focus:ring-0" value="150000" onchange="calcSupplements()">
+                                        <div>
+                                            <p class="font-bold text-sm text-white">Cardarine (SARM)</p>
+                                            <p class="text-[10px] text-gray-400">Resistencia élite</p>
+                                        </div>
+                                    </div>
+                                    <span class="font-bold text-white text-sm">+$150.000</span>
+                                </label>
+                            </div>
+
+                            <!-- Dynamic Discount Bar -->
+                            <div class="mb-4">
+                                <div class="flex justify-between text-[10px] text-gray-400 mb-1">
+                                    <span>Progreso Descuento Combo</span>
+                                    <span id="supp-discount-text" class="text-green-400 font-bold">0% OFF</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div id="supp-progress" class="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Total -->
+                            <div class="flex justify-between items-end mb-4">
+                                <div>
+                                    <p class="text-xs text-gray-400">Total Combo:</p>
+                                    <p id="supp-total" class="text-3xl font-black text-white">$180.000</p>
+                                </div>
+                                <div id="supp-savings" class="hidden text-right">
+                                    <p class="text-xs text-red-400 line-through" id="supp-original">$180.000</p>
+                                    <span class="bg-green-500/20 text-green-400 text-xs font-bold px-2 py-1 rounded">Ahorras <span id="supp-saved-amount">$0</span></span>
+                                </div>
+                            </div>
+
+                            <button class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-4 rounded-xl shadow-lg shadow-red-600/20 transition-all flex items-center justify-center gap-2">
+                                AÑADIR AL CARRITO
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -1215,47 +1407,143 @@
             calculateROI();
         });
 
-        // --- PRODUCT DEMO LOGIC ---
-        function changeVariant(color) {
-            // Update Text
-            const nameMap = { 'black': 'Midnight Black', 'gold': 'Luxury Gold', 'silver': 'Sterling Silver' };
-            const nameEl = document.getElementById('color-name');
-            if(nameEl) nameEl.innerText = nameMap[color] || 'Black';
-            
-            // Visual Feedback on Buttons
-            document.querySelectorAll('.variant-btn').forEach(btn => {
-                btn.classList.remove('ring-2', 'ring-gold', 'scale-110', 'border-white');
-                btn.classList.add('border-transparent');
-            });
-            
-            const activeBtn = document.getElementById(`btn-color-${color}`);
-            if(activeBtn) {
-                activeBtn.classList.remove('border-transparent');
-                activeBtn.classList.add('ring-2', 'ring-gold', 'scale-110', 'border-white');
+        // --- UPSELL & BUNDLE DEMO LOGIC ---
+
+        // 1. Tab Switcher
+        function switchDemoTab(tab) {
+            const perfTab = document.getElementById('tab-perfume');
+            const suppTab = document.getElementById('tab-supplements');
+            const perfContent = document.getElementById('demo-perfume');
+            const suppContent = document.getElementById('demo-supplements');
+
+            if (tab === 'perfume') {
+                perfTab.classList.add('border-gold', 'bg-gold/10', 'text-gold');
+                perfTab.classList.remove('border-white/20', 'bg-white/5', 'text-gray-400');
+                suppTab.classList.remove('border-gold', 'bg-gold/10', 'text-gold');
+                suppTab.classList.add('border-white/20', 'bg-white/5', 'text-gray-400');
+
+                perfContent.classList.remove('hidden');
+                setTimeout(() => perfContent.classList.remove('opacity-0'), 10);
+                suppContent.classList.add('opacity-0');
+                setTimeout(() => suppContent.classList.add('hidden'), 500);
+            } else {
+                suppTab.classList.add('border-gold', 'bg-gold/10', 'text-gold');
+                suppTab.classList.remove('border-white/20', 'bg-white/5', 'text-gray-400');
+                perfTab.classList.remove('border-gold', 'bg-gold/10', 'text-gold');
+                perfTab.classList.add('border-white/20', 'bg-white/5', 'text-gray-400');
+
+                suppContent.classList.remove('hidden');
+                setTimeout(() => suppContent.classList.remove('opacity-0'), 10);
+                perfContent.classList.add('opacity-0');
+                setTimeout(() => perfContent.classList.add('hidden'), 500);
             }
         }
 
-        function selectBundle(qty) {
-            // Reset all
-            document.querySelectorAll('.bundle-option').forEach(el => {
-                el.classList.remove('border-2', 'border-gold', 'bg-gold/10', 'shadow-glow-gold');
+        // 2. Perfume Logic
+        let perfumeQty = 1;
+        const perfumeBasePrice = 120000;
+        const pheromonePrice = 40000;
+
+        function selectPerfumeQty(qty) {
+            perfumeQty = qty;
+
+            // UI Update
+            document.querySelectorAll('.perfume-opt').forEach(el => {
+                el.classList.remove('border-gold', 'bg-gold/10', 'shadow-glow-gold');
                 el.classList.add('border-white/10', 'bg-white/5');
                 el.querySelector('.radio-circle').innerHTML = '';
                 el.querySelector('.radio-circle').classList.remove('border-gold');
                 el.querySelector('.radio-circle').classList.add('border-gray-500');
             });
 
-            // Active State
-            const activeEl = document.getElementById(`bundle-${qty}`);
-            if(activeEl) {
-                activeEl.classList.remove('border-white/10', 'bg-white/5');
-                activeEl.classList.add('border-2', 'border-gold', 'bg-gold/10', 'shadow-glow-gold');
-                
-                const radio = activeEl.querySelector('.radio-circle');
-                radio.classList.remove('border-gray-500');
-                radio.classList.add('border-gold');
-                radio.innerHTML = '<div class="w-3 h-3 bg-gold rounded-full"></div>';
+            const active = document.getElementById(`perfume-qty-${qty}`);
+            active.classList.add('border-gold', 'bg-gold/10', 'shadow-glow-gold');
+            active.classList.remove('border-white/10', 'bg-white/5');
+            const radio = active.querySelector('.radio-circle');
+            radio.classList.add('border-gold');
+            radio.classList.remove('border-gray-500');
+            radio.innerHTML = '<div class="w-2.5 h-2.5 bg-gold rounded-full"></div>';
+
+            calcPerfume();
+        }
+
+        function calcPerfume() {
+            const hasPheromone = document.getElementById('upsell-pheromone').checked;
+            let unitPrice = perfumeBasePrice;
+
+            // Apply Discount Logic
+            if(perfumeQty === 2) unitPrice = 216000 / 2; // 108.000 (10% off)
+            if(perfumeQty === 3) unitPrice = 288000 / 3; // 96.000 (20% off)
+
+            // Pheromone is added per unit or flat? Usually per unit in bundle, but let's do flat add-on for simplicity or per unit.
+            // Requirement says "buy 2 or 3 to receive more discount", implemented via qty.
+            // Pheromone logic: "Offer pheromones to complement sale". Let's assume it's one bottle of pheromones added to the order.
+
+            let total = (unitPrice * perfumeQty);
+            if(hasPheromone) total += pheromonePrice;
+
+            const formatter = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 });
+            document.getElementById('perfume-total').innerText = formatter.format(total);
+        }
+
+        // 3. Supplements Logic
+        const suppBasePrice = 180000;
+
+        function calcSupplements() {
+            let total = suppBasePrice;
+            let addonsCount = 0;
+
+            // Sum Addons
+            document.querySelectorAll('.supp-addon:checked').forEach(cb => {
+                total += parseInt(cb.value);
+                addonsCount++;
+            });
+
+            // Progressive Discount Logic
+            // 1 Addon = 0%, 2 Addons = 5%, 3 Addons = 10%, 4 Addons = 15%
+            let discountPercent = 0;
+            if (addonsCount >= 2) discountPercent = 0.05;
+            if (addonsCount >= 3) discountPercent = 0.10;
+            if (addonsCount >= 4) discountPercent = 0.15;
+
+            const originalTotal = total;
+            const discountAmount = total * discountPercent;
+            total = total - discountAmount;
+
+            // Update Progress Bar
+            const progress = document.getElementById('supp-progress');
+            const discountText = document.getElementById('supp-discount-text');
+            const maxAddons = 4;
+            const progressWidth = (addonsCount / maxAddons) * 100;
+
+            progress.style.width = `${progressWidth}%`;
+
+            if(discountPercent > 0) {
+                 discountText.innerText = `¡${discountPercent * 100}% DESCUENTO EXTRA ACTIVADO!`;
+                 document.getElementById('supp-savings').classList.remove('hidden');
+            } else {
+                 discountText.innerText = "Agrega 2+ productos para descuento";
+                 document.getElementById('supp-savings').classList.add('hidden');
             }
+
+            const formatter = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 });
+            document.getElementById('supp-total').innerText = formatter.format(total);
+            document.getElementById('supp-original').innerText = formatter.format(originalTotal);
+            document.getElementById('supp-saved-amount').innerText = formatter.format(discountAmount);
+        }
+
+        // --- LOYALTY DEMO LOGIC ---
+        function updateLoyaltyCalc(points) {
+            const subtotal = 450000;
+            const pointValue = 20; // 1 Point = $20 COP
+            const discount = points * pointValue;
+            const total = subtotal - discount;
+
+            const formatter = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 });
+
+            document.getElementById('redemption-display').innerText = `${points} Pts (-${formatter.format(discount)})`;
+            document.getElementById('loyalty-discount').innerText = `-${formatter.format(discount)}`;
+            document.getElementById('loyalty-total').innerText = formatter.format(total);
         }
 
         // Entrance Animation
