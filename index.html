@@ -1259,7 +1259,7 @@
         <section id="cart-recovery" class="py-20 px-6 bg-midnight border-b border-white/5 relative overflow-hidden">
              <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-900/10 via-midnight to-midnight pointer-events-none"></div>
 
-             <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+             <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                  <!-- Text Content -->
                  <div>
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-[10px] font-black tracking-widest uppercase mb-4">
@@ -1345,7 +1345,7 @@
                          </div>
 
                          <!-- MODALS CONTAINER (Hidden by default) -->
-                         <div id="exit-modal-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm z-20 hidden flex-col justify-center items-center p-4 transition-all duration-300">
+                         <div id="exit-modal-overlay" class="absolute inset-0 bg-black/20 backdrop-blur-sm z-20 hidden flex-col justify-center items-center p-4 transition-all duration-300">
 
                              <!-- MODAL 1: DISCOUNT -->
                              <div id="modal-discount" class="bg-white rounded-xl p-5 text-center shadow-2xl transform scale-95 transition-transform duration-300 hidden max-w-[280px]">
@@ -1378,11 +1378,11 @@
                                  <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
                                      <span class="material-symbols-outlined text-gold text-2xl">card_giftcard</span>
                                  </div>
-                                 <h3 class="font-black text-white text-lg mb-1 shadow-black drop-shadow-sm">¡ÚLTIMO INTENTO!</h3>
+                                 <h3 class="font-black text-midnight text-lg mb-1 drop-shadow-sm">¡ÚLTIMO INTENTO!</h3>
                                  <p class="text-midnight text-xs mb-4 font-bold">Agregamos unas <span class="underline">Medias Premium</span> a tu pedido totalmente GRATIS.</p>
                                  <div class="space-y-2">
                                      <button onclick="acceptGift()" class="w-full bg-midnight text-white font-bold py-2 rounded-lg text-xs shadow-lg">AGREGAR REGALO</button>
-                                     <button onclick="closeExitModal()" class="w-full text-midnight/50 text-[10px] font-bold hover:text-midnight">No quiero regalos</button>
+                                     <button onclick="closeExitModal()" class="w-full text-midnight/60 text-[10px] font-bold hover:text-midnight">No quiero regalos</button>
                                  </div>
                              </div>
 
@@ -1541,6 +1541,45 @@
 
                         <!-- OVERLAYS (Hidden initially) -->
                         <div id="neuro-overlay" class="absolute inset-0 z-10 hidden">
+
+                             <!-- Processing Indicator (Step 2) -->
+                             <div id="neuro-processing" class="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[2px] z-30 hidden">
+                                <div class="text-center">
+                                    <span class="material-symbols-outlined text-4xl text-purple-500 animate-spin">memory</span>
+                                    <p class="text-white font-bold text-sm mt-2 tracking-widest animate-pulse">DECODIFICANDO INTENCIÓN...</p>
+                                </div>
+                             </div>
+
+                             <!-- Legend (Step 2) -->
+                             <div id="neuro-legend" class="absolute top-4 left-4 bg-black/80 backdrop-blur border border-white/10 p-2 rounded flex flex-col gap-2 z-20 opacity-0 transition-opacity duration-500">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_8px_red]"></div>
+                                    <span class="text-[9px] text-gray-300 uppercase font-bold">Foco Principal</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-400 shadow-[0_0_8px_yellow]"></div>
+                                    <span class="text-[9px] text-gray-300 uppercase font-bold">Zona Retención</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_8px_purple]"></div>
+                                    <span class="text-[9px] text-gray-300 uppercase font-bold">Ruta Ocular</span>
+                                </div>
+                             </div>
+
+                             <!-- Dopamine Meter (Step 2) -->
+                             <div id="dopamine-meter" class="absolute bottom-4 right-4 bg-black/80 backdrop-blur border border-purple-500/30 p-3 rounded-lg z-20 opacity-0 transition-opacity duration-500 shadow-xl">
+                                <p class="text-[10px] text-purple-400 font-bold uppercase mb-2 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm">bolt</span> Dopamine Score
+                                </p>
+                                <div class="w-32 h-2 bg-gray-800 rounded-full overflow-hidden mb-1">
+                                    <div id="dopamine-fill" class="h-full bg-gradient-to-r from-purple-600 to-pink-500 w-0 transition-all duration-1000 ease-out shadow-[0_0_10px_#d946ef]"></div>
+                                </div>
+                                <div class="flex justify-between items-end">
+                                    <span class="text-[8px] text-gray-500">Neuro-Impact</span>
+                                    <p class="text-right text-white font-black text-xl leading-none">94<span class="text-[10px] text-gray-400">/100</span></p>
+                                </div>
+                             </div>
+
                              <!-- Heatmap Layer -->
                              <div class="absolute inset-0 mix-blend-multiply opacity-0 transition-opacity duration-1000" id="heatmap-layer">
                                  <!-- Hotspot CTA -->
@@ -1577,6 +1616,87 @@
                             <span class="material-symbols-outlined">visibility</span>
                             INICIAR NEURO-SCAN
                         </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WINNING SECTION: EVOLUTION (New Section) -->
+        <section class="py-24 px-6 bg-gradient-to-b from-black to-midnight border-t border-white/5 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="text-center mb-20">
+                    <div class="inline-block px-4 py-1 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs font-bold uppercase tracking-widest mb-4">Estrategia de Crecimiento</div>
+                    <h2 class="text-3xl md:text-5xl font-black text-white mb-6">La Evolución del <span class="text-gold-gradient">Ecosistema</span></h2>
+                    <p class="text-gray-400 text-lg max-w-3xl mx-auto">
+                        No nos quedamos en vender productos ajenos. Utilizamos el Dropshipping solo para validar. Una vez encontramos un "Winner", lo convertimos en una Marca Privada para multiplicar su valor.
+                    </p>
+                </div>
+
+                <div class="relative grid md:grid-cols-3 gap-8">
+                    <!-- Connecting Line -->
+                    <div class="hidden md:block absolute top-12 left-0 w-full h-1 bg-gradient-to-r from-gray-800 via-gold/50 to-gold z-0 transform translate-y-4"></div>
+
+                    <!-- Step 1 -->
+                    <div class="relative z-10 group">
+                        <div class="bg-midnight border border-white/10 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300 h-full">
+                            <div class="w-20 h-20 bg-gray-800 rounded-full border-4 border-midnight flex items-center justify-center mb-6 mx-auto relative z-20 shadow-xl group-hover:border-gray-600 transition-colors">
+                                <span class="material-symbols-outlined text-4xl text-gray-400">shopping_cart</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 block">Fase 1</span>
+                                <h3 class="text-xl font-bold text-white mb-3">Dropshipping (Validación)</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                                    Vendemos stock local sin comprarlo. Usamos la bodega de proveedores aliados para testear 100 productos por semana.
+                                </p>
+                                <div class="bg-gray-800/50 rounded-lg p-3 inline-block">
+                                    <p class="text-[10px] text-gray-500 uppercase">Riesgo</p>
+                                    <p class="text-white font-bold">Cero</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative z-10 group">
+                        <div class="bg-midnight border border-gold/30 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300 h-full shadow-glow-gold">
+                            <div class="absolute -top-4 right-8 bg-gold text-midnight text-[10px] font-black px-3 py-1 rounded-full animate-pulse">ESTAMOS AQUÍ</div>
+                            <div class="w-20 h-20 bg-gold/20 rounded-full border-4 border-midnight flex items-center justify-center mb-6 mx-auto relative z-20 shadow-xl group-hover:border-gold transition-colors">
+                                <span class="material-symbols-outlined text-4xl text-gold">verified</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-xs font-bold text-gold uppercase tracking-widest mb-2 block">Fase 2</span>
+                                <h3 class="text-xl font-bold text-white mb-3">Private Label (Escalado)</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                                    Importamos los "Winners" desde China con <strong class="text-white">Nuestra Propia Marca</strong>. Eliminamos la competencia y controlamos el precio.
+                                </p>
+                                <div class="bg-gold/10 rounded-lg p-3 inline-block border border-gold/20">
+                                    <p class="text-[10px] text-gold uppercase">Margen</p>
+                                    <p class="text-white font-bold">+300%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative z-10 group">
+                        <div class="bg-gradient-to-b from-midnight to-green-900/20 border border-green-500/30 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300 h-full">
+                            <div class="w-20 h-20 bg-green-500/20 rounded-full border-4 border-midnight flex items-center justify-center mb-6 mx-auto relative z-20 shadow-xl group-hover:border-green-500 transition-colors">
+                                <span class="material-symbols-outlined text-4xl text-green-400">payments</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-xs font-bold text-green-500 uppercase tracking-widest mb-2 block">Fase 3</span>
+                                <h3 class="text-xl font-bold text-white mb-3">Exit Strategy (Venta)</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                                    Al tener marca propia y data de clientes, la empresa se convierte en un activo vendible a un Fondo de Inversión.
+                                </p>
+                                <div class="bg-green-500/10 rounded-lg p-3 inline-block border border-green-500/20">
+                                    <p class="text-[10px] text-green-400 uppercase">Valorización</p>
+                                    <p class="text-white font-bold">10x EBITDA</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2914,17 +3034,36 @@
                 const btn = document.getElementById('btn-neuro');
                 const bar = document.getElementById('scan-bar');
                 const overlay = document.getElementById('neuro-overlay');
+                const processing = document.getElementById('neuro-processing');
                 const heatmap = document.getElementById('heatmap-layer');
                 const path = document.getElementById('eye-path');
                 const dot = document.getElementById('eye-dot');
+                const legend = document.getElementById('neuro-legend');
+                const meter = document.getElementById('dopamine-meter');
+                const meterFill = document.getElementById('dopamine-fill');
                 const tooltips = [document.getElementById('tooltip-1'), document.getElementById('tooltip-2')];
 
-                // Reset
+                // Reset State
                 btn.disabled = true;
-                btn.innerHTML = '<span class="material-symbols-outlined animate-spin">psychology</span> ANALIZANDO...';
+                btn.innerHTML = '<span class="material-symbols-outlined animate-spin">psychology</span> ESCANEANDO...';
+
                 overlay.classList.remove('hidden');
+                processing.classList.add('hidden'); // Ensure hidden initially
+
+                // Reset visuals
                 heatmap.classList.remove('opacity-100');
                 heatmap.classList.add('opacity-0');
+
+                legend.classList.remove('opacity-100');
+                legend.classList.add('opacity-0');
+
+                meter.classList.remove('opacity-100');
+                meter.classList.add('opacity-0');
+                meterFill.style.width = '0%';
+
+                path.classList.add('opacity-0');
+                dot.classList.add('opacity-0');
+
                 tooltips.forEach(t => {
                     t.classList.remove('opacity-100', 'translate-x-0', '-translate-x-0');
                     t.classList.add('opacity-0');
@@ -2932,32 +3071,52 @@
                     else t.classList.add('-translate-x-4');
                 });
 
-                // 1. Scan Bar Animation
+                // PHASE 1: SCAN (0s - 2s)
                 bar.classList.add('scan-active');
 
-                // 2. Eye Tracking
+                // PHASE 2: PROCESSING (2s - 3.5s)
                 setTimeout(() => {
-                    path.classList.remove('opacity-0');
-                    dot.classList.remove('opacity-0');
+                    bar.classList.remove('scan-active');
+                    processing.classList.remove('hidden');
+                    processing.classList.add('flex');
+                    btn.innerHTML = '<span class="material-symbols-outlined animate-pulse">memory</span> ANALIZANDO DATA...';
+                }, 2000);
 
-                    // Trigger CSS Animation via Offset Path
-                    dot.style.offsetPath = 'path("M 150 120 L 250 250 L 250 380")';
-                    dot.style.animation = 'none';
-                    dot.offsetHeight; /* trigger reflow */
-                    dot.style.animation = 'dot-travel 2s linear forwards';
-                }, 300);
-
-                // 3. Heatmap Reveal
+                // PHASE 3: REVEAL (3.5s+)
                 setTimeout(() => {
+                    processing.classList.add('hidden');
+                    processing.classList.remove('flex');
+
+                    // Reveal Layers
                     heatmap.classList.remove('opacity-0');
                     heatmap.classList.add('opacity-100');
-                }, 1800);
 
-                // 4. Tooltips
+                    legend.classList.remove('opacity-0');
+                    legend.classList.add('opacity-100');
+
+                    meter.classList.remove('opacity-0');
+                    meter.classList.add('opacity-100');
+
+                    // Start Eye Tracking
+                    path.classList.remove('opacity-0');
+                    dot.classList.remove('opacity-0');
+                    dot.style.offsetPath = 'path("M 150 120 L 250 250 L 250 380")';
+                    dot.style.animation = 'none';
+                    dot.offsetHeight;
+                    dot.style.animation = 'dot-travel 2s linear forwards';
+
+                    // Animate Meter Fill
+                    setTimeout(() => {
+                        meterFill.style.width = '94%';
+                    }, 200);
+
+                }, 3500);
+
+                // PHASE 4: INSIGHTS (4.5s)
                 setTimeout(() => {
                     tooltips[0].classList.remove('opacity-0', 'translate-x-4');
                     tooltips[0].classList.add('opacity-100', 'translate-x-0');
-                }, 2200);
+                }, 4500);
 
                 setTimeout(() => {
                     tooltips[1].classList.remove('opacity-0', '-translate-x-4');
@@ -2966,16 +3125,15 @@
                     btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> ANÁLISIS COMPLETADO';
                     btn.classList.add('bg-green-600');
                     btn.classList.remove('bg-purple-600');
-                }, 2800);
+                }, 5000);
 
-                // Reset Button
+                // Reset Button Ability
                 setTimeout(() => {
                     btn.disabled = false;
                     btn.innerHTML = '<span class="material-symbols-outlined">visibility</span> REPETIR NEURO-SCAN';
                     btn.classList.remove('bg-green-600');
                     btn.classList.add('bg-purple-600');
-                    bar.classList.remove('scan-active');
-                }, 6000);
+                }, 8000);
             }
 
         // Entrance Animation
