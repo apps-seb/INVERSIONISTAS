@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>IA Analyzer - Ecosistema Premium</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "midnight": "#0A0E1A",
+                        "midnight-light": "#151b2e",
+                        "gold": "#D4AF37",
+                        "gold-light": "#FFE55C",
+                        "gold-dim": "#8A6D26",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%)',
+                        'midnight-gradient': 'linear-gradient(to bottom, #0A0E1A 0%, #151b2e 100%)',
+                    },
+                    boxShadow: {
+                        'glow-gold': '0 0 20px rgba(212, 175, 55, 0.15)',
+                    },
+                    animation: {
+                        'scan': 'scan 2s linear infinite',
+                    },
+                    keyframes: {
+                        scan: {
+                            '0%': { top: '0%' },
+                            '50%': { top: '100%' },
+                            '100%': { top: '0%' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A0E1A;
+            color: white;
+            min-height: 100vh;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .scan-line {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #D4AF37;
+            box-shadow: 0 0 10px #D4AF37;
+            animation: scan 2s linear infinite;
+            z-index: 10;
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-midnight font-display">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5 bg-midnight/80 backdrop-blur-md">
+        <div class="px-6 py-4 flex items-center justify-between max-w-7xl mx-auto">
+            <a href="index.html" class="flex items-center gap-2 cursor-pointer text-gray-400 hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-gold">arrow_back</span>
+                <span class="font-bold text-sm tracking-widest uppercase">Volver al Ecosistema</span>
+            </a>
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-gold animate-pulse">psychology</span>
+                <span class="font-bold text-gold text-sm">IA Analyzer Pro</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 px-6 pb-20">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black mb-4">Analizador de Productos <span class="text-gold-gradient">IA</span></h1>
+            <p class="text-gray-400 text-lg">Sube una imagen de cualquier producto. Nuestra IA detectará qué es y generará los ángulos de venta perfectos.</p>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+
+            <!-- Upload Zone -->
+            <div class="glass p-8 rounded-2xl border border-white/10 relative overflow-hidden group">
+                <div class="absolute inset-0 bg-blue-900/5 pointer-events-none"></div>
+
+                <div id="upload-area" class="border-2 border-dashed border-white/20 rounded-xl h-96 flex flex-col items-center justify-center relative bg-white/5 transition-colors hover:border-gold/50 cursor-pointer" onclick="document.getElementById('file-input').click()">
+
+                    <input type="file" id="file-input" class="hidden" accept="image/*" onchange="handleImageUpload(event)">
+
+                    <!-- Placeholder State -->
+                    <div id="upload-placeholder" class="text-center p-6">
+                        <div class="w-20 h-20 bg-midnight-light rounded-full flex items-center justify-center mx-auto mb-4 border border-white/10 group-hover:border-gold/50 transition-colors shadow-lg">
+                            <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-gold transition-colors">add_photo_alternate</span>
+                        </div>
+                        <p class="font-bold text-white text-lg mb-2">Sube o arrastra tu producto</p>
+                        <p class="text-sm text-gray-500">Soporta JPG, PNG, WEBP</p>
+                    </div>
+
+                    <!-- Image Preview State -->
+                    <img id="image-preview" class="hidden w-full h-full object-contain p-4 relative z-0" src="" alt="Preview">
+
+                    <!-- Scanning Effect -->
+                    <div id="scanner" class="scan-line"></div>
+                </div>
+
+                <div class="mt-6 flex justify-center">
+                    <button onclick="analyzeImage()" id="analyze-btn" class="bg-gold-metallic text-midnight font-black py-4 px-8 rounded-xl shadow-glow-gold hover:scale-105 transition-transform flex items-center gap-2 opacity-50 cursor-not-allowed" disabled>
+                        ANALIZAR AHORA
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Zone -->
+            <div id="results-area" class="opacity-0 transition-opacity duration-1000">
+                <div class="mb-8">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
+                        <p class="text-xs font-bold text-green-400 uppercase tracking-widest">Análisis Completado</p>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-2" id="product-name">Detectando...</h2>
+                    <p class="text-gold text-sm font-bold" id="confidence-score">Confianza: --%</p>
+                </div>
+
+                <!-- Generated Content -->
+                <div class="space-y-6">
+                    <!-- Pain Points -->
+                    <div class="glass p-6 rounded-xl border-l-4 border-red-500">
+                        <h3 class="flex items-center gap-2 font-bold text-lg mb-4 text-white">
+                            <span class="material-symbols-outlined text-red-500">sentiment_dissatisfied</span>
+                            Ángulos de Dolor (Pain Points)
+                        </h3>
+                        <ul class="space-y-3 text-gray-300 text-sm" id="pain-points-list">
+                            <!-- JS populated -->
+                        </ul>
+                    </div>
+
+                    <!-- Selling Angles -->
+                    <div class="glass p-6 rounded-xl border-l-4 border-gold">
+                        <h3 class="flex items-center gap-2 font-bold text-lg mb-4 text-white">
+                            <span class="material-symbols-outlined text-gold">campaign</span>
+                            Ganchos de Venta (Hooks)
+                        </h3>
+                        <ul class="space-y-3 text-gray-300 text-sm" id="hooks-list">
+                            <!-- JS populated -->
+                        </ul>
+                    </div>
+
+                    <!-- Visual Ideas -->
+                    <div class="glass p-6 rounded-xl border-l-4 border-blue-500">
+                        <h3 class="flex items-center gap-2 font-bold text-lg mb-4 text-white">
+                            <span class="material-symbols-outlined text-blue-500">image</span>
+                            Ideas Creativas para Ads
+                        </h3>
+                        <p class="text-gray-300 text-sm leading-relaxed" id="visual-ideas">
+                            <!-- JS populated -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-xs text-gray-600 border-t border-white/5">
+        <p>© 2026 Ecosistema Premium - Módulo de Inteligencia Artificial</p>
+    </footer>
+
+    <script>
+        let model;
+
+        // 1. Initialize Logic
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log("Loading TensorFlow Model...");
+            try {
+                // Using MobileNet
+                model = await mobilenet.load();
+                console.log("Model loaded successfully!");
+            } catch (error) {
+                console.error("Error loading model:", error);
+                alert("Error cargando el modelo IA. Por favor recarga la página.");
+            }
+        });
+
+        // 2. Handle File Upload
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.getElementById('image-preview');
+                const placeholder = document.getElementById('upload-placeholder');
+
+                img.src = e.target.result;
+                img.classList.remove('hidden');
+                placeholder.classList.add('hidden');
+
+                // Enable button
+                const btn = document.getElementById('analyze-btn');
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+                // Reset Results if any
+                document.getElementById('results-area').classList.add('opacity-0');
+            }
+            reader.readAsDataURL(file);
+        }
+
+        // 3. Analyze Logic
+        async function analyzeImage() {
+            if (!model) {
+                alert("El modelo está cargando, espera un momento...");
+                return;
+            }
+
+            const img = document.getElementById('image-preview');
+            const scanner = document.getElementById('scanner');
+            const resultsArea = document.getElementById('results-area');
+            const btn = document.getElementById('analyze-btn');
+
+            // Start Animation
+            scanner.style.display = 'block';
+            btn.innerHTML = 'ANALIZANDO... <span class="material-symbols-outlined animate-spin">sync</span>';
+            btn.disabled = true;
+            resultsArea.classList.add('opacity-0');
+
+            // Fake Delay for "Cinema" effect
+            await new Promise(r => setTimeout(r, 2000));
+
+            try {
+                // Run Prediction
+                const predictions = await model.classify(img);
+                console.log("Predictions:", predictions);
+
+                if (predictions && predictions.length > 0) {
+                    const bestGuess = predictions[0];
+                    const className = bestGuess.className;
+                    const probability = Math.round(bestGuess.probability * 100);
+
+                    generateContent(className, probability);
+                } else {
+                    generateContent("producto desconocido", 50);
+                }
+            } catch (error) {
+                console.error(error);
+                alert("Error analizando la imagen.");
+            }
+
+            // Stop Animation
+            scanner.style.display = 'none';
+            btn.innerHTML = 'ANALIZAR OTRA VEZ <span class="material-symbols-outlined">auto_awesome</span>';
+            btn.disabled = false;
+            resultsArea.classList.remove('opacity-0');
+        }
+
+        // 4. Marketing "Brain" (Dictionary)
+        const marketingDB = {
+            'watch': {
+                name: "Reloj Inteligente / Lujo",
+                pain: [
+                    "¿Cansado de perder llamadas importantes por tener el celular en el bolsillo?",
+                    "Sientes que no tienes control sobre tus métricas de salud diarias.",
+                    "Los relojes tradicionales no combinan con tu estilo de vida activo."
+                ],
+                hooks: [
+                    "El compañero que cuida tu corazón y tu tiempo.",
+                    "No es solo un reloj, es tu asistente personal 24/7.",
+                    "Eleva tu estatus y productividad al instante."
+                ],
+                visual: "Primer plano del reloj en una muñeca masculina con traje, fondo urbano nocturno con luces bokeh doradas."
+            },
+            'phone': {
+                name: "Smartphone Última Generación",
+                pain: [
+                    "Tu celular actual se descarga antes del mediodía.",
+                    "Las fotos de tus viajes salen borrosas y oscuras.",
+                    "Sientes que tu tecnología te está dejando atrás."
+                ],
+                hooks: [
+                    "Potencia bruta en la palma de tu mano.",
+                    "Captura la noche como nunca antes.",
+                    "La batería que dura más que tu jornada laboral."
+                ],
+                visual: "Smartphone flotando sobre una superficie de cristal negro, con ondas de energía color neón emanando de la pantalla."
+            },
+            'shoe': {
+                name: "Calzado Deportivo / Moda",
+                pain: [
+                    "Dolor de pies después de largas jornadas de pie.",
+                    "Zapatos que se ven bien pero son incómodos.",
+                    "Materiales de baja calidad que se rompen al mes."
+                ],
+                hooks: [
+                    "Camina sobre las nubes, luce como una estrella.",
+                    "El equilibrio perfecto entre confort y diseño urbano.",
+                    "Diseñados para resistir tu ritmo de vida acelerado."
+                ],
+                visual: "Zapatilla suspendida en el aire, despiezando sus capas de confort, fondo dinámico de ciudad en movimiento."
+            },
+            'coffee': {
+                name: "Café Premium / Taza",
+                pain: [
+                    "Despertar cansado y sin energía.",
+                    "Café instantáneo que sabe a agua sucia.",
+                    "Tardes improductivas por falta de enfoque."
+                ],
+                hooks: [
+                    "El combustible que tus mañanas merecen.",
+                    "Aroma que despierta tus sentidos al instante.",
+                    "Energía natural para dominar tu día."
+                ],
+                visual: "Vapor saliendo de una taza perfecta, granos de café volando en cámara lenta alrededor, iluminación cálida y acogedora."
+            },
+            'bottle': {
+                name: "Botella / Termo",
+                pain: [
+                    "Beber agua caliente en días soleados.",
+                    "Botellas de plástico que contaminan y saben mal.",
+                    "No hidratarse lo suficiente durante el trabajo."
+                ],
+                hooks: [
+                    "Frío por 24 horas, caliente por 12. Garantizado.",
+                    "Hidratación con estilo para tu escritorio.",
+                    "La última botella que necesitarás comprar."
+                ],
+                visual: "Botella con gotas de condensación, fondo de hielo azulado y fresco, transmitiendo sed inminente."
+            },
+             'glass': {
+                name: "Gafas de Sol / Lentes",
+                pain: [
+                    "El sol te impide manejar o ver con claridad.",
+                    "Gafas baratas que no protegen tus ojos UV.",
+                    "Modelos que no encajan con la forma de tu rostro."
+                ],
+                hooks: [
+                    "Protección total con el estilo de una estrella de cine.",
+                    "Ve el mundo en HD, sin reflejos.",
+                    "El accesorio que define tu personalidad."
+                ],
+                visual: "Modelo usando las gafas reflejando una playa paradisíaca o una carretera al atardecer."
+            },
+            'cosmetic': { // Lipsticks, creams
+                name: "Cosmético / Belleza",
+                pain: [
+                    "Piel seca o labios agrietados que duelen.",
+                    "Maquillaje que se corre a la hora de aplicarlo.",
+                    "Ingredientes químicos que dañan tu piel a largo plazo."
+                ],
+                hooks: [
+                    "Resalta tu belleza natural en segundos.",
+                    "Nutrición profunda con acabado profesional.",
+                    "El secreto de las celebridades, ahora tuyo."
+                ],
+                visual: "Textura del producto en macro (crema o labial), suave, sedosa, con ingredientes naturales como flores alrededor."
+            }
+        };
+
+        const genericMarketing = {
+            name: "Producto Viral / Tendencia",
+            pain: [
+                "Sentir que te pierdes las últimas tendencias del mercado.",
+                "Productos de baja calidad que no cumplen lo que prometen.",
+                "Pagar de más por soluciones que no funcionan."
+            ],
+            hooks: [
+                "Descubre por qué todos están hablando de esto.",
+                "Calidad premium a un precio accesible.",
+                "La solución definitiva a tu problema diario."
+            ],
+            visual: "Producto iluminado con luz de estudio tipo 'Hero Shot', fondo minimalista de color sólido contrastante."
+        };
+
+        // 5. Generate Content Helper
+        function generateContent(detectedClass, probability) {
+            // Normalize
+            const term = detectedClass.toLowerCase();
+            let data = genericMarketing;
+
+            // Simple keyword matching
+            for (const key in marketingDB) {
+                if (term.includes(key)) {
+                    data = marketingDB[key];
+                    break;
+                }
+                // Special mappings
+                if (key === 'cosmetic' && (term.includes('lipstick') || term.includes('lotion'))) data = marketingDB[key];
+                if (key === 'glass' && (term.includes('sunglass') || term.includes('spectacle'))) data = marketingDB[key];
+                if (key === 'shoe' && (term.includes('sneaker') || term.includes('sandal'))) data = marketingDB[key];
+                if (key === 'watch' && (term.includes('clock'))) data = marketingDB[key];
+                if (key === 'bottle' && (term.includes('perfume'))) {
+                     // Perfume specific fallback or use bottle
+                     data = {
+                        name: "Perfume / Fragancia",
+                        pain: ["Fragancias que se desvanecen en 1 hora.", "Pagar precios excesivos por marcas comerciales.", "No dejar una huella memorable."],
+                        hooks: ["El aroma del éxito.", "Dura todo el día, impacta toda la noche.", "Seducción líquida."],
+                        visual: "Botella de perfume sobre agua con reflejos, iluminación dorada y misteriosa."
+                     }
+                }
+            }
+
+            // Update UI
+            document.getElementById('product-name').innerText = data.name + ` (${term})`; // Show detected term for "Tech demo" feel
+            document.getElementById('confidence-score').innerText = `Confianza IA: ${probability}%`;
+
+            // Populate Lists
+            const painList = document.getElementById('pain-points-list');
+            painList.innerHTML = '';
+            data.pain.forEach(item => {
+                const li = document.createElement('li');
+                li.className = "flex items-start gap-2";
+                li.innerHTML = `<span class="material-symbols-outlined text-red-500 text-sm mt-0.5">close</span> ${item}`;
+                painList.appendChild(li);
+            });
+
+            const hooksList = document.getElementById('hooks-list');
+            hooksList.innerHTML = '';
+            data.hooks.forEach(item => {
+                const li = document.createElement('li');
+                li.className = "flex items-start gap-2";
+                li.innerHTML = `<span class="material-symbols-outlined text-gold text-sm mt-0.5">check_circle</span> ${item}`;
+                hooksList.appendChild(li);
+            });
+
+            document.getElementById('visual-ideas').innerHTML = `<span class="font-bold text-blue-400">Prompt Sugerido:</span> ${data.visual}`;
+        }
+
+    </script>
+</body>
+</html>
