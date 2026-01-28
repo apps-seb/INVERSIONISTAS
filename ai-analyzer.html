@@ -33,15 +33,21 @@
                     boxShadow: {
                         'glow-gold': '0 0 20px rgba(212, 175, 55, 0.15)',
                         'glow-cyan': '0 0 20px rgba(6, 182, 212, 0.15)',
+                        'glow-card': '0 0 15px rgba(255, 255, 255, 0.05)',
                     },
                     animation: {
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'scan': 'scan 2s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
                     },
                     keyframes: {
                         scan: {
                             '0%': { top: '0%' },
                             '100%': { top: '100%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
                         }
                     }
                 },
@@ -120,10 +126,10 @@
 
     <main class="relative pt-24 pb-20 px-6 min-h-screen bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed">
 
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-7xl mx-auto">
             <!-- Header -->
             <div class="text-center mb-12">
-                <div class="inline-block px-4 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4">Beta v2.4 Release</div>
+                <div class="inline-block px-4 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4">Beta v2.5 Release</div>
                 <h1 class="text-5xl md:text-6xl font-black mb-4 tracking-tighter">Neuro-Scanner <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">AI Product</span></h1>
                 <p class="text-gray-400 max-w-2xl mx-auto text-lg">Suba la foto de cualquier producto. Nuestra IA generará instantáneamente los ángulos de dolor, hooks de venta y estructura de landing page ganadora.</p>
             </div>
@@ -149,48 +155,61 @@
 
                     <!-- Quick Demos -->
                     <div>
-                        <p class="text-xs font-bold text-gray-500 uppercase mb-4 tracking-widest">O pruebe con estos ejemplos:</p>
-                        <div class="grid grid-cols-3 gap-4">
-                            <button onclick="runDemo('corrector')" class="group relative overflow-hidden rounded-xl border border-white/10 hover:border-cyan-500/50 transition-all">
-                                <img src="https://m.media-amazon.com/images/I/71J1x-i7TJL._AC_SL1500_.jpg" class="w-full h-24 object-cover opacity-60 group-hover:opacity-100 transition-opacity">
-                                <div class="absolute bottom-0 left-0 w-full bg-black/80 p-2 text-[10px] font-bold text-center text-white">Corrector Postura</div>
+                        <p class="text-xs font-bold text-gray-500 uppercase mb-4 tracking-widest">Productos Ganadores Ejemplo:</p>
+                        <div class="grid grid-cols-3 sm:grid-cols-5 gap-3">
+                            <button onclick="runDemo('gym_shorts')" class="group relative overflow-hidden rounded-xl border border-white/10 hover:border-cyan-500/50 transition-all aspect-square">
+                                <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-0 left-0 w-full bg-black/80 p-1 text-[8px] font-bold text-center text-white truncate">Shorts Gym</div>
                             </button>
-                            <button onclick="runDemo('serum')" class="group relative overflow-hidden rounded-xl border border-white/10 hover:border-cyan-500/50 transition-all">
-                                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1000&auto=format&fit=crop" class="w-full h-24 object-cover opacity-60 group-hover:opacity-100 transition-opacity">
-                                <div class="absolute bottom-0 left-0 w-full bg-black/80 p-2 text-[10px] font-bold text-center text-white">Serum Facial</div>
+                            <button onclick="runDemo('perfume_man')" class="group relative overflow-hidden rounded-xl border border-white/10 hover:border-cyan-500/50 transition-all aspect-square">
+                                <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-0 left-0 w-full bg-black/80 p-1 text-[8px] font-bold text-center text-white truncate">Perfume</div>
                             </button>
-                            <button onclick="runDemo('smartwatch')" class="group relative overflow-hidden rounded-xl border border-white/10 hover:border-cyan-500/50 transition-all">
-                                <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=1000&auto=format&fit=crop" class="w-full h-24 object-cover opacity-60 group-hover:opacity-100 transition-opacity">
-                                <div class="absolute bottom-0 left-0 w-full bg-black/80 p-2 text-[10px] font-bold text-center text-white">Smartwatch</div>
+                            <button onclick="runDemo('corrector')" class="group relative overflow-hidden rounded-xl border border-white/10 hover:border-cyan-500/50 transition-all aspect-square">
+                                <img src="https://m.media-amazon.com/images/I/71J1x-i7TJL._AC_SL1500_.jpg" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-0 left-0 w-full bg-black/80 p-1 text-[8px] font-bold text-center text-white truncate">Corrector</div>
+                            </button>
+                            <button onclick="runDemo('serum')" class="group relative overflow-hidden rounded-xl border border-white/10 hover:border-cyan-500/50 transition-all aspect-square">
+                                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-0 left-0 w-full bg-black/80 p-1 text-[8px] font-bold text-center text-white truncate">Serum</div>
+                            </button>
+                            <button onclick="runDemo('smartwatch')" class="group relative overflow-hidden rounded-xl border border-white/10 hover:border-cyan-500/50 transition-all aspect-square">
+                                <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-0 left-0 w-full bg-black/80 p-1 text-[8px] font-bold text-center text-white truncate">Smartwatch</div>
                             </button>
                         </div>
                     </div>
                 </div>
 
                 <!-- OUTPUT / PREVIEW ZONE -->
-                <div class="relative min-h-[500px]">
+                <div class="relative min-h-[600px]">
 
                     <!-- Placeholder State -->
                     <div id="state-placeholder" class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 border border-white/5 rounded-3xl bg-midnight-light/30">
-                        <span class="material-symbols-outlined text-6xl text-gray-700 mb-4">deployed_code</span>
+                        <span class="material-symbols-outlined text-6xl text-gray-700 mb-4 animate-float">deployed_code</span>
                         <h3 class="text-xl font-bold text-gray-600">Esperando Input...</h3>
-                        <p class="text-sm text-gray-700 mt-2">El análisis aparecerá aquí.</p>
+                        <p class="text-sm text-gray-700 mt-2">Seleccione un demo o suba una imagen.</p>
                     </div>
 
-                    <!-- Processing State -->
-                    <div id="state-processing" class="hidden absolute inset-0 bg-midnight z-20 rounded-3xl overflow-hidden border border-cyan-500/30">
-                        <div class="absolute inset-0 loader-grid opacity-20"></div>
+                    <!-- Processing State (Matrix) -->
+                    <div id="state-processing" class="hidden absolute inset-0 bg-black z-20 rounded-3xl overflow-hidden border border-cyan-500/50 shadow-[0_0_50px_rgba(6,182,212,0.2)]">
+                        <!-- Canvas for Matrix Rain -->
+                        <canvas id="matrix-canvas" class="absolute inset-0 w-full h-full opacity-60"></canvas>
+
+                        <div class="absolute inset-0 loader-grid opacity-30"></div>
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-900/10 to-transparent"></div>
 
                         <!-- Image being scanned -->
                         <div class="absolute inset-0 flex items-center justify-center p-12">
-                            <img id="scan-image-preview" src="" class="max-h-full max-w-full object-contain opacity-50 filter grayscale blur-sm transition-all duration-1000">
-                            <div class="scan-line top-0"></div>
+                            <div class="relative">
+                                <img id="scan-image-preview" src="" class="max-h-[300px] max-w-full object-contain opacity-80 filter drop-shadow-[0_0_15px_rgba(6,182,212,0.5)]">
+                                <div class="scan-line top-0"></div>
+                            </div>
                         </div>
 
                         <!-- Terminal Logs -->
-                        <div class="absolute bottom-0 left-0 w-full p-6 font-mono text-xs bg-black/80 backdrop-blur border-t border-cyan-900/50">
-                            <div id="scan-logs" class="space-y-1 text-cyan-400">
+                        <div class="absolute bottom-0 left-0 w-full p-6 font-mono text-xs bg-black/90 backdrop-blur border-t border-cyan-900/50">
+                            <div id="scan-logs" class="space-y-1 text-cyan-400 font-bold">
                                 <p>> Initializing Neural Network...</p>
                             </div>
                         </div>
@@ -199,67 +218,78 @@
                     <!-- Results State -->
                     <div id="state-results" class="hidden absolute inset-0 z-30 overflow-y-auto custom-scrollbar rounded-3xl bg-midnight border border-gold/30 shadow-2xl">
                         <!-- Result Header -->
-                        <div class="sticky top-0 bg-midnight/90 backdrop-blur z-40 p-6 border-b border-white/10 flex items-center justify-between">
+                        <div class="sticky top-0 bg-midnight/95 backdrop-blur z-40 p-6 border-b border-white/10 flex items-center justify-between">
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded bg-white/10 p-1">
+                                <div class="w-14 h-14 rounded-lg bg-white/10 p-1 border border-white/20">
                                     <img id="result-thumb" src="" class="w-full h-full object-cover rounded">
                                 </div>
                                 <div>
-                                    <h3 id="result-title" class="font-bold text-white text-lg leading-tight">Product Name</h3>
-                                    <p class="text-[10px] text-green-400 font-mono">CONFIDENCE SCORE: 98.4%</p>
+                                    <h3 id="result-title" class="font-bold text-white text-xl leading-tight">Product Name</h3>
+                                    <p class="text-xs text-green-400 font-mono flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-[14px]">verified</span>
+                                        AI CONFIDENCE: 99.1%
+                                    </p>
                                 </div>
                             </div>
-                            <button onclick="resetApp()" class="text-xs text-gray-400 hover:text-white underline">Nuevo Análisis</button>
+                            <button onclick="resetApp()" class="px-4 py-2 rounded-full border border-white/20 text-xs font-bold text-gray-300 hover:bg-white/10 hover:text-white transition-colors">Nuevo Análisis</button>
                         </div>
 
-                        <div class="p-6 space-y-8">
+                        <div class="p-6 space-y-10">
 
-                            <!-- Pain Points -->
-                            <div class="animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100">
-                                <h4 class="text-xs font-bold text-gray-500 uppercase mb-3 flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-red-500 text-sm">warning</span>
-                                    Ángulos de Dolor Detectados
+                            <!-- Pain Points (Cards with images) -->
+                            <div class="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
+                                <h4 class="text-sm font-black text-white uppercase mb-4 flex items-center gap-2 tracking-wider">
+                                    <span class="material-symbols-outlined text-red-500">warning</span>
+                                    Ángulos de Dolor (Pains)
                                 </h4>
-                                <div id="result-pains" class="grid gap-3">
+                                <div id="result-pains" class="grid sm:grid-cols-2 gap-4">
                                     <!-- Populated by JS -->
                                 </div>
                             </div>
 
-                            <!-- Sales Hooks -->
-                            <div class="animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200">
-                                <h4 class="text-xs font-bold text-gray-500 uppercase mb-3 flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-gold text-sm">campaign</span>
+                            <!-- Sales Hooks (Expanded) -->
+                            <div class="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+                                <h4 class="text-sm font-black text-white uppercase mb-4 flex items-center gap-2 tracking-wider">
+                                    <span class="material-symbols-outlined text-gold">campaign</span>
                                     Hooks de Alta Conversión
                                 </h4>
-                                <div id="result-hooks" class="space-y-3">
+                                <div id="result-hooks" class="grid gap-3">
                                     <!-- Populated by JS -->
                                 </div>
                             </div>
 
                             <!-- Landing Structure -->
-                            <div class="animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300">
-                                <h4 class="text-xs font-bold text-gray-500 uppercase mb-3 flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-blue-400 text-sm">view_quilt</span>
+                            <div class="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
+                                <h4 class="text-sm font-black text-white uppercase mb-4 flex items-center gap-2 tracking-wider">
+                                    <span class="material-symbols-outlined text-blue-400">view_quilt</span>
                                     Estructura Landing Page Sugerida
                                 </h4>
-                                <div class="bg-white/5 rounded-xl p-4 border border-white/5 space-y-2">
-                                    <div class="bg-red-500/20 text-red-300 p-2 rounded text-xs font-bold text-center border border-red-500/30">
-                                        HEADER: <span id="lp-header" class="font-normal text-white">...</span>
+                                <div class="bg-white/5 rounded-xl p-6 border border-white/5 space-y-3 relative overflow-hidden group">
+                                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                                        <span class="material-symbols-outlined text-6xl text-white">web</span>
                                     </div>
-                                    <div class="bg-white/10 text-gray-300 p-2 rounded text-xs text-center">
-                                        GIF: Demostración del problema
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-xs font-bold text-red-400 w-24">HEADLINE:</span>
+                                        <p id="lp-header" class="text-sm text-white font-medium">...</p>
                                     </div>
-                                    <div class="bg-gold/20 text-gold p-2 rounded text-xs font-bold text-center border border-gold/30">
-                                        OFERTA: <span id="lp-offer" class="font-normal text-white">...</span>
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-xs font-bold text-gray-400 w-24">VISUAL:</span>
+                                        <p class="text-xs text-gray-400 italic">GIF mostrando el problema principal (3 seg)</p>
                                     </div>
-                                    <div class="bg-green-500/20 text-green-300 p-2 rounded text-xs font-bold text-center border border-green-500/30">
-                                        SOCIAL PROOF: <span id="lp-proof" class="font-normal text-white">...</span>
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-xs font-bold text-gold w-24">OFERTA:</span>
+                                        <p id="lp-offer" class="text-sm text-gold font-bold">...</p>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-xs font-bold text-green-400 w-24">PROOF:</span>
+                                        <p id="lp-proof" class="text-sm text-white">...</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <button onclick="window.location.href='index.html#investmentModal'" class="w-full py-4 bg-gold-metallic text-midnight font-black rounded-xl shadow-glow-gold hover:scale-[1.02] transition-transform">
+                            <button onclick="window.location.href='index.html#investmentModal'" class="w-full py-5 bg-gold-metallic text-midnight font-black text-lg rounded-xl shadow-glow-gold hover:scale-[1.02] transition-transform flex items-center justify-center gap-3">
                                 LANZAR ESTE PRODUCTO AHORA
+                                <span class="material-symbols-outlined">rocket_launch</span>
                             </button>
 
                         </div>
@@ -271,20 +301,122 @@
     </main>
 
     <script>
-        // DATASETS
+        // --- MATRIX RAIN EFFECT ---
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let matrixInterval;
+
+        function startMatrix() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+
+            const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+            const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const nums = '0123456789';
+            const alphabet = katakana + latin + nums;
+
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+
+            const rainDrops = [];
+            for(let x = 0; x < columns; x++) {
+                rainDrops[x] = 1;
+            }
+
+            const draw = () => {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = '#0F0'; // Green text
+                ctx.font = fontSize + 'px monospace';
+
+                for(let i = 0; i < rainDrops.length; i++) {
+                    const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+
+                    // Gradient effect for characters (Cyan to Green)
+                    ctx.fillStyle = Math.random() > 0.5 ? '#06b6d4' : '#22c55e';
+
+                    ctx.fillText(text, i*fontSize, rainDrops[i]*fontSize);
+
+                    if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975){
+                        rainDrops[i] = 0;
+                    }
+                    rainDrops[i]++;
+                }
+            };
+
+            if(matrixInterval) clearInterval(matrixInterval);
+            matrixInterval = setInterval(draw, 30);
+        }
+
+        function stopMatrix() {
+            clearInterval(matrixInterval);
+        }
+
+
+        // --- DATASETS ---
+        // Images are placeholders as requested
         const DEMO_DATA = {
+            'gym_shorts': {
+                title: "Pantalonetas Gym Tech-Flex",
+                img: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=1000&auto=format&fit=crop",
+                pains: [
+                    { title: "Rozaduras Molestas", desc: "La ropa interior tradicional causa fricción en entrenamientos largos.", img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Vergüenza por Sudor", desc: "Marcas visibles de sudor en la entrepierna arruinan tu imagen.", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Falta de Movilidad", desc: "Te sientes restringido al hacer sentadillas profundas.", img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Bolsillos Inseguros", desc: "El celular se cae o rebota mientras corres.", img: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?q=80&w=200&auto=format&fit=crop" }
+                ],
+                hooks: [
+                    "Entrena como una bestia, luce como un caballero.",
+                    "La única pantaloneta con forro anti-rozaduras garantizado.",
+                    "Bolsillo oculto para celular: corre sin preocupaciones.",
+                    "Tecnología de secado rápido: del gym a la calle en 5 minutos.",
+                    "Diseñada para Squats profundos: no se sube ni se rompe."
+                ],
+                lp: {
+                    header: "La Última Pantaloneta que Necesitarás Comprar.",
+                    offer: "Pack x3 (Negro, Gris, Azul) + Medias Compresión GRATIS",
+                    proof: "Usado por +500 entrenadores personales"
+                }
+            },
+            'perfume_man': {
+                title: "Fragancia 'Midnight CEO' Pheromones",
+                img: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+                pains: [
+                    { title: "Invisibilidad Social", desc: "Entras a una habitación y nadie nota tu presencia.", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Baja Autoestima", desc: "Sientes que te falta ese 'algo' para cerrar el trato o la cita.", img: "https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Fragancias Débiles", desc: "Tu perfume actual desaparece antes del almuerzo.", img: "https://images.unsplash.com/photo-1595535373192-fc09355e3615?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Rechazo Sutil", desc: "Sientes que no generas el impacto magnético que deseas.", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" }
+                ],
+                hooks: [
+                    "No es solo un perfume, es una ventaja injusta.",
+                    "Científicamente formulado para despertar atracción subconsciente.",
+                    "Duración de 24 horas: domina desde la mañana hasta la noche.",
+                    "El aroma del éxito: madera, cuero y un secreto de feromonas.",
+                    "Garantía de cumplidos: si no te preguntan qué usas, devuélvelo."
+                ],
+                lp: {
+                    header: "Domina la Habitación sin Decir una Palabra.",
+                    offer: "Compra 100ml y lleva Travel Size (15ml) GRATIS",
+                    proof: "Votado #1 en Atracción por Men's Style Magazine"
+                }
+            },
             'corrector': {
-                title: "Corrector de Postura Ortopédico",
+                title: "Corrector de Postura Ortopédico Pro",
                 img: "https://m.media-amazon.com/images/I/71J1x-i7TJL._AC_SL1500_.jpg",
                 pains: [
-                    { title: "Dolor Crónico", desc: "La espalda encorvada está arruinando tu sueño y tu energía diaria." },
-                    { title: "Mala Presencia", desc: "Proyectas inseguridad y cansancio en reuniones importantes." },
-                    { title: "Miedo a la Vejez", desc: "Temor a desarrollar joroba permanente antes de los 50." }
+                    { title: "Dolor Crónico", desc: "La espalda encorvada está arruinando tu sueño y tu energía diaria.", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Mala Presencia", desc: "Proyectas inseguridad y cansancio en reuniones importantes.", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Miedo a la Vejez", desc: "Temor a desarrollar joroba permanente antes de los 50.", img: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Ropa que no Ajusta", desc: "La ropa no te luce bien debido a los hombros caídos.", img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=200&auto=format&fit=crop" }
                 ],
                 hooks: [
                     "Corrige tu postura en 14 días o te devolvemos tu dinero.",
                     "El secreto de los ejecutivos para proyectar confianza instantánea.",
-                    "Elimina el dolor de espalda sin medicamentos ni terapias costosas."
+                    "Elimina el dolor de espalda sin medicamentos ni terapias costosas.",
+                    "Invisible bajo la ropa: úsalo en la oficina o en casa.",
+                    "Recupera hasta 3cm de estatura al alinear tu columna."
                 ],
                 lp: {
                     header: "¿Te duele la espalda al trabajar? No es tu silla, es tu postura.",
@@ -296,14 +428,17 @@
                 title: "Serum Facial Vitamina C + Ácido Hialurónico",
                 img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1000&auto=format&fit=crop",
                 pains: [
-                    { title: "Envejecimiento Prematuro", desc: "Las líneas de expresión te hacen ver 10 años mayor." },
-                    { title: "Piel Opaca", desc: "Tu rostro luce cansado incluso después de dormir bien." },
-                    { title: "Manchas de Sol", desc: "El maquillaje ya no cubre las imperfecciones." }
+                    { title: "Envejecimiento Prematuro", desc: "Las líneas de expresión te hacen ver 10 años mayor.", img: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Piel Opaca", desc: "Tu rostro luce cansado incluso después de dormir bien.", img: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Manchas de Sol", desc: "El maquillaje ya no cubre las imperfecciones.", img: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Textura Irregular", desc: "Poros abiertos y piel áspera al tacto.", img: "https://images.unsplash.com/photo-1505944270255-72b8c68c6a70?q=80&w=200&auto=format&fit=crop" }
                 ],
                 hooks: [
                     "Recupera el brillo de tu juventud en solo 3 gotas diarias.",
                     "Dermatólogos lo llaman 'Botox en botella' (y es 100% natural).",
-                    "Borra manchas y arrugas mientras duermes."
+                    "Borra manchas y arrugas mientras duermes.",
+                    "Efecto lifting inmediato sin agujas.",
+                    "Hidratación profunda que dura 72 horas."
                 ],
                 lp: {
                     header: "Despierta con una piel radiante, todos los días.",
@@ -315,14 +450,17 @@
                 title: "Smartwatch Ultra Series 9 (Clon AAA)",
                 img: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=1000&auto=format&fit=crop",
                 pains: [
-                    { title: "Status Social", desc: "Quieres lucir exitoso pero el original cuesta $4 millones." },
-                    { title: "Salud Descuidada", desc: "No sabes cuántas calorías quemas ni cómo duermes." },
-                    { title: "Desconexión", desc: "Pierdes llamadas importantes por no tener el celular a la mano." }
+                    { title: "Status Social", desc: "Quieres lucir exitoso pero el original cuesta $4 millones.", img: "https://images.unsplash.com/photo-1533228100845-08145b01de14?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Salud Descuidada", desc: "No sabes cuántas calorías quemas ni cómo duermes.", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Desconexión", desc: "Pierdes llamadas importantes por no tener el celular a la mano.", img: "https://images.unsplash.com/photo-1512428559087-560fa5ce7d02?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Fragilidad", desc: "Miedo a dañar un reloj costoso en el gimnasio.", img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=200&auto=format&fit=crop" }
                 ],
                 hooks: [
                     "El mismo diseño, las mismas funciones, por el 10% del precio.",
                     "Controla tu salud y tu negocio desde tu muñeca.",
-                    "La réplica exacta que nadie notará la diferencia."
+                    "La réplica exacta que nadie notará la diferencia.",
+                    "Batería de 7 días: olvídate del cargador.",
+                    "Resistente al agua y a golpes: hecho para la vida real."
                 ],
                 lp: {
                     header: "Tecnología Premium al alcance de tu bolsillo.",
@@ -334,14 +472,17 @@
                 title: "Producto Detectado (Análisis General)",
                 img: "", // Dynamic
                 pains: [
-                    { title: "Problema No Resuelto", desc: "Los clientes están frustrados con las soluciones actuales." },
-                    { title: "Pérdida de Tiempo/Dinero", desc: "La alternativa actual es demasiado costosa o lenta." },
-                    { title: "Deseo de Mejora", desc: "Buscan una forma más inteligente y rápida de lograr resultados." }
+                    { title: "Problema No Resuelto", desc: "Los clientes están frustrados con las soluciones actuales.", img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Pérdida de Tiempo", desc: "La alternativa actual es demasiado complicada o lenta.", img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Costo Excesivo", desc: "Las opciones de la competencia son impagables para el promedio.", img: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?q=80&w=200&auto=format&fit=crop" },
+                    { title: "Calidad Dudosa", desc: "Miedo a comprar productos que se rompen a la semana.", img: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=200&auto=format&fit=crop" }
                 ],
                 hooks: [
                     "La solución definitiva que estabas esperando.",
                     "Ahorra tiempo y dinero desde el primer uso.",
-                    "Calidad premium garantizada o devolución inmediata."
+                    "Calidad premium garantizada o devolución inmediata.",
+                    "Únete a los miles que ya cambiaron su vida con esto.",
+                    "Stock limitado: no te quedes sin el tuyo."
                 ],
                 lp: {
                     header: "Transforma tu vida con [Nombre del Producto].",
@@ -363,6 +504,7 @@
             stateProcessing.classList.add('hidden');
             statePlaceholder.classList.remove('hidden');
             document.getElementById('file-upload').value = "";
+            stopMatrix();
         }
 
         function handleFile(file) {
@@ -388,13 +530,17 @@
             scanImg.src = imgSrc;
             logsContainer.innerHTML = '<p class="text-cyan-400">> Initializing Neural Network...</p>';
 
+            // Start Matrix Effect
+            startMatrix();
+
             // 2. Simulate Steps
             const steps = [
-                { t: 500, msg: "> Detecting edges and features..." },
-                { t: 1200, msg: "> Identifying object classification..." },
-                { t: 2000, msg: "> Analyzing market sentiment data..." },
-                { t: 2800, msg: "> Generating psychological hooks..." },
-                { t: 3500, msg: "> <span class='text-green-400'>ANALYSIS COMPLETE.</span>" }
+                { t: 600, msg: "> Detecting object edges and geometry..." },
+                { t: 1400, msg: "> Cross-referencing with Global Market Trends..." },
+                { t: 2400, msg: "> Identifying target demographics (Age 25-45)..." },
+                { t: 3200, msg: "> Generating emotional triggers..." },
+                { t: 4000, msg: "> Optimizing sales copy for conversion..." },
+                { t: 4800, msg: "> <span class='text-green-400 font-bold'>ANALYSIS COMPLETE. GENERATING DASHBOARD...</span>" }
             ];
 
             steps.forEach(step => {
@@ -406,19 +552,20 @@
 
             // 3. Show Results
             setTimeout(() => {
+                stopMatrix();
                 renderResults(type, imgSrc);
                 stateProcessing.classList.add('hidden');
                 stateResults.classList.remove('hidden');
 
                 // Celebration
                 confetti({
-                    particleCount: 100,
-                    spread: 70,
+                    particleCount: 150,
+                    spread: 80,
                     origin: { y: 0.6 },
-                    colors: ['#06b6d4', '#ffffff'] // Cyan/White
+                    colors: ['#06b6d4', '#ffffff', '#22c55e'] // Cyan/White/Green
                 });
 
-            }, 4000);
+            }, 5500);
         }
 
         function renderResults(type, imgSrc) {
@@ -427,26 +574,32 @@
             document.getElementById('result-title').innerText = data.title;
             document.getElementById('result-thumb').src = imgSrc;
 
-            // Render Pains
+            // Render Pains (Cards)
             const painsContainer = document.getElementById('result-pains');
             painsContainer.innerHTML = data.pains.map(pain => `
-                <div class="bg-red-900/10 border border-red-500/20 p-3 rounded-lg">
-                    <p class="font-bold text-red-300 text-sm">${pain.title}</p>
-                    <p class="text-xs text-gray-400">${pain.desc}</p>
+                <div class="glass p-4 rounded-xl border border-white/5 hover:border-red-500/30 transition-all group flex gap-4 items-start">
+                    <div class="w-16 h-16 shrink-0 rounded-lg bg-gray-800 overflow-hidden border border-white/10">
+                        <img src="${pain.img}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Pain Visual">
+                    </div>
+                    <div>
+                        <p class="font-bold text-red-300 text-sm mb-1">${pain.title}</p>
+                        <p class="text-xs text-gray-400 leading-relaxed">${pain.desc}</p>
+                    </div>
                 </div>
             `).join('');
 
             // Render Hooks
             const hooksContainer = document.getElementById('result-hooks');
             hooksContainer.innerHTML = data.hooks.map((hook, i) => `
-                <div class="flex items-start gap-3 bg-white/5 p-3 rounded-lg">
-                    <div class="bg-gold/20 text-gold rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold shrink-0">${i+1}</div>
-                    <p class="text-sm text-gray-200">"${hook}"</p>
+                <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl hover:bg-white/10 transition-colors border border-white/5">
+                    <div class="bg-gold/10 text-gold rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0 border border-gold/20 shadow-glow-gold">${i+1}</div>
+                    <p class="text-sm text-gray-200 font-medium">"${hook}"</p>
+                    <button class="ml-auto text-gray-500 hover:text-white" title="Copiar"><span class="material-symbols-outlined text-sm">content_copy</span></button>
                 </div>
             `).join('');
 
             // Render LP
-            document.getElementById('lp-header').innerText = data.lp.header;
+            document.getElementById('lp-header').innerText = `"${data.lp.header}"`;
             document.getElementById('lp-offer').innerText = data.lp.offer;
             document.getElementById('lp-proof').innerText = data.lp.proof;
         }
