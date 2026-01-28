@@ -411,76 +411,133 @@
                 <div class="text-center mb-16">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-[10px] font-black tracking-widest uppercase mb-4 shadow-[0_0_10px_rgba(6,182,212,0.2)]">
                         <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                        Tecnología Core v5.0
+                        Neural Core v6.0
                     </div>
-                    <h2 class="text-4xl md:text-6xl font-black text-white mb-6">El Cerebro: <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">Agente IA Autónomo</span></h2>
+                    <h2 class="text-4xl md:text-6xl font-black text-white mb-6">El Cerebro: <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">Gemini Ultra & n8n</span></h2>
                     <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
-                        No son solo "herramientas". Es un Agente Central orquestado con <strong>n8n</strong> que conecta, decide y ejecuta todo el negocio sin intervención humana.
+                        Un ecosistema autónomo donde <strong>Gemini Ultra</strong> orquesta la creatividad y <strong>n8n</strong> ejecuta la operación. Desde la creación de video con <strong>Veo</strong> hasta el cierre de ventas en <strong>WhatsApp</strong>.
                     </p>
                 </div>
 
-                <div class="relative min-h-[600px] bg-gray-900/40 border border-white/5 rounded-3xl p-8 overflow-hidden backdrop-blur-sm">
+                <div class="relative min-h-[700px] bg-gray-900/40 border border-white/5 rounded-3xl p-4 md:p-8 overflow-hidden backdrop-blur-sm">
                     <!-- Background Grid -->
                     <div class="absolute inset-0" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 30px 30px; opacity: 0.1;"></div>
 
                     <!-- Flow Container -->
-                    <div class="relative w-full h-full flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 min-h-[500px]" id="n8n-flow-container">
+                    <div class="relative w-full h-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 min-h-[600px] py-10" id="n8n-flow-container">
 
-                        <!-- Step 1: Creative (Left) -->
-                        <div class="flex flex-col gap-8 items-center md:items-end">
-                             <!-- Node: Creative Gen -->
-                             <div class="n8n-node relative w-20 h-20 md:w-24 md:h-24 bg-gray-800 rounded-2xl border-2 border-pink-500/50 flex items-center justify-center shadow-[0_0_20px_rgba(236,72,153,0.2)] z-10 group hover:scale-110 transition-transform cursor-default">
-                                <span class="material-symbols-outlined text-4xl text-pink-400">palette</span>
-                                <div class="absolute -bottom-8 w-max text-center">
-                                    <p class="text-xs font-bold text-pink-400 uppercase">Generación Creativa</p>
-                                    <p class="text-[9px] text-gray-500">Midjourney / DALL-E 3</p>
+                        <!-- LEFT COLUMN: CREATION & LOGIC -->
+                        <div class="flex flex-col gap-12 items-center md:items-end w-full md:w-1/3 z-10">
+
+                             <!-- Node 1: Video -->
+                             <div class="n8n-node relative w-full max-w-[200px] bg-gray-800/80 backdrop-blur rounded-xl border border-pink-500/30 p-4 flex items-center gap-4 shadow-[0_0_15px_rgba(236,72,153,0.1)] group hover:scale-105 transition-transform hover:border-pink-500">
+                                <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center text-pink-400">
+                                    <span class="material-symbols-outlined text-xl">movie_filter</span>
                                 </div>
-                                <div class="absolute -top-3 -right-3 bg-pink-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">AI</div>
+                                <div>
+                                    <p class="text-xs font-bold text-white uppercase">Video IA</p>
+                                    <div class="flex gap-1 mt-1">
+                                        <span class="text-[9px] bg-pink-500/20 text-pink-300 px-1.5 py-0.5 rounded border border-pink-500/20">Veo 3.1</span>
+                                        <span class="text-[9px] bg-pink-500/20 text-pink-300 px-1.5 py-0.5 rounded border border-pink-500/20">Kling AI</span>
+                                    </div>
+                                </div>
                              </div>
 
-                             <!-- Node: Testing -->
-                             <div class="n8n-node relative w-20 h-20 md:w-24 md:h-24 bg-gray-800 rounded-2xl border-2 border-orange-500/50 flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.2)] z-10 group hover:scale-110 transition-transform cursor-default">
-                                <span class="material-symbols-outlined text-4xl text-orange-400">science</span>
-                                <div class="absolute -bottom-8 w-max text-center">
-                                    <p class="text-xs font-bold text-orange-400 uppercase">A/B Testing</p>
-                                    <p class="text-[9px] text-gray-500">Variaciones Auto</p>
+                             <!-- Node 2: Image -->
+                             <div class="n8n-node relative w-full max-w-[200px] bg-gray-800/80 backdrop-blur rounded-xl border border-purple-500/30 p-4 flex items-center gap-4 shadow-[0_0_15px_rgba(168,85,247,0.1)] group hover:scale-105 transition-transform hover:border-purple-500">
+                                <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400">
+                                    <span class="material-symbols-outlined text-xl">palette</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white uppercase">Imagen Gen</p>
+                                    <div class="flex gap-1 mt-1">
+                                        <span class="text-[9px] bg-purple-500/20 text-purple-300 px-1.5 py-0.5 rounded border border-purple-500/20">Midjourney</span>
+                                        <span class="text-[9px] bg-purple-500/20 text-purple-300 px-1.5 py-0.5 rounded border border-purple-500/20">Flux</span>
+                                    </div>
+                                </div>
+                             </div>
+
+                             <!-- Node 3: Copy/Logic -->
+                             <div class="n8n-node relative w-full max-w-[200px] bg-gray-800/80 backdrop-blur rounded-xl border border-blue-500/30 p-4 flex items-center gap-4 shadow-[0_0_15px_rgba(59,130,246,0.1)] group hover:scale-105 transition-transform hover:border-blue-500">
+                                <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
+                                    <span class="material-symbols-outlined text-xl">psychology</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white uppercase">Copy & Logic</p>
+                                    <div class="flex gap-1 mt-1">
+                                        <span class="text-[9px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded border border-blue-500/20">GPT-4o</span>
+                                        <span class="text-[9px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded border border-blue-500/20">Claude 3.5</span>
+                                    </div>
                                 </div>
                              </div>
                         </div>
 
-                        <!-- CENTER: THE BRAIN (n8n) -->
-                        <div class="relative z-20">
-                             <div class="w-32 h-32 md:w-40 md:h-40 bg-black rounded-full border-4 border-cyan-500 flex items-center justify-center shadow-[0_0_50px_rgba(6,182,212,0.4)] relative animate-pulse-slow">
-                                <div class="absolute inset-2 rounded-full border border-cyan-500/30 border-dashed animate-[spin_10s_linear_infinite]"></div>
-                                <div class="text-center z-10">
-                                    <span class="text-3xl md:text-4xl font-black text-white tracking-tighter">n8n</span>
-                                    <p class="text-[9px] text-cyan-400 font-bold uppercase tracking-widest mt-1">Orchestrator</p>
+                        <!-- CENTER: THE BRAIN (Gemini Ultra) -->
+                        <div class="relative z-20 shrink-0">
+                             <div class="w-40 h-40 md:w-56 md:h-56 bg-black rounded-full border-4 border-double border-indigo-500 flex flex-col items-center justify-center shadow-[0_0_80px_rgba(99,102,241,0.4)] relative animate-pulse-slow group">
+                                <!-- Brain Animation -->
+                                <div class="absolute inset-0 rounded-full border border-indigo-500/50 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
+                                <div class="absolute inset-4 rounded-full border-2 border-dashed border-indigo-400/30 animate-[spin_20s_linear_infinite]"></div>
+                                <div class="absolute inset-0 bg-gradient-to-tr from-indigo-900/50 to-purple-900/50 rounded-full blur-xl opacity-50"></div>
+
+                                <!-- Icon/Text -->
+                                <div class="z-10 text-center transform group-hover:scale-110 transition-transform duration-500">
+                                    <span class="material-symbols-outlined text-6xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 mb-2">neurology</span>
+                                    <h3 class="text-xl md:text-2xl font-black text-white tracking-tighter">n8n + GEMINI</h3>
+                                    <p class="text-xs font-bold text-indigo-400 uppercase tracking-[0.2em]">ULTRA 3.0</p>
                                 </div>
 
-                                <!-- Orbital Particles -->
-                                <div class="absolute w-full h-full animate-[spin_3s_linear_infinite]">
-                                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-cyan-400 rounded-full shadow-[0_0_10px_cyan]"></div>
+                                <!-- Satellites -->
+                                <div class="absolute w-full h-full animate-[spin_6s_linear_infinite]">
+                                    <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-8 bg-gray-900 rounded-full border border-white/20 flex items-center justify-center shadow-lg transform -rotate-0">
+                                        <span class="text-[8px] font-bold text-white">n8n</span>
+                                    </div>
                                 </div>
                              </div>
                         </div>
 
-                        <!-- Step 3: Execution (Right) -->
-                        <div class="flex flex-col gap-8 items-center md:items-start">
-                             <!-- Node: Ads Publishing -->
-                             <div class="n8n-node relative w-20 h-20 md:w-24 md:h-24 bg-gray-800 rounded-2xl border-2 border-blue-500/50 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.2)] z-10 group hover:scale-110 transition-transform cursor-default">
-                                <span class="material-symbols-outlined text-4xl text-blue-400">campaign</span>
-                                <div class="absolute -bottom-8 w-max text-center">
-                                    <p class="text-xs font-bold text-blue-400 uppercase">Publicidad & Ads</p>
-                                    <p class="text-[9px] text-gray-500">Meta / Google API</p>
+                        <!-- RIGHT COLUMN: DISTRIBUTION & SALES -->
+                        <div class="flex flex-col gap-12 items-center md:items-start w-full md:w-1/3 z-10">
+
+                             <!-- Node 4: Ads -->
+                             <div class="n8n-node relative w-full max-w-[200px] bg-gray-800/80 backdrop-blur rounded-xl border border-blue-400/30 p-4 flex items-center gap-4 shadow-[0_0_15px_rgba(96,165,250,0.1)] group hover:scale-105 transition-transform hover:border-blue-400">
+                                <div class="w-10 h-10 rounded-lg bg-blue-400/20 flex items-center justify-center text-blue-400">
+                                    <span class="material-symbols-outlined text-xl">ads_click</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white uppercase">Publicidad</p>
+                                    <div class="flex gap-1 mt-1">
+                                        <span class="text-[9px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded border border-blue-500/20">Meta Ads</span>
+                                        <span class="text-[9px] bg-yellow-500/20 text-yellow-300 px-1.5 py-0.5 rounded border border-yellow-500/20">Google</span>
+                                    </div>
                                 </div>
                              </div>
 
-                             <!-- Node: Sales & CRM -->
-                             <div class="n8n-node relative w-20 h-20 md:w-24 md:h-24 bg-gray-800 rounded-2xl border-2 border-green-500/50 flex items-center justify-center shadow-[0_0_20px_rgba(34,197,94,0.2)] z-10 group hover:scale-110 transition-transform cursor-default">
-                                <span class="material-symbols-outlined text-4xl text-green-400">payments</span>
-                                <div class="absolute -bottom-8 w-max text-center">
-                                    <p class="text-xs font-bold text-green-400 uppercase">Cierre & Ventas</p>
-                                    <p class="text-[9px] text-gray-500">WhatsApp / Shopify</p>
+                             <!-- Node 5: WhatsApp -->
+                             <div class="n8n-node relative w-full max-w-[200px] bg-gray-800/80 backdrop-blur rounded-xl border border-green-500/30 p-4 flex items-center gap-4 shadow-[0_0_15px_rgba(34,197,94,0.1)] group hover:scale-105 transition-transform hover:border-green-500">
+                                <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400">
+                                    <span class="material-symbols-outlined text-xl">chat</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white uppercase">Ventas Chat</p>
+                                    <div class="flex gap-1 mt-1">
+                                        <span class="text-[9px] bg-green-500/20 text-green-300 px-1.5 py-0.5 rounded border border-green-500/20">WhatsApp</span>
+                                        <span class="text-[9px] bg-green-500/20 text-green-300 px-1.5 py-0.5 rounded border border-green-500/20">Bot</span>
+                                    </div>
+                                </div>
+                             </div>
+
+                             <!-- Node 6: Email -->
+                             <div class="n8n-node relative w-full max-w-[200px] bg-gray-800/80 backdrop-blur rounded-xl border border-red-500/30 p-4 flex items-center gap-4 shadow-[0_0_15px_rgba(239,68,68,0.1)] group hover:scale-105 transition-transform hover:border-red-500">
+                                <div class="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400">
+                                    <span class="material-symbols-outlined text-xl">mail</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white uppercase">Email Mkt</p>
+                                    <div class="flex gap-1 mt-1">
+                                        <span class="text-[9px] bg-red-500/20 text-red-300 px-1.5 py-0.5 rounded border border-red-500/20">Gmail</span>
+                                        <span class="text-[9px] bg-gray-500/20 text-gray-300 px-1.5 py-0.5 rounded border border-gray-500/20">Klaviyo</span>
+                                    </div>
                                 </div>
                              </div>
                         </div>
@@ -491,12 +548,12 @@
                     </div>
 
                     <!-- Live Log Terminal -->
-                    <div class="mt-12 mx-auto max-w-2xl bg-black/80 rounded-lg border border-gray-800 p-4 font-mono text-xs h-32 overflow-hidden relative shadow-2xl">
+                    <div class="mt-4 mx-auto max-w-2xl bg-black/80 rounded-lg border border-gray-800 p-4 font-mono text-xs h-32 overflow-hidden relative shadow-2xl">
                         <div class="absolute top-0 left-0 w-full h-6 bg-gray-800 flex items-center px-4 gap-2">
                             <div class="w-2 h-2 rounded-full bg-red-500"></div>
                             <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
                             <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                            <span class="text-gray-500 ml-2">agent_logs.txt</span>
+                            <span class="text-gray-500 ml-2">gemini_core.log</span>
                         </div>
                         <div id="n8n-logs" class="mt-6 text-gray-400 space-y-1">
                             <!-- Logs will appear here -->
@@ -3263,7 +3320,7 @@
             }, 800);
         });
 
-            // --- N8N AGENT ANIMATION ---
+            // --- N8N AGENT ANIMATION (UPDATED) ---
             function initN8nAnimation() {
                 const canvas = document.getElementById('n8n-canvas');
                 const container = document.getElementById('n8n-flow-container');
@@ -3292,15 +3349,16 @@
                 }
 
                 function spawnPacket(startIdx, endIdx, color) {
-                    const nodes = document.querySelectorAll('.n8n-node'); // 0:Creative, 1:Testing, 2:Ads, 3:Sales
+                    const nodes = document.querySelectorAll('.n8n-node');
+                    // Nodes order: 0:Video, 1:Image, 2:Copy (Left) | 3:Ads, 4:WhatsApp, 5:Email (Right)
                     const brain = document.querySelector('.animate-pulse-slow');
 
                     let startEl, endEl;
 
-                    if(startIdx === 4) startEl = brain;
+                    if(startIdx === -1) startEl = brain;
                     else startEl = nodes[startIdx];
 
-                    if(endIdx === 4) endEl = brain;
+                    if(endIdx === -1) endEl = brain;
                     else endEl = nodes[endIdx];
 
                     if(!startEl || !endEl) return;
@@ -3310,7 +3368,7 @@
                         end: getCenter(endEl),
                         progress: 0,
                         color: color,
-                        speed: 0.02 + Math.random() * 0.01
+                        speed: 0.01 + Math.random() * 0.02
                     });
                 }
 
@@ -3321,14 +3379,16 @@
                     const nodes = document.querySelectorAll('.n8n-node');
                     const brain = document.querySelector('.animate-pulse-slow');
 
-                    if(brain && nodes.length === 4) {
+                    if(brain && nodes.length > 0) {
                         const brainPos = getCenter(brain);
-                        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
-                        ctx.lineWidth = 2;
-                        ctx.setLineDash([5, 5]);
+                        ctx.lineWidth = 1;
 
-                        nodes.forEach(node => {
+                        nodes.forEach((node, idx) => {
                             const pos = getCenter(node);
+                            // Dynamic color based on side
+                            const isLeft = idx < 3;
+                            ctx.strokeStyle = isLeft ? 'rgba(236, 72, 153, 0.1)' : 'rgba(96, 165, 250, 0.1)';
+
                             ctx.beginPath();
                             ctx.moveTo(brainPos.x, brainPos.y);
                             ctx.lineTo(pos.x, pos.y);
@@ -3337,7 +3397,6 @@
                     }
 
                     // Draw Packets
-                    ctx.setLineDash([]);
                     for(let i = 0; i < packets.length; i++) {
                         const p = packets[i];
                         p.progress += p.speed;
@@ -3346,10 +3405,10 @@
                         const y = p.start.y + (p.end.y - p.start.y) * p.progress;
 
                         ctx.fillStyle = p.color;
-                        ctx.shadowBlur = 10;
+                        ctx.shadowBlur = 8;
                         ctx.shadowColor = p.color;
                         ctx.beginPath();
-                        ctx.arc(x, y, 4, 0, Math.PI * 2);
+                        ctx.arc(x, y, 3, 0, Math.PI * 2);
                         ctx.fill();
                         ctx.shadowBlur = 0;
 
@@ -3364,22 +3423,33 @@
 
                 draw();
 
-                setInterval(() => {
-                    spawnPacket(0, 4, '#ec4899'); // Pink
-                    setTimeout(() => spawnPacket(4, 2, '#3b82f6'), 1000); // Blue
-                    addLog('Creating new Ad Variation v' + Math.floor(Math.random()*100), 'text-pink-400');
-                    setTimeout(() => addLog('Publishing to Meta Ads API...', 'text-blue-400'), 1200);
-                }, 3000);
+                // Simulation Loop
+                const scenarios = [
+                    { start: 0, color: '#ec4899', msg: 'Generating Video with Veo 3.1...', logColor: 'text-pink-400' }, // Video -> Brain
+                    { start: 1, color: '#a855f7', msg: 'Creating Product Images (Midjourney)', logColor: 'text-purple-400' }, // Image -> Brain
+                    { start: 2, color: '#3b82f6', msg: 'Writing Sales Copy (GPT-4o)', logColor: 'text-blue-400' }, // Copy -> Brain
+                ];
+
+                const actions = [
+                    { end: 3, color: '#60a5fa', msg: 'Optimizing Meta Ads Budget', logColor: 'text-blue-300' }, // Brain -> Ads
+                    { end: 4, color: '#22c55e', msg: 'Closing Sale via WhatsApp Bot', logColor: 'text-green-400' }, // Brain -> WhatsApp
+                    { end: 5, color: '#ef4444', msg: 'Sending Retargeting Email', logColor: 'text-red-400' }, // Brain -> Email
+                ];
 
                 setInterval(() => {
-                    spawnPacket(4, 3, '#22c55e'); // Green
-                    addLog('New Sale Detected: $125.000 COP', 'text-green-400');
-                }, 4500);
+                    // Random Input (Creation -> Brain)
+                    const scenario = scenarios[Math.floor(Math.random() * scenarios.length)];
+                    spawnPacket(scenario.start, -1, scenario.color);
+                    addLog(scenario.msg, scenario.logColor);
 
-                setInterval(() => {
-                     spawnPacket(1, 4, '#f97316'); // Orange
-                     addLog('Optimizing ROAS: Bid Strategy Updated', 'text-orange-400');
-                }, 6000);
+                    // Random Output (Brain -> Distribution) after delay
+                    setTimeout(() => {
+                        const action = actions[Math.floor(Math.random() * actions.length)];
+                        spawnPacket(-1, action.end, action.color);
+                        if(Math.random() > 0.5) addLog(action.msg, action.logColor);
+                    }, 1000 + Math.random() * 1000);
+
+                }, 2500);
             }
 
             function addLog(text, colorClass) {
