@@ -6,6 +6,7 @@
     <title>Ecosistema Premium Inversión v2 - Colombia</title>
     <meta name="description" content="Invierta en el futuro del comercio digital en Colombia. Ecosistema todo-en-uno con logística propia, IA y alta rentabilidad.">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -199,12 +200,13 @@
     <main class="relative pt-16">
         
         <!-- Hero Section -->
-        <section class="hero-bg min-h-[90vh] flex flex-col justify-center px-6 relative overflow-hidden">
-            <div class="absolute top-20 right-0 w-96 h-96 bg-gold/10 rounded-full blur-[100px] animate-pulse-slow"></div>
-            <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-900/20 rounded-full blur-[80px]"></div>
+        <section class="min-h-[90vh] flex flex-col justify-center px-6 relative overflow-hidden" id="hero">
+            <div id="hero-canvas-container" class="absolute inset-0 z-0"></div>
+            <div class="absolute top-20 right-0 w-96 h-96 bg-gold/10 rounded-full blur-[100px] animate-pulse-slow pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-900/20 rounded-full blur-[80px] pointer-events-none"></div>
             
-            <div class="relative z-10 max-w-5xl mx-auto text-center md:text-left md:flex md:items-center md:justify-between w-full">
-                <div class="md:w-1/2">
+            <div class="relative z-10 max-w-5xl mx-auto text-center md:text-left md:flex md:items-center md:justify-between w-full pointer-events-none">
+                <div class="md:w-1/2 pointer-events-auto">
                     <div class="reveal-up inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold-light text-[10px] font-black tracking-widest uppercase mb-6 backdrop-blur-sm">
                         <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
                         Ronda de Inversión Semilla 2026
@@ -245,33 +247,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Hero Image/Visual -->
-                <div class="hidden md:block md:w-5/12 relative animate-float">
-                   <div class="relative z-10 glass-gold rounded-2xl p-4 transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Dashboard" class="rounded-xl shadow-2xl opacity-90 border border-gold/20">
-                        
-                        <!-- Floating Badges -->
-                        <div class="absolute -left-10 top-10 glass p-3 rounded-lg flex items-center gap-3 shadow-xl border-l-4 border-gold">
-                            <div class="bg-green-500/20 p-2 rounded-full text-green-400">
-                                <span class="material-symbols-outlined">trending_up</span>
-                            </div>
-                            <div>
-                                <p class="text-[10px] text-gray-400 uppercase">ROI Mensual</p>
-                                <p class="text-sm font-bold text-white">+35%</p>
-                            </div>
-                        </div>
-
-                        <div class="absolute -right-5 bottom-10 glass p-3 rounded-lg flex items-center gap-3 shadow-xl border-l-4 border-blue-500">
-                            <div class="bg-blue-500/20 p-2 rounded-full text-blue-400">
-                                <span class="material-symbols-outlined">local_shipping</span>
-                            </div>
-                            <div>
-                                <p class="text-[10px] text-gray-400 uppercase">Envíos Hoy</p>
-                                <p class="text-sm font-bold text-white">1,240</p>
-                            </div>
-                        </div>
-                   </div>
-                </div>
+                <!-- Hero Image/Visual (Replaced by 3D Animation) -->
             </div>
         </section>
 
@@ -3465,7 +3441,193 @@
 
             document.addEventListener('DOMContentLoaded', () => {
                  setTimeout(initN8nAnimation, 1000);
+                 initHero3D();
             });
+
+            // --- HERO 3D ANIMATION ---
+            function initHero3D() {
+                const container = document.getElementById('hero-canvas-container');
+                if (!container) return;
+
+                // Setup
+                const scene = new THREE.Scene();
+                // Fog for depth
+                scene.fog = new THREE.FogExp2(0x0a0e1a, 0.002);
+
+                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+                const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(window.devicePixelRatio);
+                container.appendChild(renderer.domElement);
+
+                // Group to hold the main object
+                const group = new THREE.Group();
+                scene.add(group);
+
+                // 1. Cyber Sphere (Icosahedron)
+                const geometry = new THREE.IcosahedronGeometry(10, 2);
+
+                // Wireframe Material (Gold)
+                const materialWire = new THREE.MeshBasicMaterial({
+                    color: 0xD4AF37,
+                    wireframe: true,
+                    transparent: true,
+                    opacity: 0.3
+                });
+
+                const sphere = new THREE.Mesh(geometry, materialWire);
+                group.add(sphere);
+
+                // Points Material (Blue Nodes) on vertices
+                const materialPoints = new THREE.PointsMaterial({
+                    color: 0x60a5fa,
+                    size: 0.2,
+                    transparent: true,
+                    opacity: 0.8
+                });
+
+                // Extract vertices for points
+                const pointsGeo = new THREE.BufferGeometry();
+                const positions = [];
+                const positionAttribute = geometry.getAttribute('position');
+
+                for (let i = 0; i < positionAttribute.count; i++) {
+                    positions.push(
+                        positionAttribute.getX(i),
+                        positionAttribute.getY(i),
+                        positionAttribute.getZ(i)
+                    );
+                }
+                pointsGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+                const points = new THREE.Points(pointsGeo, materialPoints);
+                sphere.add(points); // Add points to sphere so they rotate together
+
+                // Inner Glow Sphere
+                const innerGeo = new THREE.IcosahedronGeometry(9, 1);
+                const innerMat = new THREE.MeshBasicMaterial({
+                    color: 0x60a5fa,
+                    wireframe: true,
+                    transparent: true,
+                    opacity: 0.05
+                });
+                const innerSphere = new THREE.Mesh(innerGeo, innerMat);
+                group.add(innerSphere);
+
+
+                // 2. Background Galaxy Particles
+                const particlesGeo = new THREE.BufferGeometry();
+                const particleCount = 700;
+                const posArray = new Float32Array(particleCount * 3);
+
+                for(let i = 0; i < particleCount * 3; i++) {
+                    posArray[i] = (Math.random() - 0.5) * 60; // Spread
+                }
+
+                particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+                // Gold particles material
+                const particlesMat = new THREE.PointsMaterial({
+                    size: 0.05,
+                    color: 0xffffff, // White stars
+                    transparent: true,
+                    opacity: 0.5
+                });
+
+                // Mix of Gold and Blue? Let's just do white/blue tint stars
+                const particlesMesh = new THREE.Points(particlesGeo, particlesMat);
+                scene.add(particlesMesh);
+
+                // Lights
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+                scene.add(ambientLight);
+
+                const pointLight = new THREE.PointLight(0xD4AF37, 1);
+                pointLight.position.set(20, 20, 20);
+                scene.add(pointLight);
+
+                const blueLight = new THREE.PointLight(0x60a5fa, 1);
+                blueLight.position.set(-20, -10, 20);
+                scene.add(blueLight);
+
+                // Positioning logic
+                function updateLayout() {
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+
+                    if (window.innerWidth >= 768) {
+                        // Desktop: Move sphere to the right
+                        group.position.x = 8;
+                        camera.position.z = 20;
+                    } else {
+                        // Mobile: Center/Bottom
+                        group.position.x = 0;
+                        group.position.y = 2; // Move up a bit behind text or down?
+                        // Actually, let's put it behind text slightly
+                        camera.position.z = 25;
+                    }
+                }
+                updateLayout();
+                window.addEventListener('resize', updateLayout);
+
+                // Interaction State
+                let mouseX = 0;
+                let mouseY = 0;
+                let targetX = 0;
+                let targetY = 0;
+
+                const windowHalfX = window.innerWidth / 2;
+                const windowHalfY = window.innerHeight / 2;
+
+                function onDocumentMouseMove(event) {
+                    mouseX = (event.clientX - windowHalfX) * 0.001;
+                    mouseY = (event.clientY - windowHalfY) * 0.001;
+                }
+
+                function onDocumentTouchMove(event) {
+                    if (event.touches.length > 0) {
+                        mouseX = (event.touches[0].clientX - windowHalfX) * 0.002;
+                        mouseY = (event.touches[0].clientY - windowHalfY) * 0.002;
+                    }
+                }
+
+                document.addEventListener('mousemove', onDocumentMouseMove);
+                document.addEventListener('touchmove', onDocumentTouchMove);
+
+                // Animation Loop
+                const clock = new THREE.Clock();
+
+                function animate() {
+                    requestAnimationFrame(animate);
+                    const elapsedTime = clock.getElapsedTime();
+
+                    // Continuous Rotation
+                    sphere.rotation.y += 0.002;
+                    sphere.rotation.z += 0.001;
+                    innerSphere.rotation.y -= 0.002;
+
+                    // Interactive Rotation (Lerp)
+                    targetX = mouseX * 2; // Scale sensitivity
+                    targetY = mouseY * 2;
+
+                    group.rotation.y += 0.05 * (targetX - group.rotation.y);
+                    group.rotation.x += 0.05 * (targetY - group.rotation.x);
+
+                    // Particles Movement (Parallax + Drift)
+                    particlesMesh.rotation.y = -mouseX * 0.2; // Inverse movement
+                    particlesMesh.rotation.x = -mouseY * 0.2;
+                    particlesMesh.position.z = Math.sin(elapsedTime * 0.1) * 2; // Breathing effect
+
+                    // Inner Glow Pulse
+                    const scale = 1 + Math.sin(elapsedTime * 2) * 0.02;
+                    innerSphere.scale.set(scale, scale, scale);
+
+                    renderer.render(scene, camera);
+                }
+
+                animate();
+            }
 </script>
 </body>
 </html>
