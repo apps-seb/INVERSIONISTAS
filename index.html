@@ -150,7 +150,7 @@
             90% { opacity: 1; }
             100% { offset-distance: 100%; opacity: 0; }
         }
-
+        
         /* 3D Effects for Final CTA */
         .perspective-1000 {
             perspective: 1000px;
@@ -172,7 +172,7 @@
                 transform: rotate(-2deg);
             }
         }
-
+        
         .card-3d-hover {
             transition: transform 0.5s;
         }
@@ -1990,7 +1990,7 @@
                             </div>
                             <p class="font-bold text-xl text-white">$20,000,000</p>
                         </div>
-
+                        
                         <!-- Hidden Details: Inventory -->
                         <div id="breakdown-inventory" class="hidden bg-black/30 border-t border-white/10 p-6 animate-in slide-in-from-top-2 duration-300">
                             <div class="text-xs text-gray-400 space-y-2">
@@ -2285,6 +2285,70 @@
             </div>
         </section>
 
+        <!-- FINAL DECISION (New Section) -->
+        <section class="py-24 px-6 bg-black relative overflow-hidden flex items-center justify-center min-h-[600px]">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+            
+            <!-- Spotlight Effect -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-gold/5 blur-[100px] pointer-events-none"></div>
+
+            <div class="relative z-10 max-w-4xl mx-auto text-center perspective-1000">
+                <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 text-xs font-bold uppercase tracking-[0.2em] mb-8 animate-pulse">
+                    <span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                    Oportunidad Limitada
+                </div>
+
+                <h2 class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter">
+                    SU LUGAR EN LA <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold">MESA DIRECTIVA</span>
+                </h2>
+
+                <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+                    No es solo una inversión, es el pasaporte a la élite del comercio digital. 
+                    <span class="text-white font-bold">Solo quedan 3 cupos</span> en esta ronda semilla.
+                </p>
+
+                <!-- The Card -->
+                <div class="relative w-full max-w-md mx-auto group perspective-1000 cursor-pointer" onclick="openModal()">
+                    <div class="card-3d-hover relative h-64 bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl border-2 border-gold p-8 shadow-[0_0_60px_rgba(212,175,55,0.4)] preserve-3d overflow-hidden">
+                        
+                        <!-- 3D Animation Container -->
+                        <div id="card-3d-model" class="absolute inset-0 z-0 opacity-60 pointer-events-none mix-blend-screen"></div>
+
+                        <!-- Shine -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-gold/0 via-gold/10 to-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none z-10"></div>
+
+                        <!-- Card Content -->
+                        <div class="relative z-10 flex justify-between items-start mb-8">
+                            <span class="material-symbols-outlined text-gold text-4xl">diamond</span>
+                            <span class="text-[10px] text-gold border border-gold px-2 py-1 rounded uppercase tracking-widest">Founder Member</span>
+                        </div>
+                        
+                        <div class="text-left mt-12">
+                            <p class="text-gray-500 text-xs uppercase tracking-widest mb-1">Holder Name</p>
+                            <p class="text-white font-mono text-xl tracking-widest">SU NOMBRE AQUÍ</p>
+                        </div>
+
+                        <div class="absolute bottom-8 right-8">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=EcosistemaPremium" class="w-12 h-12 opacity-50 filter invert" alt="QR">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <button onclick="openModal()" class="relative inline-flex group">
+                        <div class="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-gold via-yellow-200 to-gold rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
+                        <div class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-black text-midnight transition-all duration-200 bg-gold-metallic font-display rounded-xl shadow-glow-gold animate-pulse hover:scale-105">
+                            RECLAMAR MI CUPO AHORA
+                            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform text-midnight">arrow_forward</span>
+                        </div>
+                    </button>
+                    <p class="mt-4 text-xs text-gray-500">Cierre de ronda: 30 de Enero, 2026</p>
+                </div>
+            </div>
+        </section>
+
         <!-- FAQ Section -->
         <section class="py-20 px-6">
             <div class="max-w-3xl mx-auto">
@@ -2327,66 +2391,6 @@
             </div>
         </section>
 
-        <!-- FINAL DECISION (New Section) -->
-        <section class="py-24 px-6 bg-black relative overflow-hidden flex items-center justify-center min-h-[600px]">
-            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-            <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
-
-            <!-- Spotlight Effect -->
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-gold/5 blur-[100px] pointer-events-none"></div>
-
-            <div class="relative z-10 max-w-4xl mx-auto text-center perspective-1000">
-                <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 text-xs font-bold uppercase tracking-[0.2em] mb-8 animate-pulse">
-                    <span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
-                    Oportunidad Limitada
-                </div>
-
-                <h2 class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter">
-                    SU LUGAR EN LA <br/>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold">MESA DIRECTIVA</span>
-                </h2>
-
-                <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-                    No es solo una inversión, es el pasaporte a la élite del comercio digital.
-                    <span class="text-white font-bold">Solo quedan 3 cupos</span> en esta ronda semilla.
-                </p>
-
-                <!-- The Card -->
-                <div class="relative w-full max-w-md mx-auto group perspective-1000 cursor-pointer" onclick="openModal()">
-                    <div class="card-3d-hover relative h-64 bg-gradient-to-br from-gray-900 to-black rounded-2xl border border-gold/30 p-8 shadow-[0_0_50px_rgba(212,175,55,0.2)] preserve-3d">
-
-                        <!-- Shine -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
-
-                        <!-- Card Content -->
-                        <div class="flex justify-between items-start mb-8">
-                            <span class="material-symbols-outlined text-gold text-4xl">diamond</span>
-                            <span class="text-[10px] text-gold border border-gold px-2 py-1 rounded uppercase tracking-widest">Founder Member</span>
-                        </div>
-
-                        <div class="text-left mt-12">
-                            <p class="text-gray-500 text-xs uppercase tracking-widest mb-1">Holder Name</p>
-                            <p class="text-white font-mono text-xl tracking-widest">SU NOMBRE AQUÍ</p>
-                        </div>
-
-                        <div class="absolute bottom-8 right-8">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=EcosistemaPremium" class="w-12 h-12 opacity-50 filter invert" alt="QR">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-12">
-                    <button onclick="openModal()" class="relative inline-flex group">
-                        <div class="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
-                        <div class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-black font-display rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
-                            RECLAMAR MI CUPO AHORA
-                            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </div>
-                    </button>
-                    <p class="mt-4 text-xs text-gray-500">Cierre de ronda: 30 de Enero, 2026</p>
-                </div>
-            </div>
-        </section>
 
         <footer class="pt-16 pb-8 px-6 border-t border-white/5 bg-midnight-light/50 text-center">
             <div class="max-w-6xl mx-auto mb-12 flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
@@ -3653,7 +3657,83 @@
             document.addEventListener('DOMContentLoaded', () => {
                  setTimeout(initN8nAnimation, 1000);
                  initHero3D();
+                 initCard3D();
             });
+
+            // --- CARD 3D ANIMATION (New) ---
+            function initCard3D() {
+                const container = document.getElementById('card-3d-model');
+                if (!container) return;
+
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(50, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+                
+                const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+                renderer.setSize(container.offsetWidth, container.offsetHeight);
+                container.appendChild(renderer.domElement);
+
+                // Gold Diamond (Octahedron/Icosahedron)
+                const geometry = new THREE.OctahedronGeometry(2, 0);
+                const material = new THREE.MeshPhongMaterial({ 
+                    color: 0xD4AF37, 
+                    specular: 0xffffff,
+                    shininess: 100,
+                    flatShading: true,
+                    transparent: true,
+                    opacity: 0.9
+                });
+                const crystal = new THREE.Mesh(geometry, material);
+                scene.add(crystal);
+
+                // Wireframe Overlay
+                const wireGeo = new THREE.OctahedronGeometry(2.1, 0);
+                const wireMat = new THREE.MeshBasicMaterial({ color: 0xffe55c, wireframe: true, transparent: true, opacity: 0.3 });
+                const wireframe = new THREE.Mesh(wireGeo, wireMat);
+                scene.add(wireframe);
+
+                // Lights
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+                scene.add(ambientLight);
+
+                const pointLight = new THREE.PointLight(0xffd700, 2);
+                pointLight.position.set(10, 10, 10);
+                scene.add(pointLight);
+                
+                const pointLight2 = new THREE.PointLight(0x4444ff, 1);
+                pointLight2.position.set(-10, -10, 10);
+                scene.add(pointLight2);
+
+                camera.position.z = 6;
+
+                // Animate
+                const clock = new THREE.Clock();
+                function animate() {
+                    requestAnimationFrame(animate);
+                    const t = clock.getElapsedTime();
+
+                    crystal.rotation.y = t * 0.5;
+                    crystal.rotation.x = Math.sin(t * 0.3) * 0.2;
+                    
+                    wireframe.rotation.y = t * 0.5;
+                    wireframe.rotation.x = Math.sin(t * 0.3) * 0.2;
+
+                    // Floating effect
+                    crystal.position.y = Math.sin(t) * 0.2;
+                    wireframe.position.y = Math.sin(t) * 0.2;
+
+                    renderer.render(scene, camera);
+                }
+                animate();
+
+                // Handle resize
+                window.addEventListener('resize', () => {
+                    const width = container.offsetWidth;
+                    const height = container.offsetHeight;
+                    renderer.setSize(width, height);
+                    camera.aspect = width / height;
+                    camera.updateProjectionMatrix();
+                });
+            }
 
             // --- HERO 3D ANIMATION ---
             function initHero3D() {
