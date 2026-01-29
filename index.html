@@ -1865,86 +1865,53 @@
                 <!-- Header -->
                 <div class="text-center mb-16">
                     <div class="inline-block px-4 py-1 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs font-bold uppercase tracking-widest mb-4">Transparencia Total</div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Hoja de Ruta & <span class="text-gold-gradient">Destino de Fondos</span></h2>
+                    <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">HOJA DE RUTA & <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold drop-shadow-sm">DESTINO DE FONDOS</span></h2>
                     <p class="text-gray-400">Su capital impulsa una maquinaria validada para generar retornos.</p>
                 </div>
 
-                <!-- 1. Timeline & ROI Cards -->
-                <div class="grid md:grid-cols-2 gap-12 mb-16">
-
-                    <!-- Timeline Visual -->
-                    <div class="bg-midnight border border-white/10 p-6 rounded-2xl">
-                        <h3 class="font-bold text-white mb-6 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-gold">timer</span> Cronograma de Ejecución
-                        </h3>
-                        <div class="relative space-y-6 border-l-2 border-white/10 pl-6 ml-2">
-                            <div class="relative">
-                                <div class="absolute -left-[31px] top-1 w-4 h-4 bg-gray-600 rounded-full border-2 border-midnight"></div>
-                                <p class="text-xs font-bold text-gray-500 uppercase">Mes 1</p>
-                                <p class="text-sm text-gray-300">Constitución & Setup Tecnológico</p>
-                            </div>
-                            <div class="relative">
-                                <div class="absolute -left-[31px] top-1 w-4 h-4 bg-gray-600 rounded-full border-2 border-midnight"></div>
-                                <p class="text-xs font-bold text-gray-500 uppercase">Mes 2</p>
-                                <p class="text-sm text-gray-300">Importación & Branding</p>
-                            </div>
-                            <div class="relative">
-                                <div class="absolute -left-[31px] top-1 w-4 h-4 bg-gold rounded-full border-2 border-midnight shadow-glow-gold animate-pulse"></div>
-                                <p class="text-xs font-bold text-gold uppercase">Mes 3-4</p>
-                                <p class="text-sm text-white font-bold">🚀 INICIO DE VENTAS</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ROI Scenarios -->
-                    <div class="grid grid-cols-1 gap-4">
-                        <h3 class="font-bold text-white mb-2 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-green-400">payments</span> Proyección Utilidad Mensual
-                        </h3>
-
+                <!-- ROI Scenarios (Expanded Grid) -->
+                <div class="mb-16">
+                    <h3 class="font-bold text-white mb-6 flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-green-400">payments</span> Proyección Utilidad Mensual
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <!-- Pessimistic -->
-                        <div class="flex justify-between items-center p-4 bg-white/5 border border-white/5 rounded-xl">
-                            <div>
-                                <p class="text-xs text-gray-500 uppercase font-bold">Pesimista</p>
-                                <p class="text-[10px] text-gray-600">Ventas bajas</p>
-                            </div>
-                            <p class="text-lg font-bold text-gray-300">$8,000,000 COP</p>
+                        <div class="flex flex-col justify-center items-center p-6 bg-white/5 border border-white/5 rounded-xl hover:bg-white/10 transition-colors">
+                            <p class="text-xs text-gray-500 uppercase font-bold mb-2">Escenario Pesimista</p>
+                            <p class="text-2xl font-bold text-gray-300">$8,000,000</p>
+                            <p class="text-[10px] text-gray-600 mt-1">Ventas Mínimas</p>
                         </div>
 
                         <!-- Conservative -->
-                        <div class="flex justify-between items-center p-4 bg-white/5 border border-blue-500/30 rounded-xl relative overflow-hidden">
-                            <div class="absolute left-0 top-0 h-full w-1 bg-blue-500"></div>
-                            <div>
-                                <p class="text-xs text-blue-400 uppercase font-bold">Conservador</p>
-                                <p class="text-[10px] text-gray-500">Escenario Base</p>
-                            </div>
-                            <p class="text-xl font-bold text-white">$25,000,000 COP</p>
+                        <div class="flex flex-col justify-center items-center p-6 bg-white/5 border border-blue-500/30 rounded-xl relative overflow-hidden shadow-lg shadow-blue-500/10 transform scale-105 z-10">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-blue-500"></div>
+                            <p class="text-xs text-blue-400 uppercase font-bold mb-2">Escenario Conservador</p>
+                            <p class="text-3xl font-bold text-white">$25,000,000</p>
+                            <p class="text-[10px] text-gray-500 mt-1">Base Proyectada</p>
                         </div>
 
                         <!-- Optimistic -->
-                        <div class="flex justify-between items-center p-4 bg-gradient-to-r from-gold/10 to-midnight border border-gold/30 rounded-xl relative overflow-hidden">
-                            <div class="absolute left-0 top-0 h-full w-1 bg-gold"></div>
-                            <div>
-                                <p class="text-xs text-gold uppercase font-bold flex items-center gap-1">Optimista <span class="material-symbols-outlined text-[12px] animate-bounce">trending_up</span></p>
-                                <p class="text-[10px] text-gray-400">Viralización</p>
-                            </div>
-                            <p class="text-2xl font-black text-white">$60,000,000+ COP</p>
+                        <div class="flex flex-col justify-center items-center p-6 bg-gradient-to-b from-gold/10 to-midnight border border-gold/30 rounded-xl relative overflow-hidden hover:border-gold transition-colors">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gold"></div>
+                            <p class="text-xs text-gold uppercase font-bold mb-2 flex items-center gap-1">Optimista <span class="material-symbols-outlined text-[14px] animate-bounce">trending_up</span></p>
+                            <p class="text-3xl font-black text-white">$60,000,000+</p>
+                            <p class="text-[10px] text-gray-400 mt-1">Alta Viralidad</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- 2. Interactive Budget Breakdown -->
                 <div class="bg-midnight border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
-                    <div class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5">
+                    <div class="p-6 border-b border-white/10 flex flex-col md:flex-row justify-between items-center bg-white/5 gap-4">
                         <h3 class="font-bold text-xl text-white">Inversión Total</h3>
-                        <p class="font-black text-2xl text-gold">$70,000,000 COP</p>
+                        <p class="font-black text-3xl text-gold">$70,000,000 COP</p>
                     </div>
 
                     <!-- Tech Section (Expandable) -->
                     <div class="border-b border-white/10">
-        <div class="p-6 flex flex-col md:flex-row justify-between items-center cursor-pointer hover:bg-white/5 transition-colors group" onclick="toggleBreakdown('breakdown-tech')">
-                            <div class="flex items-center gap-4 mb-4 md:mb-0">
-                                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                        <div class="p-6 flex flex-col md:flex-row justify-between items-start md:items-center cursor-pointer hover:bg-white/5 transition-colors group gap-4" onclick="toggleBreakdown('breakdown-tech')">
+                            <div class="flex items-center gap-4 w-full md:w-auto">
+                                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform shrink-0">
                                     <span class="material-symbols-outlined text-2xl">memory</span>
                                 </div>
                                 <div>
@@ -1955,7 +1922,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <p class="font-bold text-xl text-white">$25,000,000</p>
+                            <p class="font-bold text-xl text-white pl-[64px] md:pl-0">$25,000,000</p>
                         </div>
 
                         <!-- Hidden Details -->
@@ -1975,9 +1942,9 @@
 
                     <!-- Inventory Section -->
                     <div class="border-b border-white/10">
-                        <div class="p-6 flex flex-col md:flex-row justify-between items-center cursor-pointer hover:bg-white/5 transition-colors group" onclick="toggleBreakdown('breakdown-inventory')">
-                            <div class="flex items-center gap-4 mb-4 md:mb-0">
-                                <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">
+                        <div class="p-6 flex flex-col md:flex-row justify-between items-start md:items-center cursor-pointer hover:bg-white/5 transition-colors group gap-4" onclick="toggleBreakdown('breakdown-inventory')">
+                            <div class="flex items-center gap-4 w-full md:w-auto">
+                                <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400 shrink-0">
                                     <span class="material-symbols-outlined text-2xl">inventory_2</span>
                                 </div>
                                 <div>
@@ -1988,7 +1955,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <p class="font-bold text-xl text-white">$20,000,000</p>
+                            <p class="font-bold text-xl text-white pl-[64px] md:pl-0">$20,000,000</p>
                         </div>
                         
                         <!-- Hidden Details: Inventory -->
@@ -2004,9 +1971,9 @@
 
                     <!-- Marketing Section -->
                     <div class="border-b border-white/10">
-                        <div class="p-6 flex flex-col md:flex-row justify-between items-center cursor-pointer hover:bg-white/5 transition-colors group" onclick="toggleBreakdown('breakdown-marketing')">
-                            <div class="flex items-center gap-4 mb-4 md:mb-0">
-                                <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">
+                        <div class="p-6 flex flex-col md:flex-row justify-between items-start md:items-center cursor-pointer hover:bg-white/5 transition-colors group gap-4" onclick="toggleBreakdown('breakdown-marketing')">
+                            <div class="flex items-center gap-4 w-full md:w-auto">
+                                <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400 shrink-0">
                                     <span class="material-symbols-outlined text-2xl">campaign</span>
                                 </div>
                                 <div>
@@ -2017,7 +1984,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <p class="font-bold text-xl text-white">$15,000,000</p>
+                            <p class="font-bold text-xl text-white pl-[64px] md:pl-0">$15,000,000</p>
                         </div>
 
                         <!-- Hidden Details: Marketing -->
@@ -2033,9 +2000,9 @@
 
                     <!-- Branding Section -->
                     <div class="border-b border-white/10">
-                        <div class="p-6 flex flex-col md:flex-row justify-between items-center cursor-pointer hover:bg-white/5 transition-colors group" onclick="toggleBreakdown('breakdown-branding')">
-                            <div class="flex items-center gap-4 mb-4 md:mb-0">
-                                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400">
+                        <div class="p-6 flex flex-col md:flex-row justify-between items-start md:items-center cursor-pointer hover:bg-white/5 transition-colors group gap-4" onclick="toggleBreakdown('breakdown-branding')">
+                            <div class="flex items-center gap-4 w-full md:w-auto">
+                                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400 shrink-0">
                                     <span class="material-symbols-outlined text-2xl">photo_camera</span>
                                 </div>
                                 <div>
@@ -2046,7 +2013,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <p class="font-bold text-xl text-white">$10,000,000</p>
+                            <p class="font-bold text-xl text-white pl-[64px] md:pl-0">$10,000,000</p>
                         </div>
 
                         <!-- Hidden Details: Branding -->
@@ -2057,6 +2024,70 @@
                                 <p class="flex justify-between border-b border-white/5 pb-1"><span>Registro de Marca & Legal</span> <span class="text-gray-300">$3.0M</span></p>
                                 <p class="flex justify-between text-gold font-bold pt-2"><span>TOTAL BRANDING</span> <span>$10.0M</span></p>
                             </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TIMELINE & ROADMAP Section (New) -->
+        <section id="roadmap" class="py-24 px-6 bg-black relative overflow-hidden border-t border-white/5">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+
+            <div class="max-w-5xl mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <div class="inline-block px-4 py-1 rounded-full border border-blue-500/30 bg-blue-500/5 text-blue-400 text-xs font-bold uppercase tracking-widest mb-4">Ejecución Inmediata</div>
+                    <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Cronograma de <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Lanzamiento</span></h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Nuestro objetivo es la operatividad inmediata. La tecnología se construye en paralelo a la constitución legal.</p>
+                </div>
+
+                <div class="relative">
+                    <!-- Vertical Line -->
+                    <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-gold"></div>
+
+                    <!-- Milestone 1 -->
+                    <div class="relative flex flex-col md:flex-row gap-8 mb-16 group">
+                        <div class="md:w-1/2 md:text-right order-2 md:order-1 pl-12 md:pl-0 md:pr-12">
+                            <h3 class="text-2xl font-black text-white mb-2">Cierre Ronda de Inversión</h3>
+                            <p class="text-gray-400 text-sm">Finalización de la etapa de recaudación de capital semilla. Validación de socios.</p>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-black shadow-[0_0_20px_#3b82f6] z-10 order-1 md:order-2"></div>
+                        <div class="md:w-1/2 order-3 pl-12 md:pl-12">
+                            <span class="inline-block bg-blue-500/20 text-blue-400 font-bold px-3 py-1 rounded text-xs border border-blue-500/30">2 de Febrero</span>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 (Dual Phase) -->
+                    <div class="relative flex flex-col md:flex-row gap-8 mb-16 group">
+                        <div class="md:w-1/2 md:text-right order-2 md:order-1 pl-12 md:pl-0 md:pr-12">
+                             <span class="inline-block bg-purple-500/20 text-purple-400 font-bold px-3 py-1 rounded text-xs border border-purple-500/30 mb-2">2 de Febrero (Inicio)</span>
+                             <div class="p-6 bg-white/5 border border-purple-500/30 rounded-2xl relative overflow-hidden group-hover:bg-purple-900/10 transition-colors">
+                                <div class="absolute top-0 right-0 p-3 opacity-20"><span class="material-symbols-outlined text-4xl">gavel</span></div>
+                                <h4 class="font-bold text-white text-lg mb-1">Fase 1: Legal & Constitución</h4>
+                                <p class="text-gray-400 text-xs">Registro de empresa S.A.S., RUT, Cámara de Comercio y Apertura de Cuentas Bancarias.</p>
+                             </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-black shadow-[0_0_20px_#a855f7] z-10 animate-pulse order-1 md:order-2"></div>
+                        <div class="md:w-1/2 order-3 pl-12 md:pl-12">
+                             <span class="inline-block bg-cyan-500/20 text-cyan-400 font-bold px-3 py-1 rounded text-xs border border-cyan-500/30 mb-2">Simultáneo</span>
+                             <div class="p-6 bg-white/5 border border-cyan-500/30 rounded-2xl relative overflow-hidden group-hover:bg-cyan-900/10 transition-colors">
+                                <div class="absolute top-0 right-0 p-3 opacity-20"><span class="material-symbols-outlined text-4xl">code</span></div>
+                                <h4 class="font-bold text-white text-lg mb-1">Fase 2: Ecosistema Tech</h4>
+                                <p class="text-gray-400 text-xs">Desarrollo Web, Integración de IA, Montaje de Logística y Negociación con Proveedores.</p>
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="relative flex flex-col md:flex-row gap-8 group">
+                        <div class="md:w-1/2 md:text-right order-2 md:order-1 pl-12 md:pl-0 md:pr-12">
+                            <h3 class="text-2xl font-black text-gold mb-2">Inicio de Operaciones</h3>
+                            <p class="text-gray-400 text-sm">Lanzamiento oficial al mercado. La empresa nace facturando desde el Día 1 gracias al trabajo previo.</p>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-6 h-6 bg-gold rounded-full border-4 border-black shadow-[0_0_30px_#D4AF37] z-10 animate-bounce order-1 md:order-2"></div>
+                        <div class="md:w-1/2 order-3 pl-12 md:pl-12">
+                            <span class="inline-block bg-gold/20 text-gold font-bold px-3 py-1 rounded text-xs border border-gold/30">Marzo (Estimado)</span>
                         </div>
                     </div>
 
