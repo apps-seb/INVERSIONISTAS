@@ -76,6 +76,22 @@
             background-position: center;
             background-attachment: fixed;
         }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #D4AF37; }
+        }
+        .typewriter-text {
+            overflow: hidden;
+            border-right: .15em solid #D4AF37;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-brand-blue font-sans antialiased">
@@ -125,16 +141,26 @@
             <div class="swiper-wrapper">
                 <!-- Slide 1 -->
                 <div class="swiper-slide relative flex items-center justify-center">
-                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('https://images.unsplash.com/photo-1600596542815-e328d4de4bf7?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
+                    <!-- Updated Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1600596542815-e328d4de4bf7?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
                     <div class="relative z-10 text-center px-6 md:px-12 max-w-6xl mx-auto py-20" data-swiper-parallax="-300">
                         <p class="text-brand-gold font-semibold tracking-[0.3em] mb-6 text-sm md:text-xl uppercase animate-fade-in-up">
                             Barrio Maria Occidente, Popayán
                         </p>
-                        <h1 class="text-4xl md:text-6xl lg:text-8xl font-serif font-bold text-white mb-8 leading-tight drop-shadow-lg">
+
+                        <h1 class="text-4xl md:text-6xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-lg">
                             Construye Tu <br/><span class="gradient-text">Futuro Ideal</span>
                         </h1>
+
+                        <!-- New Animated High Conversion Text -->
+                        <div class="inline-block bg-brand-blue/80 backdrop-blur-sm border border-brand-gold px-6 py-3 rounded-full mb-8 shadow-lg transform hover:scale-105 transition duration-300">
+                             <div class="typewriter-text text-xl md:text-2xl font-bold text-white">
+                                <span class="text-brand-gold">355 LOTES</span> • 6x12 m² • <span class="text-green-400">ALTA VALORIZACIÓN</span>
+                             </div>
+                        </div>
+
                         <p class="text-gray-100 text-lg md:text-2xl mb-12 max-w-4xl mx-auto font-light leading-relaxed drop-shadow-md">
-                            355 Lotes Urbanos de 72m² en una ubicación estratégica. <br class="hidden md:block"> Espacio, naturaleza y seguridad para tu familia.
+                            Espacio, naturaleza y seguridad para tu familia en una ubicación estratégica.
                         </p>
                         <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
                             <a href="#contacto" class="w-full md:w-auto px-10 py-5 bg-brand-gold text-brand-blue font-bold rounded-full text-lg hover:bg-white transition transform hover:scale-105 shadow-xl flex items-center justify-center gap-3">
@@ -279,9 +305,9 @@
     </div>
 
     <!-- Scroll Trigger Reveal Section -->
-    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <!-- Fixed Background with Reveal Effect handled by CSS attachment fixed -->
-        <div class="absolute inset-0 w-full h-full bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop'); filter: brightness(0.6);"></div>
+    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gray-900 parallax-section">
+        <!-- Parallax Background -->
+        <div class="absolute left-0 w-full h-[150%] -top-[25%] bg-cover bg-center parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop'); filter: brightness(0.6);"></div>
 
         <div class="relative z-10 container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1500">
             <h2 class="text-5xl md:text-7xl font-serif font-bold text-white mb-8 text-shadow">
@@ -419,8 +445,8 @@
     </section>
 
     <!-- Full Width Reveal Section -->
-    <section class="relative h-screen w-full overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop');"></div>
+    <section class="relative h-screen w-full overflow-hidden parallax-section">
+        <div class="absolute left-0 w-full h-[150%] -top-[25%] bg-cover bg-center parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop');"></div>
         <div class="absolute inset-0 bg-black/40"></div>
         <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6" data-aos="zoom-out">
             <h2 class="text-5xl md:text-8xl font-serif font-bold text-white mb-6 drop-shadow-2xl">
@@ -778,15 +804,20 @@
                 </div>
 
                 <!-- Map -->
-                <div class="w-full md:w-1/2 h-[400px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white" data-aos="fade-left">
+                <div class="w-full md:w-1/2 h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white relative bg-gray-100" data-aos="fade-left">
+                     <!-- Loading Placeholder -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                        <i class="fas fa-spinner fa-spin text-4xl text-brand-gold"></i>
+                    </div>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.208688432364!2d-76.6346283252655!3d2.441991757879483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3003057e934399%3A0x33486c321d009230!2sMaria%20Occidente%2C%20Popay%C3%A1n%2C%20Cauca!5e0!3m2!1ses!2sco!4v1716300000000!5m2!1ses!2sco"
+                        src="https://mercacol.com.co/elementor-993/"
                         width="100%"
                         height="100%"
                         style="border:0;"
                         allowfullscreen=""
                         loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        class="relative z-10"
+                        title="Mapa Interactivo Riviera">
                     </iframe>
                 </div>
             </div>
@@ -1012,6 +1043,26 @@
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
+            });
+        });
+
+        // Mobile Parallax Fix
+        window.addEventListener('scroll', function() {
+            const parallaxSections = document.querySelectorAll('.parallax-section');
+            parallaxSections.forEach(section => {
+                const bg = section.querySelector('.parallax-bg');
+                if (bg) {
+                    const scrollPosition = window.pageYOffset;
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+
+                    // Check if section is in viewport
+                    if (scrollPosition + window.innerHeight > sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        const distance = scrollPosition - sectionTop;
+                        const speed = 0.5; // Increased parallax speed
+                        bg.style.transform = `translateY(${distance * speed}px)`;
+                    }
+                }
             });
         });
 
