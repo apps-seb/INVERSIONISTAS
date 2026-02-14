@@ -14,6 +14,9 @@
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,29 +113,80 @@
     </nav>
 
     <!-- Hero Section -->
-    <header id="inicio" class="relative h-screen flex items-center justify-center hero-bg text-center px-4">
-        <div class="relative z-10 max-w-5xl mx-auto" data-aos="fade-up" data-aos-duration="1200">
-            <p class="text-brand-gold font-medium tracking-[0.2em] mb-4 text-sm md:text-lg uppercase">
-                Barrio Maria Occidente, Popayán
-            </p>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight">
-                Construye Tu <br/><span class="gradient-text">Futuro Ideal</span>
-            </h1>
-            <p class="text-gray-200 text-lg md:text-2xl mb-10 max-w-3xl mx-auto font-light">
-                355 Lotes Urbanos de 72m² en una ubicación estratégica. Diseño de casa y escrituras incluidas.
-            </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#contacto" class="px-8 py-4 bg-brand-gold text-brand-blue font-bold rounded-full text-lg hover:bg-white transition transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
-                    <i class="fas fa-calendar-check"></i> Aparta tu Lote
-                </a>
-                <a href="#beneficios" class="px-8 py-4 border-2 border-white text-white font-bold rounded-full text-lg hover:bg-white hover:text-brand-blue transition transform hover:scale-105 flex items-center justify-center gap-2">
-                    <i class="fas fa-info-circle"></i> Ver Detalles
-                </a>
+    <header id="inicio" class="relative h-screen w-full">
+        <!-- Swiper -->
+        <div class="swiper heroSwiper h-full w-full">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide relative flex items-center justify-center">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1600596542815-e328d4de4bf7?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
+                    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto" data-swiper-parallax="-300">
+                        <p class="text-brand-gold font-medium tracking-[0.2em] mb-4 text-sm md:text-lg uppercase">
+                            Barrio Maria Occidente, Popayán
+                        </p>
+                        <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight">
+                            Construye Tu <br/><span class="gradient-text">Futuro Ideal</span>
+                        </h1>
+                        <p class="text-gray-200 text-lg md:text-2xl mb-10 max-w-3xl mx-auto font-light">
+                            355 Lotes Urbanos de 72m² en una ubicación estratégica.
+                        </p>
+                        <div class="flex flex-col md:flex-row gap-4 justify-center">
+                            <a href="#contacto" class="px-8 py-4 bg-brand-gold text-brand-blue font-bold rounded-full text-lg hover:bg-white transition transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+                                <i class="fas fa-calendar-check"></i> Aparta tu Lote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide relative flex items-center justify-center">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
+                    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto" data-swiper-parallax="-300">
+                        <p class="text-brand-gold font-medium tracking-[0.2em] mb-4 text-sm md:text-lg uppercase">
+                            Diseño & Exclusividad
+                        </p>
+                        <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight">
+                            Arquitectura <br/><span class="gradient-text">Moderna</span>
+                        </h1>
+                        <p class="text-gray-200 text-lg md:text-2xl mb-10 max-w-3xl mx-auto font-light">
+                            Diseño de casa incluido en tu inversión. Espacios pensados para ti.
+                        </p>
+                        <div class="flex flex-col md:flex-row gap-4 justify-center">
+                            <a href="#galeria" class="px-8 py-4 border-2 border-white text-white font-bold rounded-full text-lg hover:bg-white hover:text-brand-blue transition transform hover:scale-105 flex items-center justify-center gap-2">
+                                <i class="fas fa-eye"></i> Ver Diseños
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide relative flex items-center justify-center">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
+                    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto" data-swiper-parallax="-300">
+                        <p class="text-brand-gold font-medium tracking-[0.2em] mb-4 text-sm md:text-lg uppercase">
+                            Inversión Inteligente
+                        </p>
+                        <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight">
+                            Alta <br/><span class="gradient-text">Valorización</span>
+                        </h1>
+                        <p class="text-gray-200 text-lg md:text-2xl mb-10 max-w-3xl mx-auto font-light">
+                            Asegura tu patrimonio en la zona de mayor crecimiento de Popayán.
+                        </p>
+                        <div class="flex flex-col md:flex-row gap-4 justify-center">
+                            <a href="#contacto" class="px-8 py-4 bg-brand-gold text-brand-blue font-bold rounded-full text-lg hover:bg-white transition transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+                                <i class="fas fa-chart-line"></i> Invertir Ahora
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-prev text-white"></div>
+            <div class="swiper-button-next text-white"></div>
         </div>
 
         <!-- Scroll Down Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
             <a href="#beneficios" class="text-white text-2xl hover:text-brand-gold transition">
                 <i class="fas fa-chevron-down"></i>
             </a>
@@ -160,7 +214,79 @@
         </div>
     </div>
 
-    <!-- Benefits Section -->
+    <!-- Lotes Carousel Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mb-2">Conoce el <span class="text-brand-gold">Terreno</span></h2>
+                <p class="text-gray-600">Topografía plana y ubicación privilegiada.</p>
+            </div>
+
+            <div class="swiper lotesSwiper max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-xl h-[400px]" data-aos="zoom-in">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop');">
+                        <div class="absolute bottom-0 left-0 bg-black/50 text-white p-4 w-full">
+                            <h3 class="font-bold text-lg">Vistas Panorámicas</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1500076656116-558758c991c1?q=80&w=1200&auto=format&fit=crop');">
+                        <div class="absolute bottom-0 left-0 bg-black/50 text-white p-4 w-full">
+                            <h3 class="font-bold text-lg">Entorno Natural</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1464296458354-887538ed43a0?q=80&w=1200&auto=format&fit=crop');">
+                        <div class="absolute bottom-0 left-0 bg-black/50 text-white p-4 w-full">
+                            <h3 class="font-bold text-lg">Amplias Zonas Verdes</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next text-brand-gold"></div>
+                <div class="swiper-button-prev text-brand-gold"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info & Cards Section -->
+    <section class="py-20 bg-brand-blue text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2" data-aos="fade-right">
+                    <h2 class="text-4xl font-serif font-bold mb-6">Detalles <span class="text-brand-gold">Urbanísticos</span></h2>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        Riviera del Occidente ha sido planificado meticulosamente para ofrecer el equilibrio perfecto entre vida urbana y tranquilidad. Cada metro cuadrado está diseñado para maximizar tu inversión y calidad de vida.
+                    </p>
+                    <a href="#contacto" class="inline-block px-8 py-3 border-2 border-brand-gold text-brand-gold font-bold rounded-full hover:bg-brand-gold hover:text-brand-blue transition">
+                        Solicitar Brochure
+                    </a>
+                </div>
+                <div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-left">
+                    <div class="bg-brand-lightBlue p-6 rounded-xl border border-gray-700 hover:border-brand-gold transition group">
+                        <i class="fas fa-road text-3xl text-brand-gold mb-4 group-hover:scale-110 transition-transform block"></i>
+                        <h3 class="font-bold text-xl mb-2">Vías Pavimentadas</h3>
+                        <p class="text-sm text-gray-400">Acceso garantizado con infraestructura vial de calidad.</p>
+                    </div>
+                    <div class="bg-brand-lightBlue p-6 rounded-xl border border-gray-700 hover:border-brand-gold transition group">
+                        <i class="fas fa-lightbulb text-3xl text-brand-gold mb-4 group-hover:scale-110 transition-transform block"></i>
+                        <h3 class="font-bold text-xl mb-2">Iluminación LED</h3>
+                        <p class="text-sm text-gray-400">Calles iluminadas con tecnología eficiente y sostenible.</p>
+                    </div>
+                    <div class="bg-brand-lightBlue p-6 rounded-xl border border-gray-700 hover:border-brand-gold transition group">
+                        <i class="fas fa-water text-3xl text-brand-gold mb-4 group-hover:scale-110 transition-transform block"></i>
+                        <h3 class="font-bold text-xl mb-2">Redes de Servicios</h3>
+                        <p class="text-sm text-gray-400">Agua, alcantarillado y energía listos para conexión.</p>
+                    </div>
+                    <div class="bg-brand-lightBlue p-6 rounded-xl border border-gray-700 hover:border-brand-gold transition group">
+                        <i class="fas fa-tree text-3xl text-brand-gold mb-4 group-hover:scale-110 transition-transform block"></i>
+                        <h3 class="font-bold text-xl mb-2">Zonas Comunes</h3>
+                        <p class="text-sm text-gray-400">Espacios diseñados para el esparcimiento familiar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Carousel Section (Cards Effect) -->
     <section id="beneficios" class="py-20 px-6 bg-white relative overflow-hidden">
         <!-- Background decorative elements -->
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl"></div>
@@ -173,64 +299,159 @@
                 </h2>
                 <div class="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
                 <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    Diseñado para quienes buscan seguridad, rentabilidad y calidad de vida en un solo lugar.
+                    Desliza para descubrir las ventajas de invertir con nosotros.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
-                        <i class="fas fa-map-marked-alt"></i>
+            <!-- Swiper Container -->
+            <div class="swiper benefitsSwiper max-w-sm md:max-w-md mx-auto py-10">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide bg-gray-50 p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-20 h-20 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-4xl mb-6">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-blue mb-3">Ubicación Estratégica</h3>
+                        <p class="text-gray-600">Situado en el Barrio Maria Occidente, con fácil acceso a transporte y servicios.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-3">Ubicación Estratégica</h3>
-                    <p class="text-gray-600">Situado en el Barrio Maria Occidente, una zona consolidada con fácil acceso a transporte y servicios.</p>
-                </div>
 
-                <!-- Card 2 -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
-                        <i class="fas fa-ruler-combined"></i>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide bg-gray-50 p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-20 h-20 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-4xl mb-6">
+                            <i class="fas fa-ruler-combined"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-blue mb-3">Lotes de 72m²</h3>
+                        <p class="text-gray-600">Espacio ideal de 6x12m, perfecto para vivienda unifamiliar moderna.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-3">Lotes de 72m²</h3>
-                    <p class="text-gray-600">Espacio ideal de 6x12 metros, perfecto para desarrollar una vivienda unifamiliar cómoda y moderna.</p>
-                </div>
 
-                <!-- Card 3 -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
-                        <i class="fas fa-drafting-compass"></i>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide bg-gray-50 p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-20 h-20 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-4xl mb-6">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-blue mb-3">Diseño Arquitectónico</h3>
+                        <p class="text-gray-600">Incluye planos arquitectónicos modernos, ahorrándote tiempo y dinero.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-3">Diseño Arquitectónico</h3>
-                    <p class="text-gray-600">Te entregamos los planos arquitectónicos para una casa moderna, ahorrándote tiempo y dinero en diseño.</p>
-                </div>
 
-                <!-- Card 4 -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
-                        <i class="fas fa-file-signature"></i>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide bg-gray-50 p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-20 h-20 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-4xl mb-6">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-blue mb-3">Legalidad Garantizada</h3>
+                        <p class="text-gray-600">Tranquilidad total con escrituras al día listas para el traspaso.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-3">Legalidad Garantizada</h3>
-                    <p class="text-gray-600">Tranquilidad total con escrituras al día listas para el traspaso. Inversión segura y transparente.</p>
-                </div>
 
-                <!-- Card 5 -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
-                        <i class="fas fa-chart-line"></i>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide bg-gray-50 p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-20 h-20 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-4xl mb-6">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-blue mb-3">Alta Valorización</h3>
+                        <p class="text-gray-600">Inversión segura en un sector de pleno crecimiento urbano.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-3">Alta Valorización</h3>
-                    <p class="text-gray-600">Sector en pleno crecimiento urbano, lo que garantiza que tu inversión crecerá con el tiempo.</p>
-                </div>
 
-                <!-- Card 6 -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="600">
-                    <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
-                        <i class="fas fa-faucet"></i>
+                     <!-- Slide 6 -->
+                     <div class="swiper-slide bg-gray-50 p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-20 h-20 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-4xl mb-6">
+                            <i class="fas fa-faucet"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-blue mb-3">Servicios Completos</h3>
+                        <p class="text-gray-600">Factibilidad de agua, energía y alcantarillado en zona urbana.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-3">Servicios Disponibles</h3>
-                    <p class="text-gray-600">Zona urbana con factibilidad de servicios públicos esenciales (Agua, Energía, Alcantarillado).</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Carousel Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mb-2">Planos <span class="text-brand-gold">Arquitectónicos</span></h2>
+                <p class="text-gray-600">Opciones de vivienda diseñadas para tu estilo de vida.</p>
+            </div>
+
+            <div class="swiper plansSwiper pb-12" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="h-64 bg-gray-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=600&auto=format&fit=crop" alt="Plano Tipo 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-brand-blue/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-brand-gold font-bold text-lg">Ver Distribución</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-brand-blue mb-2">Casa Modelo A</h3>
+                            <p class="text-sm text-gray-500 mb-4">3 Habitaciones • 2 Baños • 90m² construidos</p>
+                            <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                                <li><i class="fas fa-check text-brand-gold mr-2"></i>Sala-Comedor amplia</li>
+                                <li><i class="fas fa-check text-brand-gold mr-2"></i>Cocina integral</li>
+                                <li><i class="fas fa-check text-brand-gold mr-2"></i>Patio de ropas</li>
+                            </ul>
+                            <button class="w-full py-2 border border-brand-blue text-brand-blue rounded hover:bg-brand-blue hover:text-white transition">Descargar PDF</button>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="h-64 bg-gray-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1628151016001-e2dd62164c4c?q=80&w=600&auto=format&fit=crop" alt="Plano Tipo 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-brand-blue/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-brand-gold font-bold text-lg">Ver Distribución</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-brand-blue mb-2">Casa Modelo B</h3>
+                            <p class="text-sm text-gray-500 mb-4">4 Habitaciones • 3 Baños • 110m² construidos</p>
+                            <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                                <li><i class="fas fa-check text-brand-gold mr-2"></i>Estudio privado</li>
+                                <li><i class="fas fa-check text-brand-gold mr-2"></i>Balcón en alcoba principal</li>
+                                <li><i class="fas fa-check text-brand-gold mr-2"></i>Garaje cubierto</li>
+                            </ul>
+                            <button class="w-full py-2 border border-brand-blue text-brand-blue rounded hover:bg-brand-blue hover:text-white transition">Descargar PDF</button>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="h-64 bg-gray-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop" alt="Plano Tipo 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-brand-blue/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-brand-gold font-bold text-lg">Ver Distribución</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-brand-blue mb-2">Casa Modelo C (Dúplex)</h3>
+                            <p class="text-sm text-gray-500 mb-4">3 Habitaciones • 2.5 Baños • 105m² construidos</p>
+                            <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                                <li><i class="fas fa-check text-brand-gold mr-2"></i>Doble altura en sala</li>
+                                <li><i class="fas fa-check text-brand-gold mr-2"></i>Terraza BBQ</li>
+                                <li><i class="fas fa-check text-brand-gold mr-2"></i>Jardín interior</li>
+                            </ul>
+                            <button class="w-full py-2 border border-brand-blue text-brand-blue rounded hover:bg-brand-blue hover:text-white transition">Descargar PDF</button>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="h-64 bg-gray-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1599309995543-911e25e98516?q=80&w=600&auto=format&fit=crop" alt="Plano Tipo 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-brand-blue/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-brand-gold font-bold text-lg">Ver Distribución</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-brand-blue mb-2">Local Comercial</h3>
+                            <p class="text-sm text-gray-500 mb-4">Espacio abierto • 1 Baño • 72m² construidos</p>
+                            <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                                <li><i class="fas fa-check text-brand-gold mr-2"></i>Fachada en vidrio</li>
+                                <li><i class="fas fa-check text-brand-gold mr-2"></i>Alta visibilidad</li>
+                                <li><i class="fas fa-check text-brand-gold mr-2"></i>Zona de carga</li>
+                            </ul>
+                            <button class="w-full py-2 border border-brand-blue text-brand-blue rounded hover:bg-brand-blue hover:text-white transition">Descargar PDF</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -302,6 +523,33 @@
                     <button class="w-3 h-3 rounded-full bg-white/50 transition-all hover:bg-brand-gold indicator-btn"></button>
                     <button class="w-3 h-3 rounded-full bg-white/50 transition-all hover:bg-brand-gold indicator-btn"></button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Renders Carousel Section -->
+    <section class="py-20 bg-brand-blue text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">
+                    Tu Futuro <span class="text-brand-gold">Hecho Realidad</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Explora los renders de alta calidad de nuestro proyecto.
+                </p>
+            </div>
+
+            <div class="swiper rendersSwiper rounded-2xl overflow-hidden shadow-2xl h-[500px] border border-gray-700">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop');"></div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600573472592-401b489a3cdc?q=80&w=1600&auto=format&fit=crop');"></div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop');"></div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=1600&auto=format&fit=crop');"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev text-brand-gold"></div>
+                <div class="swiper-button-next text-brand-gold"></div>
             </div>
         </div>
     </section>
@@ -451,6 +699,7 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         // Init AOS
         AOS.init({
@@ -529,6 +778,78 @@
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
             });
+        });
+
+        // Initialize Swipers
+        var heroSwiper = new Swiper(".heroSwiper", {
+            speed: 600,
+            parallax: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        var lotesSwiper = new Swiper(".lotesSwiper", {
+            spaceBetween: 30,
+            effect: "fade",
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        var plansSwiper = new Swiper(".plansSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
+        });
+
+        var benefitsSwiper = new Swiper(".benefitsSwiper", {
+            effect: "cards",
+            grabCursor: true,
+            cardsEffect: {
+                perSlideOffset: 15,
+                slideShadows: true,
+            },
+        });
+
+        var rendersSwiper = new Swiper(".rendersSwiper", {
+            spaceBetween: 0,
+            effect: "fade",
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
         });
 
         // Form Submission Simulation
