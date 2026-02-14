@@ -609,63 +609,87 @@
     </section>
 
     <!-- Landscaping Reveal Section -->
-    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gray-900 parallax-section">
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900 parallax-section">
         <!-- Parallax Background -->
-        <div class="absolute left-0 w-full h-[150%] -top-[25%] bg-cover bg-center parallax-bg" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/FOGATAS.jpg'); filter: brightness(0.6);"></div>
+        <div class="absolute left-0 w-full h-[150%] -top-[25%] bg-cover bg-center parallax-bg" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/FOGATAS.webp');"></div>
+
+        <!-- Gradient Overlay for Contrast -->
+        <div class="absolute inset-0 bg-black/40"></div>
 
         <div class="relative z-10 container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1500">
-            <h2 class="text-5xl md:text-7xl font-serif font-bold text-white mb-8 text-shadow">
+            <h2 class="text-6xl md:text-8xl font-serif font-bold text-white mb-8 text-shadow tracking-tight">
                 Paisajismo & <br/><span class="text-brand-gold">Amenidades</span>
             </h2>
-            <p class="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-                Un entorno diseñado para la conexión con la naturaleza: zonas de pesca, fogatas y espacios de descanso exclusivos.
+            <p class="text-xl md:text-3xl text-gray-100 mb-12 max-w-4xl mx-auto font-light leading-relaxed drop-shadow-md">
+                Un entorno diseñado para la conexión con la naturaleza, donde cada rincón invita a la tranquilidad y el disfrute.
             </p>
+             <div class="animate-bounce mt-10">
+                <i class="fas fa-chevron-down text-white text-3xl opacity-80"></i>
+            </div>
+        </div>
+
+        <!-- Bottom Fade -->
+        <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
+    </section>
+
+    <!-- Amenities Cards Section -->
+    <section class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-2 block">Experiencias Exclusivas</span>
+                <h3 class="text-4xl md:text-5xl font-serif font-bold text-brand-blue">
+                    Vive la <span class="italic text-brand-gold">Naturaleza</span>
+                </h3>
+            </div>
 
             <!-- Premium Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
                 <!-- Card 1: Zonas de Pesca -->
-                <div class="relative h-80 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow text-left">
+                <div class="relative h-96 rounded-3xl overflow-hidden group shadow-2xl card-premium-glow text-left cursor-pointer" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-border-trace"></div>
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop');"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 flex flex-col justify-end">
-                        <i class="fas fa-fish text-brand-gold text-3xl mb-3 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
-                        <h3 class="text-xl font-bold text-white mb-1">Pesca Deportiva</h3>
-                        <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
-                            Disfruta de la tranquilidad del río en nuestras zonas habilitadas.
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 flex flex-col justify-end">
+                        <div class="bg-brand-gold/20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mb-6 border border-brand-gold/50 group-hover:bg-brand-gold group-hover:border-transparent transition-all duration-300">
+                             <i class="fas fa-fish text-brand-gold text-3xl group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Pesca Deportiva</h3>
+                        <p class="text-gray-200 text-base transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100 leading-relaxed">
+                            Disfruta de la tranquilidad del río en nuestras zonas habilitadas, perfectas para conectar con el entorno.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 2: Fogatas -->
-                <div class="relative h-80 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow text-left">
+                <div class="relative h-96 rounded-3xl overflow-hidden group shadow-2xl card-premium-glow text-left cursor-pointer" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-border-trace"></div>
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=800&auto=format&fit=crop');"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 flex flex-col justify-end">
-                        <i class="fas fa-fire text-brand-gold text-3xl mb-3 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
-                        <h3 class="text-xl font-bold text-white mb-1">Zonas de Fogatas</h3>
-                        <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
-                            Momentos inolvidables bajo las estrellas al calor del fuego.
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 flex flex-col justify-end">
+                        <div class="bg-brand-gold/20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mb-6 border border-brand-gold/50 group-hover:bg-brand-gold group-hover:border-transparent transition-all duration-300">
+                            <i class="fas fa-fire text-brand-gold text-3xl group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Zonas de Fogatas</h3>
+                        <p class="text-gray-200 text-base transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100 leading-relaxed">
+                            Momentos inolvidables bajo las estrellas, compartiendo historias al calor del fuego en espacios seguros.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 3: Zonas de Descanso -->
-                <div class="relative h-80 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow text-left">
+                <div class="relative h-96 rounded-3xl overflow-hidden group shadow-2xl card-premium-glow text-left cursor-pointer" data-aos="fade-up" data-aos-delay="300">
                     <div class="card-border-trace"></div>
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1499750310159-5b600aa48c15?q=80&w=800&auto=format&fit=crop');"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 flex flex-col justify-end">
-                        <i class="fas fa-couch text-brand-gold text-3xl mb-3 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
-                        <h3 class="text-xl font-bold text-white mb-1">Relax & Confort</h3>
-                        <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
-                            Espacios diseñados para tu desconexión y paz mental.
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 flex flex-col justify-end">
+                        <div class="bg-brand-gold/20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mb-6 border border-brand-gold/50 group-hover:bg-brand-gold group-hover:border-transparent transition-all duration-300">
+                            <i class="fas fa-couch text-brand-gold text-3xl group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Relax & Confort</h3>
+                        <p class="text-gray-200 text-base transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100 leading-relaxed">
+                            Espacios diseñados para tu desconexión y paz mental, inmersos en el paisaje natural.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Bottom Fade -->
-        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
     </section>
 
 
