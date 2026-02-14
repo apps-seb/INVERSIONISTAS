@@ -608,6 +608,117 @@
         </div>
     </section>
 
+    <!-- Scroll Trigger Reveal Section: Paisajismo -->
+    <style>
+        .clip-init {
+            clip-path: inset(10% 20% 10% 20% round 30px);
+            opacity: 0.8;
+            transform: scale(0.95);
+        }
+        .clip-active {
+            clip-path: inset(0 0 0 0 round 0px);
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+    <section class="relative py-24 bg-gray-900 overflow-hidden" id="paisajismo-reveal">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] opacity-5"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Header -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
+                    Paisajismo <span class="text-brand-gold">& Bienestar</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+                    Un entorno diseñado para conectar con la naturaleza. Zonas exclusivas para disfrutar momentos inolvidables.
+                </p>
+            </div>
+
+            <!-- Reveal Image Container -->
+            <div class="relative w-full h-[50vh] md:h-[80vh] mb-20 rounded-3xl overflow-hidden reveal-trigger group shadow-2xl">
+                <!-- The Reveal Wrapper -->
+                <div class="absolute inset-0 w-full h-full transition-all duration-[2000ms] ease-[cubic-bezier(0.25,1,0.5,1)] clip-init" id="landscape-image">
+                    <img src="https://alta57.com/wp-content/uploads/2026/02/FOGATAS.jpg" alt="Zonas de Fogata y Descanso" class="w-full h-full object-cover transform scale-110 transition-transform duration-[3000ms] ease-out group-hover:scale-100">
+                    <!-- Overlay Gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
+                </div>
+
+                <!-- Floating Badge/Text inside image -->
+                <div class="absolute bottom-10 left-6 md:left-20 text-left z-20 opacity-0 transition-opacity duration-1000 delay-1000 reveal-text">
+                    <h3 class="text-3xl md:text-5xl font-serif font-bold text-white mb-2 text-shadow">Fogatas</h3>
+                    <p class="text-brand-gold text-sm md:text-xl tracking-[0.3em] uppercase font-bold bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full inline-block">Bajo las estrellas</p>
+                </div>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Zonas de Pesca -->
+                <div class="relative group bg-gray-800/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-brand-gold/50 transition duration-500 hover:transform hover:-translate-y-2 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-gold/0 via-brand-gold/5 to-brand-gold/10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center border border-brand-gold/30 mb-6 group-hover:bg-brand-gold group-hover:text-brand-blue transition duration-300 relative z-10 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                        <i class="fas fa-fish text-2xl text-brand-gold group-hover:text-brand-blue transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 relative z-10">Zonas de Pesca</h3>
+                    <p class="text-gray-400 leading-relaxed relative z-10 text-sm">
+                        Lagos naturales acondicionados para la pesca recreativa. Relájate y disfruta de la serenidad del agua en tu propio patio trasero.
+                    </p>
+                </div>
+
+                <!-- Card 2: Fogatas -->
+                <div class="relative group bg-gray-800/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-brand-gold/50 transition duration-500 hover:transform hover:-translate-y-2 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-gold/0 via-brand-gold/5 to-brand-gold/10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center border border-brand-gold/30 mb-6 group-hover:bg-brand-gold group-hover:text-brand-blue transition duration-300 relative z-10 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                        <i class="fas fa-fire text-2xl text-brand-gold group-hover:text-brand-blue transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 relative z-10">Zonas de Fogata</h3>
+                    <p class="text-gray-400 leading-relaxed relative z-10 text-sm">
+                        Espacios diseñados para compartir historias. La calidez del fuego en un entorno seguro y mágico para tus noches en familia.
+                    </p>
+                </div>
+
+                <!-- Card 3: Zonas de Descanso -->
+                <div class="relative group bg-gray-800/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-brand-gold/50 transition duration-500 hover:transform hover:-translate-y-2 overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-gold/0 via-brand-gold/5 to-brand-gold/10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center border border-brand-gold/30 mb-6 group-hover:bg-brand-gold group-hover:text-brand-blue transition duration-300 relative z-10 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                        <i class="fas fa-couch text-2xl text-brand-gold group-hover:text-brand-blue transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 relative z-10">Zonas de Descanso</h3>
+                    <p class="text-gray-400 leading-relaxed relative z-10 text-sm">
+                        Hamacas, pérgolas y mobiliario integrado al paisaje para tu desconexión total. El lugar perfecto para leer o meditar.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Landscape Reveal Animation Logic
+            document.addEventListener('DOMContentLoaded', () => {
+                const landscapeSection = document.querySelector('.reveal-trigger');
+                const landscapeImage = document.getElementById('landscape-image');
+                const landscapeText = document.querySelector('.reveal-text');
+
+                if(landscapeSection && landscapeImage) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                landscapeImage.classList.remove('clip-init');
+                                landscapeImage.classList.add('clip-active');
+                                if(landscapeText) landscapeText.classList.remove('opacity-0');
+                                // Unobserve after triggering once for smoother experience
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.2, rootMargin: "0px 0px -100px 0px" });
+
+                    observer.observe(landscapeSection);
+                }
+            });
+        </script>
+    </section>
+
     <!-- Benefits Carousel Section (Cards Effect) -->
     <section id="beneficios" class="py-20 px-6 bg-white relative overflow-hidden">
         <!-- Background decorative elements -->
