@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riviera del Occidente | Lotes Urbanos en Popayán</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            darkGold: '#AA8C2C',
+                            blue: '#0F172A',
+                            lightBlue: '#1E293B',
+                            accent: '#10B981',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles */
+        body {
+            overflow-x: hidden;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #F3E5AB, #D4AF37, #F3E5AB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+        }
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 25s linear infinite;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1600596542815-e328d4de4bf7?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-brand-blue font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-bold text-white tracking-widest">
+                RIVIERA <span class="text-brand-gold">DEL OCCIDENTE</span>
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#inicio" class="text-white hover:text-brand-gold transition">Inicio</a>
+                <a href="#beneficios" class="text-white hover:text-brand-gold transition">Beneficios</a>
+                <a href="#galeria" class="text-white hover:text-brand-gold transition">Galería</a>
+                <a href="#ubicacion" class="text-white hover:text-brand-gold transition">Ubicación</a>
+                <a href="#contacto" class="px-6 py-2 bg-brand-gold text-brand-blue font-bold rounded-full hover:bg-white transition transform hover:scale-105 shadow-lg">
+                    Contactar
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white text-2xl focus:outline-none" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-brand-blue/95 absolute top-full left-0 w-full border-t border-brand-gold/30" id="mobile-menu">
+            <div class="flex flex-col p-6 space-y-4 text-center">
+                <a href="#inicio" class="text-white hover:text-brand-gold text-lg">Inicio</a>
+                <a href="#beneficios" class="text-white hover:text-brand-gold text-lg">Beneficios</a>
+                <a href="#galeria" class="text-white hover:text-brand-gold text-lg">Galería</a>
+                <a href="#ubicacion" class="text-white hover:text-brand-gold text-lg">Ubicación</a>
+                <a href="#contacto" class="text-brand-gold font-bold text-lg">Contactar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="relative h-screen flex items-center justify-center hero-bg text-center px-4">
+        <div class="relative z-10 max-w-5xl mx-auto" data-aos="fade-up" data-aos-duration="1200">
+            <p class="text-brand-gold font-medium tracking-[0.2em] mb-4 text-sm md:text-lg uppercase">
+                Barrio Maria Occidente, Popayán
+            </p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight">
+                Construye Tu <br/><span class="gradient-text">Futuro Ideal</span>
+            </h1>
+            <p class="text-gray-200 text-lg md:text-2xl mb-10 max-w-3xl mx-auto font-light">
+                355 Lotes Urbanos de 72m² en una ubicación estratégica. Diseño de casa y escrituras incluidas.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#contacto" class="px-8 py-4 bg-brand-gold text-brand-blue font-bold rounded-full text-lg hover:bg-white transition transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-calendar-check"></i> Aparta tu Lote
+                </a>
+                <a href="#beneficios" class="px-8 py-4 border-2 border-white text-white font-bold rounded-full text-lg hover:bg-white hover:text-brand-blue transition transform hover:scale-105 flex items-center justify-center gap-2">
+                    <i class="fas fa-info-circle"></i> Ver Detalles
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#beneficios" class="text-white text-2xl hover:text-brand-gold transition">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Marquee Section -->
+    <div class="bg-brand-gold py-4 overflow-hidden whitespace-nowrap border-b-4 border-brand-blue shadow-lg relative z-20">
+        <div class="inline-flex animate-marquee items-center text-brand-blue font-bold text-lg md:text-xl uppercase tracking-widest">
+            <span class="mx-8"><i class="fas fa-star text-white"></i> Lanzamiento Oficial</span>
+            <span class="mx-8">355 Lotes Disponibles</span>
+            <span class="mx-8"><i class="fas fa-map-marker-alt text-white"></i> Barrio Maria Occidente</span>
+            <span class="mx-8">Diseño de Casa Incluido</span>
+            <span class="mx-8"><i class="fas fa-file-contract text-white"></i> Escrituras al Día</span>
+            <span class="mx-8">Lotes de 6x12m</span>
+            <span class="mx-8"><i class="fas fa-check-circle text-white"></i> Todo en Regla</span>
+            <!-- Duplicated for seamless loop -->
+            <span class="mx-8"><i class="fas fa-star text-white"></i> Lanzamiento Oficial</span>
+            <span class="mx-8">355 Lotes Disponibles</span>
+            <span class="mx-8"><i class="fas fa-map-marker-alt text-white"></i> Barrio Maria Occidente</span>
+            <span class="mx-8">Diseño de Casa Incluido</span>
+            <span class="mx-8"><i class="fas fa-file-contract text-white"></i> Escrituras al Día</span>
+            <span class="mx-8">Lotes de 6x12m</span>
+            <span class="mx-8"><i class="fas fa-check-circle text-white"></i> Todo en Regla</span>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="py-20 px-6 bg-white relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand-blue mb-4">
+                    ¿Por qué elegir <span class="text-brand-gold">Riviera?</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Diseñado para quienes buscan seguridad, rentabilidad y calidad de vida en un solo lugar.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">Ubicación Estratégica</h3>
+                    <p class="text-gray-600">Situado en el Barrio Maria Occidente, una zona consolidada con fácil acceso a transporte y servicios.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">Lotes de 72m²</h3>
+                    <p class="text-gray-600">Espacio ideal de 6x12 metros, perfecto para desarrollar una vivienda unifamiliar cómoda y moderna.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">Diseño Arquitectónico</h3>
+                    <p class="text-gray-600">Te entregamos los planos arquitectónicos para una casa moderna, ahorrándote tiempo y dinero en diseño.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">Legalidad Garantizada</h3>
+                    <p class="text-gray-600">Tranquilidad total con escrituras al día listas para el traspaso. Inversión segura y transparente.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">Alta Valorización</h3>
+                    <p class="text-gray-600">Sector en pleno crecimiento urbano, lo que garantiza que tu inversión crecerá con el tiempo.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">Servicios Disponibles</h3>
+                    <p class="text-gray-600">Zona urbana con factibilidad de servicios públicos esenciales (Agua, Energía, Alcantarillado).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery & Plans Section -->
+    <section id="galeria" class="py-20 bg-brand-blue text-white relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+                    Visualiza Tu <span class="text-brand-gold">Nuevo Hogar</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Conoce los diseños arquitectónicos y la distribución urbanística de Riviera del Occidente.
+                </p>
+            </div>
+
+            <!-- Carousel -->
+            <div class="relative max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-brand-gold/20" data-aos="zoom-in">
+
+                <!-- Slides Container -->
+                <div class="flex transition-transform duration-500 ease-out h-[400px] md:h-[600px]" id="carousel-slides">
+                    <!-- Slide 1 -->
+                    <div class="w-full flex-shrink-0 relative group">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop" alt="Fachada Casa Moderna" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-2xl font-bold text-brand-gold">Diseño Moderno</h3>
+                            <p class="text-white">Fachadas elegantes y contemporáneas incluidas en tu inversión.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="w-full flex-shrink-0 relative group">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop" alt="Interiores Amplios" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-2xl font-bold text-brand-gold">Interiores Amplios</h3>
+                            <p class="text-white">Espacios diseñados para el confort de tu familia.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="w-full flex-shrink-0 relative group">
+                        <img src="https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1200&auto=format&fit=crop" alt="Plano Urbanístico" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-2xl font-bold text-brand-gold">Plano Urbanístico</h3>
+                            <p class="text-white">Distribución inteligente de 355 lotes en zona urbana.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="w-full flex-shrink-0 relative group">
+                        <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=1200&auto=format&fit=crop" alt="Entorno Natural" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-2xl font-bold text-brand-gold">Entorno Privilegiado</h3>
+                            <p class="text-white">Rodeado de naturaleza y tranquilidad sin salir de la ciudad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 hover:bg-brand-gold text-white p-3 rounded-full transition-colors z-10" id="prev-btn">
+                    <i class="fas fa-chevron-left text-xl"></i>
+                </button>
+                <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 hover:bg-brand-gold text-white p-3 rounded-full transition-colors z-10" id="next-btn">
+                    <i class="fas fa-chevron-right text-xl"></i>
+                </button>
+
+                <!-- Indicators -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10" id="carousel-indicators">
+                    <button class="w-3 h-3 rounded-full bg-white transition-all hover:bg-brand-gold indicator-btn active-indicator"></button>
+                    <button class="w-3 h-3 rounded-full bg-white/50 transition-all hover:bg-brand-gold indicator-btn"></button>
+                    <button class="w-3 h-3 rounded-full bg-white/50 transition-all hover:bg-brand-gold indicator-btn"></button>
+                    <button class="w-3 h-3 rounded-full bg-white/50 transition-all hover:bg-brand-gold indicator-btn"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="ubicacion" class="py-20 bg-gray-50 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2" data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand-blue mb-6">
+                        Ubicación <span class="text-brand-gold">Estratégica</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Riviera del Occidente se encuentra en el corazón del desarrollo urbano de Popayán, en el prestigioso Barrio Maria Occidente. Una zona que combina la tranquilidad residencial con la cercanía a todo lo que necesitas.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-brand-gold mr-3 text-xl"></i>
+                            <span>A 10 minutos del Centro Histórico</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-brand-gold mr-3 text-xl"></i>
+                            <span>Cerca a Colegios y Universidades</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-brand-gold mr-3 text-xl"></i>
+                            <span>Fácil acceso a transporte público</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-brand-gold mr-3 text-xl"></i>
+                            <span>Zona de alta valorización garantizada</span>
+                        </li>
+                    </ul>
+                    <a href="https://maps.google.com/?q=Popayan+Maria+Occidente" target="_blank" class="inline-block px-8 py-4 bg-brand-blue text-white font-bold rounded-full hover:bg-brand-gold transition shadow-lg">
+                        <i class="fas fa-map-marked-alt mr-2"></i> Ver en Google Maps
+                    </a>
+                </div>
+
+                <!-- Map -->
+                <div class="w-full md:w-1/2 h-[400px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white" data-aos="fade-left">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.208688432364!2d-76.6346283252655!3d2.441991757879483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3003057e934399%3A0x33486c321d009230!2sMaria%20Occidente%2C%20Popay%C3%A1n%2C%20Cauca!5e0!3m2!1ses!2sco!4v1716300000000!5m2!1ses!2sco"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-brand-blue relative">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+
+                <!-- Contact Info -->
+                <div class="w-full md:w-5/12 bg-brand-gold p-10 flex flex-col justify-between text-brand-blue">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Información de Contacto</h3>
+                        <p class="mb-8">Estamos listos para asesorarte en tu mejor inversión.</p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <p class="font-bold">Teléfono</p>
+                                    <p>+57 300 123 4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <p class="font-bold">Email</p>
+                                    <p>ventas@rivieraoccidente.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <p class="font-bold">Oficina de Ventas</p>
+                                    <p>Barrio Maria Occidente<br>Popayán, Cauca</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <p class="font-bold mb-4">Síguenos</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-brand-blue text-brand-gold flex items-center justify-center hover:bg-white hover:text-brand-blue transition"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-brand-blue text-brand-gold flex items-center justify-center hover:bg-white hover:text-brand-blue transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-brand-blue text-brand-gold flex items-center justify-center hover:bg-white hover:text-brand-blue transition"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="w-full md:w-7/12 p-10">
+                    <h3 class="text-2xl font-bold text-brand-blue mb-6">Envíanos un Mensaje</h3>
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">Nombre</label>
+                                <input class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-gold focus:outline-none transition" id="nombre" type="text" placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="telefono">Teléfono</label>
+                                <input class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-gold focus:outline-none transition" id="telefono" type="tel" placeholder="Tu teléfono">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                            <input class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-gold focus:outline-none transition" id="email" type="email" placeholder="tu@email.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="mensaje">Mensaje</label>
+                            <textarea class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-gold focus:outline-none transition" id="mensaje" rows="4" placeholder="Estoy interesado en..."></textarea>
+                        </div>
+                        <button class="w-full bg-brand-blue text-white font-bold py-4 rounded-lg hover:bg-brand-lightBlue transition transform hover:scale-[1.02] shadow-lg">
+                            Enviar Solicitud
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue border-t border-gray-800 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-serif font-bold mb-4">RIVIERA <span class="text-brand-gold">DEL OCCIDENTE</span></h2>
+            <p class="text-gray-400 mb-8 max-w-lg mx-auto">Construyendo sueños en Popayán. Un proyecto urbanístico pensado para el futuro de tu familia.</p>
+            <p class="text-gray-500 text-sm">&copy; 2024 Riviera del Occidente. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/573001234567" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 text-white rounded-full shadow-2xl flex items-center justify-center text-3xl hover:bg-green-600 transition transform hover:scale-110 z-50 animate-bounce">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 50,
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-brand-blue/90', 'shadow-md', 'backdrop-blur-sm', 'py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-brand-blue/90', 'shadow-md', 'backdrop-blur-sm', 'py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Carousel Logic
+        const slidesContainer = document.getElementById('carousel-slides');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const indicators = document.querySelectorAll('.indicator-btn');
+        let currentSlide = 0;
+        const totalSlides = 4;
+
+        function updateCarousel() {
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.remove('bg-white/50');
+                    indicator.classList.add('bg-white', 'scale-125');
+                } else {
+                    indicator.classList.remove('bg-white', 'scale-125');
+                    indicator.classList.add('bg-white/50');
+                }
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+
+        // Auto play
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+
+        // Mobile Menu Links Close Menu
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Form Submission Simulation
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
+
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            btn.disabled = true;
+            btn.classList.add('opacity-75');
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> ¡Mensaje Enviado!';
+                btn.classList.remove('bg-brand-blue', 'text-white');
+                btn.classList.add('bg-green-500', 'text-white');
+
+                setTimeout(() => {
+                    form.reset();
+                    btn.innerHTML = originalText;
+                    btn.classList.add('bg-brand-blue', 'text-white');
+                    btn.classList.remove('bg-green-500', 'text-white', 'opacity-75');
+                    btn.disabled = false;
+                    alert('Gracias por contactarnos. Un asesor se comunicará contigo pronto.');
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
