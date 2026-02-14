@@ -279,9 +279,9 @@
     </div>
 
     <!-- Scroll Trigger Reveal Section -->
-    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <!-- Fixed Background with Reveal Effect handled by CSS attachment fixed -->
-        <div class="absolute inset-0 w-full h-full bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop'); filter: brightness(0.6);"></div>
+    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gray-900 parallax-section">
+        <!-- Parallax Background -->
+        <div class="absolute left-0 w-full h-[150%] -top-[25%] bg-cover bg-center parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop'); filter: brightness(0.6);"></div>
 
         <div class="relative z-10 container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1500">
             <h2 class="text-5xl md:text-7xl font-serif font-bold text-white mb-8 text-shadow">
@@ -419,8 +419,8 @@
     </section>
 
     <!-- Full Width Reveal Section -->
-    <section class="relative h-screen w-full overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop');"></div>
+    <section class="relative h-screen w-full overflow-hidden parallax-section">
+        <div class="absolute left-0 w-full h-[150%] -top-[25%] bg-cover bg-center parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop');"></div>
         <div class="absolute inset-0 bg-black/40"></div>
         <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6" data-aos="zoom-out">
             <h2 class="text-5xl md:text-8xl font-serif font-bold text-white mb-6 drop-shadow-2xl">
@@ -778,15 +778,20 @@
                 </div>
 
                 <!-- Map -->
-                <div class="w-full md:w-1/2 h-[400px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white" data-aos="fade-left">
+                <div class="w-full md:w-1/2 h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white relative bg-gray-100" data-aos="fade-left">
+                     <!-- Loading Placeholder -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                        <i class="fas fa-spinner fa-spin text-4xl text-brand-gold"></i>
+                    </div>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.208688432364!2d-76.6346283252655!3d2.441991757879483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3003057e934399%3A0x33486c321d009230!2sMaria%20Occidente%2C%20Popay%C3%A1n%2C%20Cauca!5e0!3m2!1ses!2sco!4v1716300000000!5m2!1ses!2sco"
+                        src="https://mercacol.com.co/elementor-993/"
                         width="100%"
                         height="100%"
                         style="border:0;"
                         allowfullscreen=""
                         loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        class="relative z-10"
+                        title="Mapa Interactivo Riviera">
                     </iframe>
                 </div>
             </div>
@@ -1012,6 +1017,26 @@
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
+            });
+        });
+
+        // Mobile Parallax Fix
+        window.addEventListener('scroll', function() {
+            const parallaxSections = document.querySelectorAll('.parallax-section');
+            parallaxSections.forEach(section => {
+                const bg = section.querySelector('.parallax-bg');
+                if (bg) {
+                    const scrollPosition = window.pageYOffset;
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+
+                    // Check if section is in viewport
+                    if (scrollPosition + window.innerHeight > sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        const distance = scrollPosition - sectionTop;
+                        const speed = 0.2; // Adjust parallax speed
+                        bg.style.transform = `translateY(${distance * speed}px)`;
+                    }
+                }
             });
         });
 
