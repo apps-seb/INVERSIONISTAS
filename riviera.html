@@ -92,6 +92,95 @@
             letter-spacing: .15em;
             animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
+
+        /* New Professional Styles */
+        .text-glow-mirror {
+            background: linear-gradient(90deg, #aa8c2c 0%, #D4AF37 45%, #ffffff 50%, #D4AF37 55%, #aa8c2c 100%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shine-mirror 4s linear infinite;
+        }
+        @keyframes shine-mirror {
+            to { background-position: 200% center; }
+        }
+
+        /* Marquee Drawing Animation */
+        .marquee-line {
+            position: absolute;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #D4AF37;
+        }
+        .marquee-line-top {
+            top: 0;
+            animation: drawLineTop 6s ease-in-out infinite;
+        }
+        .marquee-line-bottom {
+            bottom: 0;
+            animation: drawLineBottom 6s ease-in-out infinite;
+        }
+        @keyframes drawLineTop {
+            0% { width: 0; left: 0; opacity: 0; }
+            10% { opacity: 1; }
+            45% { width: 100%; left: 0; }
+            50% { width: 100%; left: 0; opacity: 0; }
+            100% { width: 100%; left: 0; opacity: 0; }
+        }
+        @keyframes drawLineBottom {
+            0% { width: 0; left: 0; opacity: 0; }
+            50% { width: 0; left: 0; opacity: 0; }
+            55% { opacity: 1; }
+            95% { width: 100%; left: 0; }
+            100% { width: 100%; left: 0; opacity: 0; }
+        }
+
+        /* Card Hover Effects */
+        .card-premium-glow {
+            transition: all 0.5s ease;
+        }
+        .card-premium-glow:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            transform: translateY(-5px);
+        }
+        .card-border-trace {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 20;
+            border-radius: 1rem;
+        }
+        .card-border-trace::before, .card-border-trace::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 2px solid transparent;
+            border-radius: 1rem;
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        .card-border-trace::before {
+            top: 0;
+            left: 0;
+        }
+        .card-border-trace::after {
+            bottom: 0;
+            right: 0;
+        }
+        .group:hover .card-border-trace::before {
+            width: 100%;
+            height: 100%;
+            border-top-color: #D4AF37;
+            border-left-color: #D4AF37;
+        }
+        .group:hover .card-border-trace::after {
+            width: 100%;
+            height: 100%;
+            border-bottom-color: #D4AF37;
+            border-right-color: #D4AF37;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-brand-blue font-sans antialiased">
@@ -106,7 +195,7 @@
                 <a href="#inicio" class="text-white hover:text-brand-gold transition">INICIO</a>
                 <a href="#beneficios" class="text-white hover:text-brand-gold transition">BENEFICIOS</a>
                 <a href="#galeria" class="text-white hover:text-brand-gold transition">GALERÍA</a>
-                <a href="https://mercacol.com.co/elementor-993/" target="_blank" class="px-5 py-2 border border-brand-gold text-brand-gold rounded-full hover:bg-brand-gold hover:text-brand-blue transition flex items-center gap-2">
+                <a href="https://alta57.com/ubicacion/" target="_blank" class="px-5 py-2 border border-brand-gold text-brand-gold rounded-full hover:bg-brand-gold hover:text-brand-blue transition flex items-center gap-2">
                     <i class="fas fa-map-marker-alt"></i> VER UBICACIÓN
                 </a>
                 <a href="#contacto" class="px-6 py-2 bg-brand-gold text-brand-blue font-bold rounded-full hover:bg-white transition transform hover:scale-105 shadow-lg">
@@ -124,7 +213,7 @@
                 <a href="#inicio" class="text-white hover:text-brand-gold text-lg tracking-widest">INICIO</a>
                 <a href="#beneficios" class="text-white hover:text-brand-gold text-lg tracking-widest">BENEFICIOS</a>
                 <a href="#galeria" class="text-white hover:text-brand-gold text-lg tracking-widest">GALERÍA</a>
-                <a href="https://mercacol.com.co/elementor-993/" target="_blank" class="text-brand-gold border border-brand-gold py-2 rounded-full mx-10 hover:bg-brand-gold hover:text-brand-blue transition">
+                <a href="https://alta57.com/ubicacion/" target="_blank" class="text-brand-gold border border-brand-gold py-2 rounded-full mx-10 hover:bg-brand-gold hover:text-brand-blue transition">
                     VER UBICACIÓN
                 </a>
                 <a href="#contacto" class="bg-brand-gold text-brand-blue font-bold py-3 rounded-full mx-10 hover:bg-white transition shadow-lg">
@@ -141,37 +230,49 @@
             <div class="swiper-wrapper">
                 <!-- Slide 1 -->
                 <div class="swiper-slide relative flex items-center justify-center">
-                    <!-- Updated Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1600596542815-e328d4de4bf7?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
-                    <div class="relative z-10 text-center px-6 md:px-12 max-w-6xl mx-auto py-20" data-swiper-parallax="-300">
-                        <p class="text-brand-gold font-semibold tracking-[0.3em] mb-6 text-sm md:text-xl uppercase animate-fade-in-up">
-                            Barrio Maria Occidente, Popayán
-                        </p>
-
-                        <h1 class="text-4xl md:text-6xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-lg">
-                            Construye Tu <br/><span class="gradient-text">Futuro Ideal</span>
-                        </h1>
-
-                        <!-- New Animated High Conversion Text -->
-                        <div class="inline-block bg-brand-blue/80 backdrop-blur-sm border border-brand-gold px-6 py-3 rounded-full mb-8 shadow-lg transform hover:scale-105 transition duration-300">
-                             <div class="typewriter-text text-xl md:text-2xl font-bold text-white">
-                                <span class="text-brand-gold">355 LOTES</span> • 6x12 m² • <span class="text-green-400">ALTA VALORIZACIÓN</span>
-                             </div>
+                    <!-- Video Background Support (Uncomment and add URL to use video) -->
+                    <!-- <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+                        <source src="URL_HERE.mp4" type="video/mp4">
+                    </video> -->
+                    
+                    <!-- Fallback/Current Image Background -->
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.7)), url('https://alta57.com/wp-content/uploads/2026/02/CASAS-PROYECTO.webp');" data-swiper-parallax="-23%"></div>
+                    
+                    <div class="relative z-10 text-center px-6 md:px-12 max-w-7xl mx-auto py-20" data-swiper-parallax="-300">
+                        <div class="inline-block mb-6 px-4 py-1 border border-brand-gold/50 rounded-full bg-brand-blue/30 backdrop-blur-sm">
+                            <p class="text-brand-gold font-medium tracking-[0.2em] text-xs md:text-sm uppercase">
+                                Barrio Maria Occidente, Popayán
+                            </p>
                         </div>
 
-                        <p class="text-gray-100 text-lg md:text-2xl mb-12 max-w-4xl mx-auto font-light leading-relaxed drop-shadow-md">
-                            Espacio, naturaleza y seguridad para tu familia en una ubicación estratégica.
+                        <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+                            Exclusividad y <br/><span class="text-glow-mirror">Naturaleza</span>
+                        </h1>
+
+                        <!-- Professional Subtitle with Glow -->
+                        <div class="mb-10">
+                             <h2 class="text-xl md:text-3xl font-light text-gray-200 tracking-wide">
+                                <span class="text-brand-gold font-bold">355 LOTES URBANOS</span> <span class="mx-2 text-gray-500">|</span> 6x12 m² <span class="mx-2 text-gray-500">|</span> <span class="text-white border-b border-brand-gold pb-1">ALTA VALORIZACIÓN</span>
+                             </h2>
+                        </div>
+
+                        <p class="text-gray-100 text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md opacity-90">
+                            Invierte en el proyecto urbanístico más visionario de la región. <br class="hidden md:block"/>Seguridad, diseño y plusvalía asegurada para tu legado.
                         </p>
+                        
                         <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                            <a href="#contacto" class="w-full md:w-auto px-10 py-5 bg-brand-gold text-brand-blue font-bold rounded-full text-lg hover:bg-white transition transform hover:scale-105 shadow-xl flex items-center justify-center gap-3">
-                                <i class="fas fa-calendar-check"></i> COTIZA TU LOTE HOY
+                            <a href="#contacto" class="w-full md:w-auto px-12 py-5 bg-brand-gold text-brand-blue font-bold rounded-full text-lg hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.3)] flex items-center justify-center gap-3 border border-transparent hover:border-brand-gold">
+                                <i class="fas fa-check-circle"></i> AGENDAR VISITA
+                            </a>
+                            <a href="https://alta57.com/ubicacion/" target="_blank" class="w-full md:w-auto px-12 py-5 bg-transparent border border-white text-white font-bold rounded-full text-lg hover:bg-white hover:text-brand-blue transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-3">
+                                <i class="fas fa-map-marker-alt"></i> VER UBICACIÓN
                             </a>
                         </div>
                     </div>
                 </div>
                 <!-- Slide 2 -->
                 <div class="swiper-slide relative flex items-center justify-center">
-                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('https://alta57.com/wp-content/uploads/2026/02/DETALLE-FACHADA.webp');" data-swiper-parallax="-23%"></div>
                     <div class="relative z-10 text-center px-6 md:px-12 max-w-6xl mx-auto py-20" data-swiper-parallax="-300">
                         <p class="text-brand-gold font-semibold tracking-[0.3em] mb-6 text-sm md:text-xl uppercase">
                             Diseño & Exclusividad
@@ -191,7 +292,7 @@
                 </div>
                 <!-- Slide 3 -->
                 <div class="swiper-slide relative flex items-center justify-center">
-                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('https://alta57.com/wp-content/uploads/2026/02/URBANIZACION-PARCELAS.webp');" data-swiper-parallax="-23%"></div>
                     <div class="relative z-10 text-center px-6 md:px-12 max-w-6xl mx-auto py-20" data-swiper-parallax="-300">
                         <p class="text-brand-gold font-semibold tracking-[0.3em] mb-6 text-sm md:text-xl uppercase">
                             Inversión Inteligente
@@ -281,9 +382,13 @@
     </section>
 
     <!-- Creative Marquee Section -->
-    <div class="bg-brand-blue py-6 overflow-hidden border-t-4 border-b-4 border-brand-gold shadow-2xl relative z-20">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-        <div class="inline-flex animate-marquee items-center text-white font-bold text-xl md:text-2xl uppercase tracking-[0.2em]">
+    <div class="bg-brand-blue py-3 overflow-hidden shadow-2xl relative z-20 marquee-container">
+        <!-- Animated Golden Lines -->
+        <div class="marquee-line marquee-line-top"></div>
+        <div class="marquee-line marquee-line-bottom"></div>
+
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+        <div class="inline-flex animate-marquee items-center text-white font-medium text-lg md:text-xl uppercase tracking-[0.3em]">
             <span class="mx-12 flex items-center"><i class="fas fa-star text-brand-gold mr-4"></i> ÉXITO EN VENTAS</span>
             <span class="mx-12 text-brand-gold">|</span>
             <span class="mx-12 flex items-center"><i class="fas fa-check-circle text-brand-gold mr-4"></i> BARRIO MARIA OCCIDENTE</span>
@@ -307,7 +412,7 @@
     <!-- Scroll Trigger Reveal Section -->
     <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gray-900 parallax-section">
         <!-- Parallax Background -->
-        <div class="absolute left-0 w-full h-[150%] -top-[25%] bg-cover bg-center parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop'); filter: brightness(0.6);"></div>
+        <div class="absolute left-0 w-full h-[150%] -top-[25%] bg-cover bg-center parallax-bg" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/URBANIZACION-PARCELAS.webp'); filter: brightness(0.6);"></div>
 
         <div class="relative z-10 container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1500">
             <h2 class="text-5xl md:text-7xl font-serif font-bold text-white mb-8 text-shadow">
@@ -355,7 +460,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl" data-aos="zoom-in" data-aos-delay="100">
+                <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card-border-trace"></div>
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=800&auto=format&fit=crop');"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
                         <i class="fas fa-road text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
@@ -366,7 +472,8 @@
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl" data-aos="zoom-in" data-aos-delay="200">
+                <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card-border-trace"></div>
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=800&auto=format&fit=crop');"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
                         <i class="fas fa-leaf text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
@@ -377,7 +484,8 @@
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl" data-aos="zoom-in" data-aos-delay="300">
+                <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card-border-trace"></div>
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800&auto=format&fit=crop');"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
                         <i class="fas fa-map-marked-alt text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
@@ -446,7 +554,7 @@
 
     <!-- Full Width Reveal Section -->
     <section class="relative h-screen w-full overflow-hidden parallax-section">
-        <div class="absolute left-0 w-full h-[150%] -top-[25%] bg-cover bg-center parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop');"></div>
+        <div class="absolute left-0 w-full h-[150%] -top-[25%] bg-cover bg-center parallax-bg" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/CASAS-PROYECTO.webp');"></div>
         <div class="absolute inset-0 bg-black/40"></div>
         <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6" data-aos="zoom-out">
             <h2 class="text-5xl md:text-8xl font-serif font-bold text-white mb-6 drop-shadow-2xl">
@@ -690,7 +798,7 @@
                 <div class="flex transition-transform duration-500 ease-out h-[400px] md:h-[600px]" id="carousel-slides">
                     <!-- Slide 1 -->
                     <div class="w-full flex-shrink-0 relative group">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop" alt="Fachada Casa Moderna" class="w-full h-full object-cover">
+                        <img src="https://alta57.com/wp-content/uploads/2026/02/DETALLE-FACHADA.webp" alt="Fachada Casa Moderna" class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             <h3 class="text-2xl font-bold text-brand-gold">Diseño Moderno</h3>
                             <p class="text-white">Fachadas elegantes y contemporáneas incluidas en tu inversión.</p>
@@ -698,7 +806,7 @@
                     </div>
                     <!-- Slide 2 -->
                     <div class="w-full flex-shrink-0 relative group">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop" alt="Interiores Amplios" class="w-full h-full object-cover">
+                        <img src="https://alta57.com/wp-content/uploads/2026/02/RENDER-INTERIOR-PARCELAS-scaled.webp" alt="Interiores Amplios" class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             <h3 class="text-2xl font-bold text-brand-gold">Interiores Amplios</h3>
                             <p class="text-white">Espacios diseñados para el confort de tu familia.</p>
@@ -706,7 +814,7 @@
                     </div>
                     <!-- Slide 3 -->
                     <div class="w-full flex-shrink-0 relative group">
-                        <img src="https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1200&auto=format&fit=crop" alt="Plano Urbanístico" class="w-full h-full object-cover">
+                        <img src="https://alta57.com/wp-content/uploads/2026/02/TERRENO-CON-PARCELACION-scaled.webp" alt="Plano Urbanístico" class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             <h3 class="text-2xl font-bold text-brand-gold">Plano Urbanístico</h3>
                             <p class="text-white">Distribución inteligente de 355 lotes en zona urbana.</p>
@@ -714,7 +822,7 @@
                     </div>
                     <!-- Slide 4 -->
                     <div class="w-full flex-shrink-0 relative group">
-                        <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=1200&auto=format&fit=crop" alt="Entorno Natural" class="w-full h-full object-cover">
+                        <img src="https://alta57.com/wp-content/uploads/2026/02/VSTA-DESDE-EL-RIO.webp" alt="Entorno Natural" class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             <h3 class="text-2xl font-bold text-brand-gold">Entorno Privilegiado</h3>
                             <p class="text-white">Rodeado de naturaleza y tranquilidad sin salir de la ciudad.</p>
@@ -756,10 +864,10 @@
 
             <div class="swiper rendersSwiper rounded-2xl overflow-hidden shadow-2xl h-[500px] border border-gray-700">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop');"></div>
-                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600573472592-401b489a3cdc?q=80&w=1600&auto=format&fit=crop');"></div>
-                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop');"></div>
-                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=1600&auto=format&fit=crop');"></div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/CASAS-PROYECTO.webp');"></div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/DETALLE-FACHADA.webp');"></div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/VISTA-BAJA-CASAS.webp');"></div>
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/FACHADA-FRONTAL.webp');"></div>
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-prev text-brand-gold"></div>
@@ -810,7 +918,7 @@
                         <i class="fas fa-spinner fa-spin text-4xl text-brand-gold"></i>
                     </div>
                     <iframe
-                        src="https://mercacol.com.co/elementor-993/"
+                        src="https://alta57.com/ubicacion/"
                         width="100%"
                         height="100%"
                         style="border:0;"
@@ -934,7 +1042,7 @@
                         <li><a href="#inicio" class="hover:text-brand-gold transition">Inicio</a></li>
                         <li><a href="#beneficios" class="hover:text-brand-gold transition">Beneficios</a></li>
                         <li><a href="#galeria" class="hover:text-brand-gold transition">Galería</a></li>
-                        <li><a href="https://mercacol.com.co/elementor-993/" target="_blank" class="hover:text-brand-gold transition">Ver Ubicación</a></li>
+                        <li><a href="https://alta57.com/ubicacion/" target="_blank" class="hover:text-brand-gold transition">Ver Ubicación</a></li>
                     </ul>
                 </div>
 
