@@ -20,7 +20,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -36,7 +36,7 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
+                        sans: ['Poppins', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
                     }
                 }
@@ -81,18 +81,20 @@
 <body class="bg-gray-50 text-brand-blue font-sans antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-serif font-bold text-white tracking-widest">
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-blue/30 backdrop-blur-md border-b border-white/10" id="navbar">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl md:text-2xl font-serif font-bold text-white tracking-widest hover:text-brand-gold transition">
                 RIVIERA <span class="text-brand-gold">DEL OCCIDENTE</span>
             </a>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#inicio" class="text-white hover:text-brand-gold transition">Inicio</a>
-                <a href="#beneficios" class="text-white hover:text-brand-gold transition">Beneficios</a>
-                <a href="#galeria" class="text-white hover:text-brand-gold transition">Galería</a>
-                <a href="#ubicacion" class="text-white hover:text-brand-gold transition">Ubicación</a>
+            <div class="hidden md:flex space-x-6 items-center text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-white hover:text-brand-gold transition">INICIO</a>
+                <a href="#beneficios" class="text-white hover:text-brand-gold transition">BENEFICIOS</a>
+                <a href="#galeria" class="text-white hover:text-brand-gold transition">GALERÍA</a>
+                <a href="https://mercacol.com.co/elementor-993/" target="_blank" class="px-5 py-2 border border-brand-gold text-brand-gold rounded-full hover:bg-brand-gold hover:text-brand-blue transition flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt"></i> VER UBICACIÓN
+                </a>
                 <a href="#contacto" class="px-6 py-2 bg-brand-gold text-brand-blue font-bold rounded-full hover:bg-white transition transform hover:scale-105 shadow-lg">
-                    Contactar
+                    COTIZAR
                 </a>
             </div>
             <!-- Mobile Menu Button -->
@@ -101,13 +103,17 @@
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div class="hidden md:hidden bg-brand-blue/95 absolute top-full left-0 w-full border-t border-brand-gold/30" id="mobile-menu">
-            <div class="flex flex-col p-6 space-y-4 text-center">
-                <a href="#inicio" class="text-white hover:text-brand-gold text-lg">Inicio</a>
-                <a href="#beneficios" class="text-white hover:text-brand-gold text-lg">Beneficios</a>
-                <a href="#galeria" class="text-white hover:text-brand-gold text-lg">Galería</a>
-                <a href="#ubicacion" class="text-white hover:text-brand-gold text-lg">Ubicación</a>
-                <a href="#contacto" class="text-brand-gold font-bold text-lg">Contactar</a>
+        <div class="hidden md:hidden bg-brand-blue/95 backdrop-blur-xl absolute top-full left-0 w-full border-t border-brand-gold/30 shadow-2xl" id="mobile-menu">
+            <div class="flex flex-col p-8 space-y-6 text-center">
+                <a href="#inicio" class="text-white hover:text-brand-gold text-lg tracking-widest">INICIO</a>
+                <a href="#beneficios" class="text-white hover:text-brand-gold text-lg tracking-widest">BENEFICIOS</a>
+                <a href="#galeria" class="text-white hover:text-brand-gold text-lg tracking-widest">GALERÍA</a>
+                <a href="https://mercacol.com.co/elementor-993/" target="_blank" class="text-brand-gold border border-brand-gold py-2 rounded-full mx-10 hover:bg-brand-gold hover:text-brand-blue transition">
+                    VER UBICACIÓN
+                </a>
+                <a href="#contacto" class="bg-brand-gold text-brand-blue font-bold py-3 rounded-full mx-10 hover:bg-white transition shadow-lg">
+                    COTIZAR AHORA
+                </a>
             </div>
         </div>
     </nav>
@@ -119,60 +125,60 @@
             <div class="swiper-wrapper">
                 <!-- Slide 1 -->
                 <div class="swiper-slide relative flex items-center justify-center">
-                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1600596542815-e328d4de4bf7?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
-                    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto" data-swiper-parallax="-300">
-                        <p class="text-brand-gold font-medium tracking-[0.2em] mb-4 text-sm md:text-lg uppercase">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('https://images.unsplash.com/photo-1600596542815-e328d4de4bf7?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
+                    <div class="relative z-10 text-center px-6 md:px-12 max-w-6xl mx-auto py-20" data-swiper-parallax="-300">
+                        <p class="text-brand-gold font-semibold tracking-[0.3em] mb-6 text-sm md:text-xl uppercase animate-fade-in-up">
                             Barrio Maria Occidente, Popayán
                         </p>
-                        <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight">
+                        <h1 class="text-4xl md:text-6xl lg:text-8xl font-serif font-bold text-white mb-8 leading-tight drop-shadow-lg">
                             Construye Tu <br/><span class="gradient-text">Futuro Ideal</span>
                         </h1>
-                        <p class="text-gray-200 text-lg md:text-2xl mb-10 max-w-3xl mx-auto font-light">
-                            355 Lotes Urbanos de 72m² en una ubicación estratégica.
+                        <p class="text-gray-100 text-lg md:text-2xl mb-12 max-w-4xl mx-auto font-light leading-relaxed drop-shadow-md">
+                            355 Lotes Urbanos de 72m² en una ubicación estratégica. <br class="hidden md:block"> Espacio, naturaleza y seguridad para tu familia.
                         </p>
-                        <div class="flex flex-col md:flex-row gap-4 justify-center">
-                            <a href="#contacto" class="px-8 py-4 bg-brand-gold text-brand-blue font-bold rounded-full text-lg hover:bg-white transition transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
-                                <i class="fas fa-calendar-check"></i> Aparta tu Lote
+                        <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                            <a href="#contacto" class="w-full md:w-auto px-10 py-5 bg-brand-gold text-brand-blue font-bold rounded-full text-lg hover:bg-white transition transform hover:scale-105 shadow-xl flex items-center justify-center gap-3">
+                                <i class="fas fa-calendar-check"></i> COTIZA TU LOTE HOY
                             </a>
                         </div>
                     </div>
                 </div>
                 <!-- Slide 2 -->
                 <div class="swiper-slide relative flex items-center justify-center">
-                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
-                    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto" data-swiper-parallax="-300">
-                        <p class="text-brand-gold font-medium tracking-[0.2em] mb-4 text-sm md:text-lg uppercase">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
+                    <div class="relative z-10 text-center px-6 md:px-12 max-w-6xl mx-auto py-20" data-swiper-parallax="-300">
+                        <p class="text-brand-gold font-semibold tracking-[0.3em] mb-6 text-sm md:text-xl uppercase">
                             Diseño & Exclusividad
                         </p>
-                        <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight">
+                        <h1 class="text-4xl md:text-6xl lg:text-8xl font-serif font-bold text-white mb-8 leading-tight drop-shadow-lg">
                             Arquitectura <br/><span class="gradient-text">Moderna</span>
                         </h1>
-                        <p class="text-gray-200 text-lg md:text-2xl mb-10 max-w-3xl mx-auto font-light">
-                            Diseño de casa incluido en tu inversión. Espacios pensados para ti.
+                        <p class="text-gray-100 text-lg md:text-2xl mb-12 max-w-4xl mx-auto font-light leading-relaxed drop-shadow-md">
+                            Diseño de casa incluido en tu inversión. <br class="hidden md:block"> Espacios pensados para maximizar tu calidad de vida.
                         </p>
-                        <div class="flex flex-col md:flex-row gap-4 justify-center">
-                            <a href="#galeria" class="px-8 py-4 border-2 border-white text-white font-bold rounded-full text-lg hover:bg-white hover:text-brand-blue transition transform hover:scale-105 flex items-center justify-center gap-2">
-                                <i class="fas fa-eye"></i> Ver Diseños
+                        <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                            <a href="#galeria" class="w-full md:w-auto px-10 py-5 border-2 border-white text-white font-bold rounded-full text-lg hover:bg-white hover:text-brand-blue transition transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg">
+                                <i class="fas fa-eye"></i> VER DISEÑOS EXCLUSIVOS
                             </a>
                         </div>
                     </div>
                 </div>
                 <!-- Slide 3 -->
                 <div class="swiper-slide relative flex items-center justify-center">
-                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
-                    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto" data-swiper-parallax="-300">
-                        <p class="text-brand-gold font-medium tracking-[0.2em] mb-4 text-sm md:text-lg uppercase">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=1920&auto=format&fit=crop');" data-swiper-parallax="-23%"></div>
+                    <div class="relative z-10 text-center px-6 md:px-12 max-w-6xl mx-auto py-20" data-swiper-parallax="-300">
+                        <p class="text-brand-gold font-semibold tracking-[0.3em] mb-6 text-sm md:text-xl uppercase">
                             Inversión Inteligente
                         </p>
-                        <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight">
+                        <h1 class="text-4xl md:text-6xl lg:text-8xl font-serif font-bold text-white mb-8 leading-tight drop-shadow-lg">
                             Alta <br/><span class="gradient-text">Valorización</span>
                         </h1>
-                        <p class="text-gray-200 text-lg md:text-2xl mb-10 max-w-3xl mx-auto font-light">
-                            Asegura tu patrimonio en la zona de mayor crecimiento de Popayán.
+                        <p class="text-gray-100 text-lg md:text-2xl mb-12 max-w-4xl mx-auto font-light leading-relaxed drop-shadow-md">
+                            Asegura tu patrimonio en la zona de mayor crecimiento de Popayán. <br class="hidden md:block"> Escrituras al día y 100% garantizadas.
                         </p>
-                        <div class="flex flex-col md:flex-row gap-4 justify-center">
-                            <a href="#contacto" class="px-8 py-4 bg-brand-gold text-brand-blue font-bold rounded-full text-lg hover:bg-white transition transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
-                                <i class="fas fa-chart-line"></i> Invertir Ahora
+                        <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                            <a href="#contacto" class="w-full md:w-auto px-10 py-5 bg-brand-gold text-brand-blue font-bold rounded-full text-lg hover:bg-white transition transform hover:scale-105 shadow-xl flex items-center justify-center gap-3">
+                                <i class="fas fa-chart-line"></i> INVERTIR AHORA
                             </a>
                         </div>
                     </div>
@@ -181,69 +187,251 @@
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
             <!-- Add Navigation -->
-            <div class="swiper-button-prev text-white"></div>
-            <div class="swiper-button-next text-white"></div>
+            <div class="swiper-button-prev text-white hover:text-brand-gold transition hidden md:flex"></div>
+            <div class="swiper-button-next text-white hover:text-brand-gold transition hidden md:flex"></div>
         </div>
 
         <!-- Scroll Down Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-            <a href="#beneficios" class="text-white text-2xl hover:text-brand-gold transition">
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+            <a href="#caracteristicas-especiales" class="text-white text-3xl hover:text-brand-gold transition opacity-80 hover:opacity-100">
                 <i class="fas fa-chevron-down"></i>
             </a>
         </div>
     </header>
 
-    <!-- Marquee Section -->
-    <div class="bg-brand-gold py-4 overflow-hidden whitespace-nowrap border-b-4 border-brand-blue shadow-lg relative z-20">
-        <div class="inline-flex animate-marquee items-center text-brand-blue font-bold text-lg md:text-xl uppercase tracking-widest">
-            <span class="mx-8"><i class="fas fa-star text-white"></i> Lanzamiento Oficial</span>
-            <span class="mx-8">355 Lotes Disponibles</span>
-            <span class="mx-8"><i class="fas fa-map-marker-alt text-white"></i> Barrio Maria Occidente</span>
-            <span class="mx-8">Diseño de Casa Incluido</span>
-            <span class="mx-8"><i class="fas fa-file-contract text-white"></i> Escrituras al Día</span>
-            <span class="mx-8">Lotes de 6x12m</span>
-            <span class="mx-8"><i class="fas fa-check-circle text-white"></i> Todo en Regla</span>
-            <!-- Duplicated for seamless loop -->
-            <span class="mx-8"><i class="fas fa-star text-white"></i> Lanzamiento Oficial</span>
-            <span class="mx-8">355 Lotes Disponibles</span>
-            <span class="mx-8"><i class="fas fa-map-marker-alt text-white"></i> Barrio Maria Occidente</span>
-            <span class="mx-8">Diseño de Casa Incluido</span>
-            <span class="mx-8"><i class="fas fa-file-contract text-white"></i> Escrituras al Día</span>
-            <span class="mx-8">Lotes de 6x12m</span>
-            <span class="mx-8"><i class="fas fa-check-circle text-white"></i> Todo en Regla</span>
+    <!-- Special Features Section -->
+    <section id="caracteristicas-especiales" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-brand-gold/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand-blue mb-4">
+                    Inversión con <span class="text-brand-gold">Propósito</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Descubre por qué Riviera del Occidente es la elección inteligente para tu futuro.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-24 h-24 mx-auto bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-4xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition duration-300 shadow-md">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-blue mb-4 text-center">Lotes Premium 72m²</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Espacios de 6x12m optimizados para vivienda moderna, con topografía plana lista para construir.
+                    </p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-24 h-24 mx-auto bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-4xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition duration-300 shadow-md">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-blue mb-4 text-center">Escritura 100% Garantizada</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Seguridad jurídica total. Tu inversión está protegida con toda la documentación legal al día.
+                    </p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-24 h-24 mx-auto bg-brand-blue text-brand-gold rounded-full flex items-center justify-center text-4xl mb-6 group-hover:bg-brand-gold group-hover:text-white transition duration-300 shadow-md">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-blue mb-4 text-center">Valorización Constante</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Ubicado en el polo de desarrollo de Popayán, asegurando el crecimiento de tu patrimonio mes a mes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center" data-aos="zoom-in">
+                <a href="#contacto" class="inline-block px-12 py-5 bg-brand-gold text-brand-blue font-bold rounded-full text-xl hover:bg-brand-blue hover:text-white transition transform hover:scale-105 shadow-xl animate-pulse">
+                    ¡COTIZA TU LOTE HOY!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Marquee Section -->
+    <div class="bg-brand-blue py-6 overflow-hidden border-t-4 border-b-4 border-brand-gold shadow-2xl relative z-20">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div class="inline-flex animate-marquee items-center text-white font-bold text-xl md:text-2xl uppercase tracking-[0.2em]">
+            <span class="mx-12 flex items-center"><i class="fas fa-star text-brand-gold mr-4"></i> ÉXITO EN VENTAS</span>
+            <span class="mx-12 text-brand-gold">|</span>
+            <span class="mx-12 flex items-center"><i class="fas fa-check-circle text-brand-gold mr-4"></i> BARRIO MARIA OCCIDENTE</span>
+            <span class="mx-12 text-brand-gold">|</span>
+            <span class="mx-12 flex items-center"><i class="fas fa-home text-brand-gold mr-4"></i> DISEÑO DE CASA INCLUIDO</span>
+            <span class="mx-12 text-brand-gold">|</span>
+            <span class="mx-12 flex items-center"><i class="fas fa-file-signature text-brand-gold mr-4"></i> ESCRITURAS AL DÍA</span>
+            <span class="mx-12 text-brand-gold">|</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="mx-12 flex items-center"><i class="fas fa-star text-brand-gold mr-4"></i> ÉXITO EN VENTAS</span>
+            <span class="mx-12 text-brand-gold">|</span>
+            <span class="mx-12 flex items-center"><i class="fas fa-check-circle text-brand-gold mr-4"></i> BARRIO MARIA OCCIDENTE</span>
+            <span class="mx-12 text-brand-gold">|</span>
+            <span class="mx-12 flex items-center"><i class="fas fa-home text-brand-gold mr-4"></i> DISEÑO DE CASA INCLUIDO</span>
+            <span class="mx-12 text-brand-gold">|</span>
+            <span class="mx-12 flex items-center"><i class="fas fa-file-signature text-brand-gold mr-4"></i> ESCRITURAS AL DÍA</span>
+            <span class="mx-12 text-brand-gold">|</span>
         </div>
     </div>
 
-    <!-- Lotes Carousel Section -->
-    <section class="py-16 bg-gray-50">
+    <!-- Scroll Trigger Reveal Section -->
+    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gray-900">
+        <!-- Fixed Background with Reveal Effect handled by CSS attachment fixed -->
+        <div class="absolute inset-0 w-full h-full bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop'); filter: brightness(0.6);"></div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1500">
+            <h2 class="text-5xl md:text-7xl font-serif font-bold text-white mb-8 text-shadow">
+                Naturaleza <br/><span class="text-brand-gold">Sin Límites</span>
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                Despierta cada mañana rodeado de verde, aire puro y la tranquilidad que tu familia merece, sin alejarte de la ciudad.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 hover:bg-brand-gold/20 transition duration-500 group">
+                    <i class="fas fa-tree text-4xl text-brand-gold mb-3 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-white font-bold">Zonas Verdes</p>
+                </div>
+                <div class="p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 hover:bg-brand-gold/20 transition duration-500 group">
+                    <i class="fas fa-wind text-4xl text-brand-gold mb-3 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-white font-bold">Aire Puro</p>
+                </div>
+                <div class="p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 hover:bg-brand-gold/20 transition duration-500 group">
+                    <i class="fas fa-sun text-4xl text-brand-gold mb-3 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-white font-bold">Iluminación</p>
+                </div>
+                <div class="p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 hover:bg-brand-gold/20 transition duration-500 group">
+                    <i class="fas fa-mountain text-4xl text-brand-gold mb-3 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-white font-bold">Vistas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Fade -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
+    </section>
+
+    <!-- Creative Cards Section -->
+    <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-10" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mb-2">Conoce el <span class="text-brand-gold">Terreno</span></h2>
-                <p class="text-gray-600">Topografía plana y ubicación privilegiada.</p>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand-blue mb-4">
+                    Experiencia <span class="text-brand-gold">Premium</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Cada detalle está pensado para tu comodidad y bienestar.
+                </p>
             </div>
 
-            <div class="swiper lotesSwiper max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-xl h-[400px]" data-aos="zoom-in">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop');">
-                        <div class="absolute bottom-0 left-0 bg-black/50 text-white p-4 w-full">
-                            <h3 class="font-bold text-lg">Vistas Panorámicas</h3>
-                        </div>
-                    </div>
-                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1500076656116-558758c991c1?q=80&w=1200&auto=format&fit=crop');">
-                        <div class="absolute bottom-0 left-0 bg-black/50 text-white p-4 w-full">
-                            <h3 class="font-bold text-lg">Entorno Natural</h3>
-                        </div>
-                    </div>
-                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1464296458354-887538ed43a0?q=80&w=1200&auto=format&fit=crop');">
-                        <div class="absolute bottom-0 left-0 bg-black/50 text-white p-4 w-full">
-                            <h3 class="font-bold text-lg">Amplias Zonas Verdes</h3>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=800&auto=format&fit=crop');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
+                        <i class="fas fa-road text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Acceso Directo</h3>
+                        <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                            Vías pavimentadas y fácil conexión con el transporte público de la ciudad.
+                        </p>
                     </div>
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next text-brand-gold"></div>
-                <div class="swiper-button-prev text-brand-gold"></div>
+                <!-- Card 2 -->
+                <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=800&auto=format&fit=crop');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
+                        <i class="fas fa-leaf text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Naturaleza Intacta</h3>
+                        <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                            Rodeado de bosques nativos y aire puro, sin salir de la zona urbana.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800&auto=format&fit=crop');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
+                        <i class="fas fa-map-marked-alt text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Ubicación Ideal</h3>
+                        <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                            A solo 10 minutos del centro histórico de Popayán y cerca de colegios y universidades.
+                        </p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Interactive Lot Section -->
+    <section class="py-20 bg-brand-blue relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+                    Explora Tu <span class="text-brand-gold">Futuro Lote</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Interactúa con el plano para conocer las características de tu próxima inversión.
+                </p>
+            </div>
+
+            <div class="relative max-w-5xl mx-auto bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border-4 border-brand-gold/30 group" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1200&auto=format&fit=crop" alt="Plano Interactivo" class="w-full h-auto opacity-80 group-hover:opacity-100 transition duration-500">
+
+                <!-- Hotspots -->
+                <div class="absolute top-1/3 left-1/4 group/spot">
+                    <div class="w-8 h-8 bg-brand-gold rounded-full animate-ping absolute"></div>
+                    <div class="w-8 h-8 bg-brand-gold rounded-full flex items-center justify-center text-brand-blue font-bold cursor-pointer relative z-10 hover:scale-110 transition">
+                        <i class="fas fa-info"></i>
+                    </div>
+                    <!-- Tooltip -->
+                    <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-48 bg-white p-4 rounded-xl shadow-xl opacity-0 invisible group-hover/spot:opacity-100 group-hover/spot:visible transition-all duration-300 transform translate-y-2 group-hover/spot:translate-y-0 z-20">
+                        <h4 class="font-bold text-brand-blue mb-1">Frente de 6m</h4>
+                        <p class="text-xs text-gray-600">Ideal para garaje y entrada moderna.</p>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-4 h-4 bg-white rotate-45"></div>
+                    </div>
+                </div>
+
+                <div class="absolute top-1/2 right-1/3 group/spot">
+                    <div class="w-8 h-8 bg-brand-gold rounded-full animate-ping absolute"></div>
+                    <div class="w-8 h-8 bg-brand-gold rounded-full flex items-center justify-center text-brand-blue font-bold cursor-pointer relative z-10 hover:scale-110 transition">
+                        <i class="fas fa-info"></i>
+                    </div>
+                    <!-- Tooltip -->
+                    <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-48 bg-white p-4 rounded-xl shadow-xl opacity-0 invisible group-hover/spot:opacity-100 group-hover/spot:visible transition-all duration-300 transform translate-y-2 group-hover/spot:translate-y-0 z-20">
+                        <h4 class="font-bold text-brand-blue mb-1">Fondo de 12m</h4>
+                        <p class="text-xs text-gray-600">Espacio perfecto para jardín interior.</p>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-4 h-4 bg-white rotate-45"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#contacto" class="inline-block px-12 py-5 bg-brand-gold text-brand-blue font-bold rounded-full text-xl hover:bg-white hover:text-brand-blue transition transform hover:scale-105 shadow-xl animate-pulse">
+                    ¡COTIZA TU LOTE HOY!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Width Reveal Section -->
+    <section class="relative h-screen w-full overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop');"></div>
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6" data-aos="zoom-out">
+            <h2 class="text-5xl md:text-8xl font-serif font-bold text-white mb-6 drop-shadow-2xl">
+                Un Legado <br/><span class="text-brand-gold">Para Siempre</span>
+            </h2>
+            <p class="text-xl md:text-3xl text-gray-200 font-light max-w-4xl mx-auto mb-12 drop-shadow-md">
+                No es solo tierra, es el cimiento donde crecerán tus sueños y los de tu familia.
+            </p>
+            <a href="#contacto" class="px-10 py-4 border-2 border-white text-white font-bold rounded-full text-lg hover:bg-white hover:text-brand-blue transition transform hover:scale-105 shadow-lg">
+                Agenda Tu Visita
+            </a>
         </div>
     </section>
 
@@ -684,11 +872,58 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-blue border-t border-gray-800 text-white py-10">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-serif font-bold mb-4">RIVIERA <span class="text-brand-gold">DEL OCCIDENTE</span></h2>
-            <p class="text-gray-400 mb-8 max-w-lg mx-auto">Construyendo sueños en Popayán. Un proyecto urbanístico pensado para el futuro de tu familia.</p>
-            <p class="text-gray-500 text-sm">&copy; 2024 Riviera del Occidente. Todos los derechos reservados.</p>
+    <footer class="bg-brand-blue border-t border-white/10 text-white pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl font-serif font-bold mb-6 tracking-wider">
+                        RIVIERA <br/><span class="text-brand-gold">DEL OCCIDENTE</span>
+                    </h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Un proyecto urbanístico visionario en Popayán. Diseñado para ofrecer calidad de vida, seguridad y alta valorización para tu familia.
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-600 text-gray-400 flex items-center justify-center hover:bg-brand-gold hover:text-brand-blue hover:border-brand-gold transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-600 text-gray-400 flex items-center justify-center hover:bg-brand-gold hover:text-brand-blue hover:border-brand-gold transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/573001234567" target="_blank" class="w-10 h-10 rounded-full border border-gray-600 text-gray-400 flex items-center justify-center hover:bg-brand-gold hover:text-brand-blue hover:border-brand-gold transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="text-center">
+                    <h3 class="text-xl font-bold text-white mb-6 uppercase tracking-wider">Enlaces Rápidos</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="#inicio" class="hover:text-brand-gold transition">Inicio</a></li>
+                        <li><a href="#beneficios" class="hover:text-brand-gold transition">Beneficios</a></li>
+                        <li><a href="#galeria" class="hover:text-brand-gold transition">Galería</a></li>
+                        <li><a href="https://mercacol.com.co/elementor-993/" target="_blank" class="hover:text-brand-gold transition">Ver Ubicación</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Address -->
+                <div class="text-center md:text-right">
+                    <h3 class="text-xl font-bold text-white mb-6 uppercase tracking-wider">Contáctanos</h3>
+                    <div class="space-y-4 text-gray-400 flex flex-col items-center md:items-end">
+                        <p><i class="fas fa-map-marker-alt text-brand-gold mr-2"></i> Barrio Maria Occidente, Popayán</p>
+                        <p><i class="fas fa-phone-alt text-brand-gold mr-2"></i> +57 300 123 4567</p>
+                        <p><i class="fas fa-envelope text-brand-gold mr-2"></i> ventas@rivieraoccidente.com</p>
+                        <a href="#contacto" class="inline-block mt-4 px-6 py-2 border border-brand-gold text-brand-gold font-bold rounded-full hover:bg-brand-gold hover:text-brand-blue transition">
+                            Solicitar Asesoría
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-600 text-sm">
+                <p>&copy; 2024 Riviera del Occidente. Todos los derechos reservados. Desarrollado con <i class="fas fa-heart text-red-500"></i> para Popayán.</p>
+            </div>
         </div>
     </footer>
 
@@ -782,11 +1017,16 @@
 
         // Initialize Swipers
         var heroSwiper = new Swiper(".heroSwiper", {
-            speed: 600,
+            speed: 1000,
             parallax: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
+                dynamicBullets: true,
             },
             navigation: {
                 nextEl: ".swiper-button-next",
@@ -794,18 +1034,6 @@
             },
         });
 
-        var lotesSwiper = new Swiper(".lotesSwiper", {
-            spaceBetween: 30,
-            effect: "fade",
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
 
         var plansSwiper = new Swiper(".plansSwiper", {
             slidesPerView: 1,
