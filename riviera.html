@@ -602,6 +602,171 @@
         </div>
     </section>
 
+    <!-- Horizontal Scroll Lifestyle Section -->
+    <section id="lifestyle-scroll" class="relative hidden md:block" style="height: 300vh;">
+        <div class="sticky top-0 h-screen overflow-hidden bg-brand-blue text-white sticky-wrapper">
+            <div class="absolute top-0 left-0 w-full h-full flex horizontal-track transition-transform duration-75 ease-linear will-change-transform" style="width: 300vw;">
+
+                <!-- Panel 1: Morning -->
+                <div class="w-screen h-screen flex-shrink-0 relative flex items-center justify-center overflow-hidden">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop'); filter: brightness(0.7);"></div>
+                    <div class="relative z-10 text-center px-6 max-w-4xl" data-aos="fade-up">
+                        <span class="text-brand-gold tracking-[0.5em] uppercase text-sm font-bold mb-4 block">06:00 AM</span>
+                        <h2 class="text-6xl md:text-8xl font-serif font-bold mb-6">El Despertar <br/><span class="text-brand-gold">Perfecto</span></h2>
+                        <p class="text-xl md:text-2xl font-light text-gray-200">Comienza tu día con la brisa fresca de la mañana y el canto de las aves.</p>
+                    </div>
+                </div>
+
+                <!-- Panel 2: Afternoon -->
+                <div class="w-screen h-screen flex-shrink-0 relative flex items-center justify-center overflow-hidden">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1920&auto=format&fit=crop'); filter: brightness(0.6);"></div>
+                    <div class="relative z-10 text-center px-6 max-w-4xl">
+                        <span class="text-brand-gold tracking-[0.5em] uppercase text-sm font-bold mb-4 block">02:00 PM</span>
+                        <h2 class="text-6xl md:text-8xl font-serif font-bold mb-6">Tarde en <br/><span class="text-brand-gold">Familia</span></h2>
+                        <p class="text-xl md:text-2xl font-light text-gray-200">Disfruta de espacios seguros y verdes para que tus hijos jueguen libremente.</p>
+                    </div>
+                </div>
+
+                <!-- Panel 3: Evening -->
+                <div class="w-screen h-screen flex-shrink-0 relative flex items-center justify-center overflow-hidden">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1920&auto=format&fit=crop'); filter: brightness(0.5);"></div>
+                    <div class="relative z-10 text-center px-6 max-w-4xl">
+                        <span class="text-brand-gold tracking-[0.5em] uppercase text-sm font-bold mb-4 block">08:00 PM</span>
+                        <h2 class="text-6xl md:text-8xl font-serif font-bold mb-6">Noches de <br/><span class="text-brand-gold">Encuentro</span></h2>
+                        <p class="text-xl md:text-2xl font-light text-gray-200">Comparte momentos inolvidables bajo un cielo estrellado, con total seguridad.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-pulse z-20">
+                <span class="text-xs uppercase tracking-widest mb-2 text-brand-gold drop-shadow-md">Desliza para vivir el día</span>
+                <div class="w-px h-12 bg-gradient-to-b from-brand-gold to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Fallback for Lifestyle Section -->
+    <section class="block md:hidden bg-brand-blue text-white">
+        <div class="py-20 px-6 text-center">
+             <h2 class="text-4xl font-serif font-bold mb-4">Un Día en <span class="text-brand-gold">Riviera</span></h2>
+             <p class="text-gray-300 mb-12">Vive la experiencia completa desde el amanecer hasta el anochecer.</p>
+
+             <div class="space-y-12">
+                <!-- Morning -->
+                <div class="relative rounded-2xl overflow-hidden h-96 group shadow-xl">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop');"></div>
+                    <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center">
+                        <span class="text-brand-gold text-xs tracking-widest mb-2 font-bold uppercase">06:00 AM</span>
+                        <h3 class="text-3xl font-serif font-bold mb-2 text-white drop-shadow-lg">El Despertar</h3>
+                        <p class="text-sm text-gray-200 font-light">Comienza tu día con la brisa fresca.</p>
+                    </div>
+                </div>
+                 <!-- Afternoon -->
+                <div class="relative rounded-2xl overflow-hidden h-96 group shadow-xl">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=800&auto=format&fit=crop');"></div>
+                    <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center">
+                        <span class="text-brand-gold text-xs tracking-widest mb-2 font-bold uppercase">02:00 PM</span>
+                        <h3 class="text-3xl font-serif font-bold mb-2 text-white drop-shadow-lg">En Familia</h3>
+                        <p class="text-sm text-gray-200 font-light">Espacios seguros para jugar.</p>
+                    </div>
+                </div>
+                 <!-- Evening -->
+                <div class="relative rounded-2xl overflow-hidden h-96 group shadow-xl">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=800&auto=format&fit=crop');"></div>
+                    <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center">
+                        <span class="text-brand-gold text-xs tracking-widest mb-2 font-bold uppercase">08:00 PM</span>
+                        <h3 class="text-3xl font-serif font-bold mb-2 text-white drop-shadow-lg">Noches Mágicas</h3>
+                        <p class="text-sm text-gray-200 font-light">Bajo un cielo estrellado.</p>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- Exclusive Amenities Section (3D Coverflow) -->
+    <section class="py-24 bg-gray-50 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand-blue mb-4">
+                    Amenidades <span class="text-brand-gold">Exclusivas</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Disfruta de espacios diseñados para elevar tu calidad de vida y bienestar.
+                </p>
+            </div>
+
+            <div class="swiper amenitiesSwiper swiper-3d-container">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1: Piscina -->
+                    <div class="swiper-slide swiper-slide-3d group" style="background-image: url('https://images.unsplash.com/photo-1572331165267-854da2b00ca1?q=80&w=800&auto=format&fit=crop');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end rounded-2xl h-full">
+                            <i class="fas fa-swimming-pool text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                            <h3 class="text-2xl font-bold text-white mb-2">Piscina Climatizada</h3>
+                            <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                                Relájate en nuestra piscina con temperatura controlada todo el año.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Gimnasio -->
+                    <div class="swiper-slide swiper-slide-3d group" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end rounded-2xl h-full">
+                            <i class="fas fa-dumbbell text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                            <h3 class="text-2xl font-bold text-white mb-2">Gimnasio Equipado</h3>
+                            <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                                Mantente en forma con equipos de última generación.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Coworking -->
+                    <div class="swiper-slide swiper-slide-3d group" style="background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format&fit=crop');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end rounded-2xl h-full">
+                            <i class="fas fa-laptop-code text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                            <h3 class="text-2xl font-bold text-white mb-2">Coworking Space</h3>
+                            <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                                Trabaja cómodamente cerca de casa en un ambiente profesional.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Parque Infantil -->
+                    <div class="swiper-slide swiper-slide-3d group" style="background-image: url('https://images.unsplash.com/photo-1560252829-87353995f088?q=80&w=800&auto=format&fit=crop');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end rounded-2xl h-full">
+                            <i class="fas fa-child text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                            <h3 class="text-2xl font-bold text-white mb-2">Parque Infantil</h3>
+                            <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                                Diversión segura para los más pequeños de la familia.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Slide 5: Senderos -->
+                    <div class="swiper-slide swiper-slide-3d group" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end rounded-2xl h-full">
+                            <i class="fas fa-walking text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                            <h3 class="text-2xl font-bold text-white mb-2">Senderos Ecológicos</h3>
+                            <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                                Conecta con la naturaleza en nuestros recorridos peatonales.
+                            </p>
+                        </div>
+                    </div>
+                     <!-- Slide 6: Zona BBQ -->
+                    <div class="swiper-slide swiper-slide-3d group" style="background-image: url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800&auto=format&fit=crop');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end rounded-2xl h-full">
+                            <i class="fas fa-fire text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                            <h3 class="text-2xl font-bold text-white mb-2">Zona BBQ</h3>
+                            <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                                Comparte momentos inolvidables con amigos y familia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Full Width Reveal Section -->
     <section class="relative h-screen w-full overflow-hidden parallax-section">
         <div class="absolute left-0 w-full h-[150%] -top-[25%] bg-cover bg-center parallax-bg" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/CASAS-PROYECTO.webp');"></div>
@@ -1395,6 +1560,60 @@
             },
             loop: true,
         });
+
+        var amenitiesSwiper = new Swiper(".amenitiesSwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            loop: true,
+        });
+
+        // Horizontal Scroll Logic
+        const stickySection = document.getElementById('lifestyle-scroll');
+        const stickyWrapper = document.querySelector('.sticky-wrapper');
+        const horizontalTrack = document.querySelector('.horizontal-track');
+
+        if (stickySection && horizontalTrack) {
+            window.addEventListener('scroll', () => {
+                const sectionTop = stickySection.offsetTop;
+                const sectionHeight = stickySection.offsetHeight;
+                const windowHeight = window.innerHeight;
+                const scrollY = window.scrollY;
+
+                // Calculate progress (0 to 1) based on how far we've scrolled into the section
+                // We start scrolling when the section hits the top of the viewport
+                let progress = (scrollY - sectionTop) / (sectionHeight - windowHeight);
+
+                // Clamp progress between 0 and 1
+                progress = Math.max(0, Math.min(1, progress));
+
+                // Total width to scroll is (number of panels - 1) * 100vw
+                // Since we have 3 panels, we scroll 200vw
+                // Actually, translate goes from 0 to -200vw
+                // Max translate is -(300vw - 100vw) = -200vw.
+
+                const maxTranslate = 200; // in vw
+                const currentTranslate = progress * maxTranslate;
+
+                horizontalTrack.style.transform = `translateX(-${currentTranslate}vw)`;
+            });
+        }
 
         // Form Submission Simulation
         const form = document.querySelector('form');
