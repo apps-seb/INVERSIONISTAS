@@ -181,6 +181,29 @@
             border-bottom-color: #D4AF37;
             border-right-color: #D4AF37;
         }
+
+        /* Swiper 3D Coverflow Styles */
+        .swiper-3d-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .swiper-slide-3d {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 400px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+            /* Reflection effect using webkit-box-reflect if supported, otherwise rely on shadow */
+            -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0006);
+        }
+        @media (max-width: 640px) {
+            .swiper-slide-3d {
+                width: 70%;
+                height: 350px;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-brand-blue font-sans antialiased">
@@ -876,6 +899,67 @@
         </div>
     </section>
 
+    <!-- 3D Gallery Section -->
+    <section class="py-20 bg-gray-900 overflow-hidden relative">
+        <!-- Background Decoration -->
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-gold/10 rounded-full blur-[100px]"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">
+                    Perspectiva <span class="text-brand-gold">Panorámica</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Sumérgete en la experiencia visual de Riviera del Occidente. Desliza para explorar.
+                </p>
+            </div>
+
+            <!-- Swiper -->
+            <div class="swiper my3DSwiper swiper-3d-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper-slide-3d" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/CASAS-PROYECTO.webp');">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 flex flex-col justify-end rounded-b-2xl h-full">
+                            <h3 class="text-white font-bold text-xl drop-shadow-md">Arquitectura</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-3d" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/DETALLE-FACHADA.webp');">
+                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 flex flex-col justify-end rounded-b-2xl h-full">
+                            <h3 class="text-white font-bold text-xl drop-shadow-md">Detalles</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-3d" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/VISTA-BAJA-CASAS.webp');">
+                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 flex flex-col justify-end rounded-b-2xl h-full">
+                            <h3 class="text-white font-bold text-xl drop-shadow-md">Entorno</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-3d" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/FACHADA-FRONTAL.webp');">
+                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 flex flex-col justify-end rounded-b-2xl h-full">
+                            <h3 class="text-white font-bold text-xl drop-shadow-md">Fachada</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-3d" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/URBANIZACION-PARCELAS.webp');">
+                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 flex flex-col justify-end rounded-b-2xl h-full">
+                            <h3 class="text-white font-bold text-xl drop-shadow-md">Urbanismo</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-3d" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/RENDER-INTERIOR-PARCELAS-scaled.webp');">
+                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 flex flex-col justify-end rounded-b-2xl h-full">
+                            <h3 class="text-white font-bold text-xl drop-shadow-md">Interiores</h3>
+                        </div>
+                    </div>
+                     <div class="swiper-slide swiper-slide-3d" style="background-image: url('https://alta57.com/wp-content/uploads/2026/02/VSTA-DESDE-EL-RIO.webp');">
+                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 flex flex-col justify-end rounded-b-2xl h-full">
+                            <h3 class="text-white font-bold text-xl drop-shadow-md">Naturaleza</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Location Section -->
     <section id="ubicacion" class="py-20 bg-gray-50 relative overflow-hidden">
         <div class="container mx-auto px-6">
@@ -1237,6 +1321,29 @@
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+        });
+
+        var swiper3D = new Swiper(".my3DSwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            loop: true,
         });
 
         // Form Submission Simulation
