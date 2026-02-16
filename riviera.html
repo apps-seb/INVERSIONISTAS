@@ -45,8 +45,10 @@
     </script>
     <style>
         /* Custom Styles */
-        body {
+        html, body {
             overflow-x: hidden;
+            width: 100%;
+            position: relative;
         }
         .text-shadow {
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -556,7 +558,8 @@
                 </p>
             </div>
 
-            <div class="relative max-w-5xl mx-auto h-[600px] md:h-[700px] bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border-4 border-brand-gold/30 group" data-aos="zoom-in">
+            <!-- Increased height for mobile to prevent modal cutoff (h-[85vh]) -->
+            <div class="relative max-w-5xl mx-auto min-h-[85vh] md:min-h-0 md:h-[700px] bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border-4 border-brand-gold/30 group" data-aos="zoom-in">
                 <!-- Loading Spinner -->
                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
                     <i class="fas fa-spinner fa-spin text-4xl text-brand-gold"></i>
@@ -1078,6 +1081,57 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeSuccessModal()"></div>
+        <div class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden transform transition-all scale-100">
+            <!-- Header -->
+            <div class="bg-brand-blue p-6 text-center border-b-4 border-brand-gold relative">
+                <button onclick="closeSuccessModal()" class="absolute top-4 right-4 text-white/50 hover:text-white transition">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <img src="https://alta57.com/wp-content/uploads/2026/02/LOGO-RIVIERA-HORIZONTAL-02.png" alt="Riviera Logo" class="h-12 mx-auto mb-4">
+                <h3 class="text-2xl font-serif font-bold text-white">¡Gracias por tu Interés!</h3>
+                <p class="text-brand-gold text-sm uppercase tracking-widest mt-2">Hemos recibido tu solicitud</p>
+            </div>
+
+            <!-- Body -->
+            <div class="p-8">
+                <p class="text-gray-600 text-center mb-6 leading-relaxed">
+                    Un asesor especializado se pondrá en contacto contigo en breve para brindarte toda la información sobre los lotes disponibles.
+                </p>
+
+                <div class="bg-gray-50 rounded-xl p-6 mb-8 border border-gray-100">
+                    <h4 class="font-bold text-brand-blue mb-4 text-center">Siguientes Pasos:</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-brand-gold text-brand-blue flex items-center justify-center font-bold mr-3 flex-shrink-0">1</div>
+                            <div>
+                                <p class="font-bold text-brand-blue text-sm">Agenda tu Visita</p>
+                                <p class="text-xs text-gray-500">Conoce el proyecto y las zonas verdes personalmente.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 rounded-full bg-brand-gold text-brand-blue flex items-center justify-center font-bold mr-3 flex-shrink-0">2</div>
+                            <div>
+                                <p class="font-bold text-brand-blue text-sm">Separa tu Lote</p>
+                                <p class="text-xs text-gray-500">Asegura tu ubicación ideal con un valor accesible.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/573114967667?text=Hola,%20acabo%20de%20enviar%20mis%20datos%20y%20quiero%20agendar%20una%20visita." target="_blank" class="block w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-xl text-center shadow-lg transition transform hover:scale-[1.02] mb-4">
+                    <i class="fab fa-whatsapp mr-2"></i> HABLAR CON UN ASESOR AHORA
+                </a>
+
+                <button onclick="closeSuccessModal()" class="block w-full text-gray-400 text-sm hover:text-gray-600 font-medium">
+                    Cerrar ventana
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -1268,6 +1322,18 @@
 
         // Form Submission Simulation
         const form = document.querySelector('form');
+        const successModal = document.getElementById('success-modal');
+
+        function openSuccessModal() {
+            successModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeSuccessModal() {
+            successModal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const btn = form.querySelector('button');
@@ -1277,6 +1343,7 @@
             btn.disabled = true;
             btn.classList.add('opacity-75');
 
+            // Simulate sending delay
             setTimeout(() => {
                 btn.innerHTML = '<i class="fas fa-check"></i> ¡Mensaje Enviado!';
                 btn.classList.remove('bg-brand-blue', 'text-white');
@@ -1288,8 +1355,10 @@
                     btn.classList.add('bg-brand-blue', 'text-white');
                     btn.classList.remove('bg-green-500', 'text-white', 'opacity-75');
                     btn.disabled = false;
-                    alert('Gracias por contactarnos. Un asesor se comunicará contigo pronto.');
-                }, 2000);
+
+                    // Show Success Modal instead of Alert
+                    openSuccessModal();
+                }, 1000);
             }, 1500);
         });
     </script>
