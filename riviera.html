@@ -111,16 +111,21 @@
             position: absolute;
             left: 0;
             width: 0;
-            height: 1px;
+            height: 3px;
             background: #D4AF37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.9);
+            z-index: 30;
         }
         .marquee-line-top {
             top: 0;
-            animation: drawLineTop 6s ease-in-out infinite;
+            animation: drawLineTop 4s ease-in-out infinite;
         }
         .marquee-line-bottom {
             bottom: 0;
-            animation: drawLineBottom 6s ease-in-out infinite;
+            animation: drawLineBottom 4s ease-in-out infinite;
+        }
+        .text-glow-gold {
+             text-shadow: 0 0 10px rgba(212, 175, 55, 0.7), 0 0 20px rgba(212, 175, 55, 0.4);
         }
         @keyframes drawLineTop {
             0% { width: 0; left: 0; opacity: 0; }
@@ -188,8 +193,8 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-blue/30 backdrop-blur-md border-b border-white/10" id="navbar">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl md:text-2xl font-serif font-bold text-white tracking-widest hover:text-brand-gold transition">
-                RIVIERA <span class="text-brand-gold">DEL OCCIDENTE</span>
+        <a href="#" class="flex items-center">
+             <img src="https://alta57.com/wp-content/uploads/2026/02/LOGO-RIVIERA-HORIZONTAL-02.png" alt="Riviera del Occidente" class="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105">
             </a>
             <div class="hidden md:flex space-x-6 items-center text-sm font-medium tracking-wide">
                 <a href="#inicio" class="text-white hover:text-brand-gold transition">INICIO</a>
@@ -382,30 +387,30 @@
     </section>
 
     <!-- Creative Marquee Section -->
-    <div class="bg-brand-blue py-3 overflow-hidden shadow-2xl relative z-20 marquee-container">
+    <div class="bg-brand-blue py-1 md:py-2 overflow-hidden shadow-2xl relative z-20 marquee-container border-y border-brand-gold/30">
         <!-- Animated Golden Lines -->
         <div class="marquee-line marquee-line-top"></div>
         <div class="marquee-line marquee-line-bottom"></div>
 
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-        <div class="inline-flex animate-marquee items-center text-white font-medium text-lg md:text-xl uppercase tracking-[0.3em]">
-            <span class="mx-12 flex items-center"><i class="fas fa-star text-brand-gold mr-4"></i> ÉXITO EN VENTAS</span>
-            <span class="mx-12 text-brand-gold">|</span>
-            <span class="mx-12 flex items-center"><i class="fas fa-check-circle text-brand-gold mr-4"></i> BARRIO MARIA OCCIDENTE</span>
-            <span class="mx-12 text-brand-gold">|</span>
-            <span class="mx-12 flex items-center"><i class="fas fa-home text-brand-gold mr-4"></i> DISEÑO DE CASA INCLUIDO</span>
-            <span class="mx-12 text-brand-gold">|</span>
-            <span class="mx-12 flex items-center"><i class="fas fa-file-signature text-brand-gold mr-4"></i> ESCRITURAS AL DÍA</span>
-            <span class="mx-12 text-brand-gold">|</span>
+        <div class="inline-flex animate-marquee items-center text-white font-bold text-base md:text-lg uppercase tracking-[0.2em] whitespace-nowrap text-glow-gold">
+            <span class="mx-8 md:mx-12 flex items-center"><i class="fas fa-star text-brand-gold mr-3 drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]"></i> ÉXITO EN VENTAS</span>
+            <span class="mx-8 md:mx-12 text-brand-gold drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]">|</span>
+            <span class="mx-8 md:mx-12 flex items-center"><i class="fas fa-check-circle text-brand-gold mr-3 drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]"></i> BARRIO MARIA OCCIDENTE</span>
+            <span class="mx-8 md:mx-12 text-brand-gold drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]">|</span>
+            <span class="mx-8 md:mx-12 flex items-center"><i class="fas fa-home text-brand-gold mr-3 drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]"></i> DISEÑO DE CASA INCLUIDO</span>
+            <span class="mx-8 md:mx-12 text-brand-gold drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]">|</span>
+            <span class="mx-8 md:mx-12 flex items-center"><i class="fas fa-file-signature text-brand-gold mr-3 drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]"></i> ESCRITURAS AL DÍA</span>
+            <span class="mx-8 md:mx-12 text-brand-gold drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]">|</span>
             <!-- Duplicate for seamless loop -->
-            <span class="mx-12 flex items-center"><i class="fas fa-star text-brand-gold mr-4"></i> ÉXITO EN VENTAS</span>
-            <span class="mx-12 text-brand-gold">|</span>
-            <span class="mx-12 flex items-center"><i class="fas fa-check-circle text-brand-gold mr-4"></i> BARRIO MARIA OCCIDENTE</span>
-            <span class="mx-12 text-brand-gold">|</span>
-            <span class="mx-12 flex items-center"><i class="fas fa-home text-brand-gold mr-4"></i> DISEÑO DE CASA INCLUIDO</span>
-            <span class="mx-12 text-brand-gold">|</span>
-            <span class="mx-12 flex items-center"><i class="fas fa-file-signature text-brand-gold mr-4"></i> ESCRITURAS AL DÍA</span>
-            <span class="mx-12 text-brand-gold">|</span>
+            <span class="mx-8 md:mx-12 flex items-center"><i class="fas fa-star text-brand-gold mr-3 drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]"></i> ÉXITO EN VENTAS</span>
+            <span class="mx-8 md:mx-12 text-brand-gold drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]">|</span>
+            <span class="mx-8 md:mx-12 flex items-center"><i class="fas fa-check-circle text-brand-gold mr-3 drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]"></i> BARRIO MARIA OCCIDENTE</span>
+            <span class="mx-8 md:mx-12 text-brand-gold drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]">|</span>
+            <span class="mx-8 md:mx-12 flex items-center"><i class="fas fa-home text-brand-gold mr-3 drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]"></i> DISEÑO DE CASA INCLUIDO</span>
+            <span class="mx-8 md:mx-12 text-brand-gold drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]">|</span>
+            <span class="mx-8 md:mx-12 flex items-center"><i class="fas fa-file-signature text-brand-gold mr-3 drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]"></i> ESCRITURAS AL DÍA</span>
+            <span class="mx-8 md:mx-12 text-brand-gold drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]">|</span>
         </div>
     </div>
 
@@ -446,7 +451,7 @@
     </section>
 
     <!-- Creative Cards Section -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-gray-50 overflow-hidden">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand-blue mb-4">
@@ -458,43 +463,81 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="card-border-trace"></div>
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=800&auto=format&fit=crop');"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
-                        <i class="fas fa-road text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
-                        <h3 class="text-2xl font-bold text-white mb-2">Acceso Directo</h3>
-                        <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
-                            Vías pavimentadas y fácil conexión con el transporte público de la ciudad.
-                        </p>
+            <!-- Premium Swiper -->
+            <div class="swiper premiumSwiper w-full py-10 pb-16">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide w-80 md:w-96">
+                        <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow border border-gray-200">
+                            <div class="card-border-trace"></div>
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=800&auto=format&fit=crop');"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
+                                <i class="fas fa-road text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                                <h3 class="text-2xl font-bold text-white mb-2">Acceso Directo</h3>
+                                <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                                    Vías pavimentadas y fácil conexión con el transporte público de la ciudad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide w-80 md:w-96">
+                        <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow border border-gray-200">
+                            <div class="card-border-trace"></div>
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=800&auto=format&fit=crop');"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
+                                <i class="fas fa-leaf text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                                <h3 class="text-2xl font-bold text-white mb-2">Naturaleza Intacta</h3>
+                                <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                                    Rodeado de bosques nativos y aire puro, sin salir de la zona urbana.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide w-80 md:w-96">
+                        <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow border border-gray-200">
+                            <div class="card-border-trace"></div>
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800&auto=format&fit=crop');"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
+                                <i class="fas fa-map-marked-alt text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                                <h3 class="text-2xl font-bold text-white mb-2">Ubicación Ideal</h3>
+                                <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                                    A solo 10 minutos del centro histórico de Popayán y cerca de colegios y universidades.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 (Duplicate for effect) -->
+                    <div class="swiper-slide w-80 md:w-96">
+                        <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow border border-gray-200">
+                            <div class="card-border-trace"></div>
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop');"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
+                                <i class="fas fa-home text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                                <h3 class="text-2xl font-bold text-white mb-2">Confort Total</h3>
+                                <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                                    Viviendas pensadas para el máximo confort y bienestar de tu familia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5 (Duplicate for effect) -->
+                    <div class="swiper-slide w-80 md:w-96">
+                        <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow border border-gray-200">
+                            <div class="card-border-trace"></div>
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?q=80&w=800&auto=format&fit=crop');"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
+                                <i class="fas fa-shield-alt text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
+                                <h3 class="text-2xl font-bold text-white mb-2">Seguridad 24/7</h3>
+                                <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
+                                    Tranquilidad garantizada con vigilancia privada y control de acceso.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="card-border-trace"></div>
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=800&auto=format&fit=crop');"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
-                        <i class="fas fa-leaf text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
-                        <h3 class="text-2xl font-bold text-white mb-2">Naturaleza Intacta</h3>
-                        <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
-                            Rodeado de bosques nativos y aire puro, sin salir de la zona urbana.
-                        </p>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="relative h-96 rounded-2xl overflow-hidden group shadow-2xl card-premium-glow" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="card-border-trace"></div>
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800&auto=format&fit=crop');"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
-                        <i class="fas fa-map-marked-alt text-brand-gold text-4xl mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500"></i>
-                        <h3 class="text-2xl font-bold text-white mb-2">Ubicación Ideal</h3>
-                        <p class="text-gray-300 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500 delay-100">
-                            A solo 10 minutos del centro histórico de Popayán y cerca de colegios y universidades.
-                        </p>
-                    </div>
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -1190,6 +1233,26 @@
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
+            },
+        });
+
+        var premiumSwiper = new Swiper(".premiumSwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            initialSlide: 1,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 2.5,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
             },
         });
 
