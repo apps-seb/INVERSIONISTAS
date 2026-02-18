@@ -188,6 +188,14 @@
             border-bottom-color: #D4AF37;
             border-right-color: #D4AF37;
         }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        .animate-shake {
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-brand-blue font-sans antialiased">
@@ -1081,6 +1089,40 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Login Overlay -->
+    <div id="login-overlay" class="fixed inset-0 z-[200] bg-brand-blue flex flex-col items-center justify-center transition-opacity duration-1000">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 bg-[url('https://alta57.com/wp-content/uploads/2026/02/CASAS-PROYECTO.webp')] opacity-20 bg-cover bg-center"></div>
+
+        <!-- Login Form Container -->
+        <div id="login-container" class="relative z-10 w-full max-w-md p-8 bg-black/40 backdrop-blur-md rounded-2xl border border-brand-gold/30 shadow-2xl transform transition-all duration-500">
+            <div class="text-center mb-8">
+                <img src="https://alta57.com/wp-content/uploads/2026/02/LOGO-RIVIERA-HORIZONTAL-02.png" alt="Riviera Logo" class="h-16 mx-auto mb-4 drop-shadow-lg">
+                <h2 class="text-2xl text-white font-serif tracking-widest border-b border-brand-gold/50 pb-2 inline-block">ACCESO EXCLUSIVO</h2>
+            </div>
+            <form id="login-form" class="space-y-6">
+                <div>
+                    <label class="block text-brand-gold text-xs font-bold mb-2 uppercase tracking-wider">Usuario</label>
+                    <input type="email" id="login-email" class="w-full px-4 py-3 bg-brand-blue/50 border border-brand-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-brand-gold transition duration-300" placeholder="admin@rivieradeloccidente.com">
+                </div>
+                <div>
+                    <label class="block text-brand-gold text-xs font-bold mb-2 uppercase tracking-wider">Contraseña</label>
+                    <input type="password" id="login-password" class="w-full px-4 py-3 bg-brand-blue/50 border border-brand-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-brand-gold transition duration-300" placeholder="••••••••">
+                </div>
+                <button type="submit" class="w-full py-3 bg-brand-gold text-brand-blue font-bold rounded-lg hover:bg-white transition transform hover:scale-105 shadow-lg uppercase tracking-widest mt-4">
+                    Ingresar
+                </button>
+                <p id="login-error" class="text-red-400 text-center text-sm hidden mt-4 animate-pulse"><i class="fas fa-exclamation-circle"></i> Credenciales incorrectas</p>
+            </form>
+        </div>
+
+        <!-- Welcome Message (Hidden Initially) -->
+        <div id="welcome-message" class="hidden relative z-10 text-center transform scale-90 opacity-0 transition-all duration-1000">
+            <h1 class="text-5xl md:text-7xl text-white font-serif font-bold mb-4 text-glow-mirror">Bienvenido</h1>
+            <p class="text-brand-gold text-xl md:text-2xl tracking-[0.5em] uppercase border-t border-b border-brand-gold/50 py-2 inline-block">Riviera del Occidente</p>
+        </div>
+    </div>
+
     <!-- Success Modal -->
     <div id="success-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeSuccessModal()"></div>
@@ -1237,7 +1279,11 @@
 
         // Initialize Swipers
         var heroSwiper = new Swiper(".heroSwiper", {
-            speed: 1000,
+            speed: 1500,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
             parallax: true,
             autoplay: {
                 delay: 5000,
@@ -1361,6 +1407,63 @@
                 }, 1000);
             }, 1500);
         });
+
+        // Login Logic
+        const loginOverlay = document.getElementById('login-overlay');
+        const loginContainer = document.getElementById('login-container');
+        const loginFormElement = document.getElementById('login-form');
+        const loginEmail = document.getElementById('login-email');
+        const loginPassword = document.getElementById('login-password');
+        const loginError = document.getElementById('login-error');
+        const welcomeMessage = document.getElementById('welcome-message');
+
+        // Lock scroll initially
+        if (loginOverlay) {
+             document.body.style.overflow = 'hidden';
+        }
+
+        if (loginFormElement) {
+            loginFormElement.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = loginEmail.value;
+                const password = loginPassword.value;
+
+                if (email === 'admin@rivieradeloccidente.com' && password === 'Riviera#2026') {
+                    // Success
+                    loginError.classList.add('hidden');
+
+                    // Fade out form
+                    loginContainer.classList.add('opacity-0', 'scale-95');
+                    setTimeout(() => {
+                        loginContainer.classList.add('hidden');
+
+                        // Show Welcome
+                        welcomeMessage.classList.remove('hidden');
+                        // Force reflow
+                        void welcomeMessage.offsetWidth;
+                        welcomeMessage.classList.remove('opacity-0', 'scale-90');
+                        welcomeMessage.classList.add('opacity-100', 'scale-100');
+
+                        // Final Reveal
+                        setTimeout(() => {
+                            loginOverlay.classList.add('opacity-0', 'pointer-events-none');
+                            document.body.style.overflow = ''; // Restore scroll
+
+                            // Initialize AOS again just in case
+                            if(typeof AOS !== 'undefined') {
+                                AOS.refresh();
+                            }
+                        }, 2500);
+                    }, 500);
+
+                } else {
+                    // Error
+                    loginError.classList.remove('hidden');
+                    loginContainer.classList.add('animate-shake');
+                    setTimeout(() => loginContainer.classList.remove('animate-shake'), 500);
+                }
+            });
+        }
     </script>
 </body>
 </html>
